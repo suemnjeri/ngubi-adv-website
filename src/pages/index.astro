@@ -1,11 +1,272 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import Hr from "@/components/Hr.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Import service icon images
+import iconPicnic from '/public/images/icon-picnic.png';
+import iconTeambuilding from '/public/images/icon-teambuilding.png';
+import iconConservation from '/public/images/icon-conservation.png';
+import iconHiking from '/public/images/icon-hiking.png';
+import iconMtb from '/public/images/icon-mtb.png';
+import iconCamping from '/public/images/icon-camping.png';
+
+import SvgIcon from '../components/SvgIcon.astro';
+
+// --- REMOVED THE OLD getCollection METHOD ---
+// --- Replaced with manual event imports and list ---
+import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
+import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
+
+// This is the new, simple list of your events
+const allEvents = [
+  { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
+  { data: birdWatchingData, href: '/events/bird-watching-tour' },
+];
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+}
 ---
 
 <Layout>
-	<Welcome />
+  <Header class="bg-background" />
+
+  
+  {/* --- START OF FULL-WIDTH HERO SECTION (VIDEO BACKGROUND) --- */}
+  <section id="hero" class="relative hero-full-width py-36 sm:py-40 overflow-hidden min-h-screen">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto" 
+      class="absolute inset-0 w-full h-full object-cover"
+      aria-label="Background video of Ngubi Forest activities"
+    >
+      <source src="/videos/hero-background-video.webm" type="video/webm" />
+      <source src="/videos/hero-background-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+
+    <div class="relative z-10 max-w-app mx-auto px-4 pt-48">
+      <h1 class="my-4 text-2xl font-bold sm:my-8 sm:text-4xl leading-tight text-white">
+        Unleash Your Potential in Ngubi Forest:
+      </h1>
+      <p class="text-lg sm:text-xl mt-4 mb-12 font-light text-white">
+        <strong class="text-accent">Opening Soon!</strong>Experience enriching nature-based adventures, foster teamwork, and connect with Kenya's vital Kikuyu Escarpment Forest.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <LinkButton
+          href="/booking"
+          class="inline-block px-6 py-2 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
+          ariaLabel="Book Your Adventure Now"
+          title="Book Your Adventure Now"
+        >
+          Book Now
+        </LinkButton>
+        <LinkButton
+          href="/services"
+          class="inline-block px-6 py-2 text-lg bg-white text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          ariaLabel="Explore Our Adventures"
+          title="Explore Our Adventures"
+        >
+          Explore Our Adventures
+        </LinkButton>
+      </div>
+    </div>
+  </section>
+  {/* --- END OF FULL-WIDTH HERO SECTION (VIDEO BACKGROUND) --- */}
+
+
+  <main id="main-content" class="pt-1">
+    <Hr />
+
+    {/* --- START OF SERVICES SECTION --- */}
+    <section class="py-12 sm:py-16 bg-surface text-foreground">
+      <div class="max-w-app mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
+          Our Adventures & Experiences
+        </h2>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
+          (Coming Soon!)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+          
+          {/* CARD 1: Hiking Adventures */}
+          <a href="/services/forest-adventures#hiking" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+            <img src={iconHiking.src} alt="Hiking icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
+            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Hiking Adventures</h3>
+            <p class="text-foreground-light-bg mb-4 text-center">
+              Step onto our scenic, well-maintained trails for a guided hike.
+            </p>
+            <span class="inline-flex items-center text-accent font-medium group mx-auto">
+              Learn More
+              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
+            </span>
+          </a>
+
+          {/* CARD 2: Mountain Biking */}
+          <a href="/services/forest-adventures#mt-biking" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+            <img src={iconMtb.src} alt="Mountain biking icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
+            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Mountain Biking</h3>
+            <p class="text-foreground-light-bg mb-4 text-center">
+              Navigate our thrilling mountain bike trails suitable for all skill levels.
+            </p>
+            <span class="inline-flex items-center text-accent font-medium group mx-auto">
+              Learn More
+              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
+
+            </span>
+          </a>
+
+          {/* CARD 3: Overnight Camping (NEW) */}
+          <a href="/services/group-adventure#camping" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+            <img src={iconCamping.src} alt="Camping icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
+            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Overnight Camping</h3>
+            <p class="text-foreground-light-bg mb-4 text-center">
+              Experience the magic of Ngubi Forest under the stars with bonfires and storytelling.
+            </p>
+            <span class="inline-flex items-center text-accent font-medium group mx-auto">
+              Learn More
+              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
+
+            </span>
+          </a>
+
+          {/* CARD 4: Forest stopover and Picnic */}
+          <a href="/services/forest-adventures#picnic" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+            <img src={iconPicnic.src} alt="Picnic icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
+            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Forest stop and Picnic</h3>
+            <p class="text-foreground-light-bg mb-4 text-center">
+              Enjoy a serene spot in the forest for a tranquil escape.
+            </p>
+            <span class="inline-flex items-center text-accent font-medium group mx-auto">
+              Learn More
+              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
+
+            </span>
+          </a>
+
+          {/* CARD 5: Group Adventure (MODIFIED) */}
+          <a href="/services/group-adventure#day-adventures" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+            <img src={iconTeambuilding.src} alt="Group adventure icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
+            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Group Adventure</h3>
+            <p class="text-foreground-light-bg mb-4 text-center">
+              For groups, clubs, and youth looking for a day of thrilling activities and teambuilding.
+            </p>
+            <span class="inline-flex items-center text-accent font-medium group mx-auto">
+              Learn More
+              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
+
+            </span>
+          </a>
+
+          {/* CARD 6: Biodiversity & Conservation Programs */}
+          <a href="/programs" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+            <img src={iconConservation.src} alt="Conservation icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
+            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Biodiversity Conservation Programs</h3>
+            <p class="text-foreground-light-bg mb-4 text-center">
+              Immerse in the Kikuyu Escarpment's vibrant ecosystem through hands-on conservation learning.
+            </p>
+            <span class="inline-flex items-center text-accent font-medium group mx-auto">
+              Learn More
+              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
+
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+    {/* --- END OF SERVICES SECTION --- */}
+
+    <Hr />
+
+    {/* --- START OF UPCOMING EVENTS SECTION --- */}
+    <section class="py-12 sm:py-16 bg-surface">
+      <div class="max-w-app mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
+          Upcoming Special Events
+        </h2>
+        <p class="text-lg text-center max-w-2xl mx-auto mb-12 text-foreground-light-bg">
+          Click on a flyer below to learn more and register.
+        </p>
+
+        {/* Dynamic Grid for Events */}
+        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12 items-start justify-center">
+          {allEvents.length === 0 ? (
+            <p class="col-span-full text-center text-text-muted">No upcoming events at the moment. Check back soon!</p>
+          ) : (
+            allEvents.map(({ data, href }, index) => (
+              <a
+                href={href}
+                class:list={[
+                  "block rounded-lg shadow-lg overflow-hidden w-60 mx-auto transform transition-transform duration-300 hover:scale-105",
+                  {"hidden": index >= 3} /* Only show the first 3 */
+                ]}
+                aria-label={`View details for ${data.title}`}
+                title={`View details for ${data.title}`}
+              >
+                <img
+                  src={data.eventImage}
+                  alt={`Flyer for ${data.title}`}
+                  class="w-full h-full object-cover"
+                />
+              </a>
+            ))
+          )}
+        </div>
+        
+        {/* View All Events button that appears when there's at least one event */}
+        {allEvents.length > 0 && (
+          <div class="my-8 text-center">
+            <LinkButton id="load-more-events-btn" class="text-foreground-light-bg" href="/events">
+              View All Events
+              <SvgIcon name="IconArrowRight" class="inline-block ml-2 w-4 h-4" />
+            </LinkButton>
+          </div>
+        )}
+
+      </div>
+    </section>
+    {/* --- END OF UPCOMING EVENTS SECTION --- */}
+
+    <Hr />
+
+    {/* --- START OF PARTNERS/ACCREDITATION SECTION --- */}
+    <section class="py-12 sm:py-16 bg-surface text-foreground">
+      <div class="max-w-app mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
+          Our Valued Partners
+        </h2>
+        {/* NEW: Flexbox container for centering the grid */}
+        <div class="flex justify-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+                {/* Partner Logos */}
+                <div class="bg-surface p-4 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32">
+                    <img src="/images/partner-museums.png" alt="Partner Museums Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
+                </div>
+
+                <div class="bg-surface p-4 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32">
+                    <img src="/images/partner-kfs.png" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    {/* --- END OF PARTNERS/ACCREDITATION SECTION --- */}
+
+  </main>
+
+  <Footer class="bg-background" />
+
 </Layout>

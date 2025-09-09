@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Main from '../layouts/Main.astro';
+import LinkButton from '../components/LinkButton.astro';
+
+// Upcoming Events Data
+import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
+import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
+
+// Gallery Images Data
+const pastEvents = [
+  { alt: 'Family Fun Day in the Forest', src: '/images/events/event1-family.jpg' },
+  // Add more past events here as needed
+  // { alt: 'Another Past Event', src: '/images/events/another-past-event.webp' },
+];
+
+// Combine all upcoming events into a single array
+const allEvents = [
+  { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
+  { data: birdWatchingData, href: '/events/bird-watching-tour' },
+];
+
+// Sort the events by date
+allEvents.sort((a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf());
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+}
+---
+
+<Layout title="Upcoming Special Events">
+  <Header />
+  <Main pageTitle=""
+    pageDesc="" class="max-w-app mx-auto px-4 pt-24">
+    <img src="/images/title-events-page.webp" alt="Join Our Upcoming Adventures" class="mb-2 w-full" />
+    <section class="py-4 sm:py-8">
+      <div class="max-w-app mx-auto px-4">
+        <!-- <h1 class="text-4xl font-bold mb-4 text-center text-accent">Special Events</h1> -->
+        <p class="text-lg text-center max-w-2xl mx-auto mb-12 text-foreground-light-bg">
+          Join us for upcoming unique experiences and special programs designed to help you connect with nature and your community.
+        </p>
+
+        <div class="space-y-12">
+          {allEvents.length === 0 ? (
+            <p class="col-span-full text-center text-text-muted">No upcoming events at the moment. Check back soon!</p>
+          ) : (
+            allEvents.map(({ data, href }) => (
+              <div class="flex flex-col md:flex-row items-center gap-8 p-6 bg-surface rounded-lg shadow-lg">
+                <div class="flex-shrink-0 w-full md:w-1/3">
+                  <img
+                    src={data.eventImage}
+                    alt={data.title}
+                    class="rounded-lg object-cover w-full h-48 md:h-full"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <h2 class="text-3xl font-bold mb-2 text-accent">{data.title}</h2>
+                  <p class="text-foreground-light-bg mb-4">
+                    <span class="font-bold">{formatDate(data.eventDate)}</span>
+                    {data.eventTime && ` at ${data.eventTime}`}
+                    {data.location && ` | ${data.location}`}
+                  </p>
+                  <p class="text-foreground-light-bg mb-4">{data.description}</p>
+                  {data.price && (
+                    <p class="text-lg font-semibold mb-4 text-accent">{data.price}</p>
+                  )}
+                  <a
+                    href={href}
+                    class="inline-block px-6 py-2 text-md bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200"
+                    aria-label={`View details for ${data.title}`}
+                    title={`View details for ${data.title}`}
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    </section>
+    
+    <section class="py-12 sm:py-16">
+      <div class="max-w-app mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">Gallery of Past Events</h2>
+        <p class="text-lg text-center max-w-2xl mx-auto mb-12 text-foreground-light-bg">
+          Take a look at some of the memorable moments from our recent events.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {pastEvents.map((image) => (
+            <div class="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </Main>
+  <Footer />
+</Layout>

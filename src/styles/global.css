@@ -1,0 +1,115 @@
+/* src/styles/global.css - Final, Cleaned up and Corrected Version */
+
+@import "@splidejs/splide/dist/css/splide.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./typography.css";  
+
+/* --- Color Variables --- */
+
+:root, /* Light Theme */
+html[data-theme="light"] {
+  --background: #F8F4F0;
+  --foreground: #2A322A;
+  --accent-h: 25;
+  --accent-s: 70%;
+  --accent-l: 59%;
+  --accent-dark: #B85C1A;
+  --muted: #504C48;
+  --border: #C0BCB8;
+  --surface: var(--background);
+  --link-hover: #D2691E;
+  --background-overlay: rgba(0, 0, 0, 0.7);
+  --dark-header-footer-bg: #2A322A;
+  --light-text-on-dark-bg: #FCF6E9;
+}
+
+html[data-theme="dark"] { /* Dark Theme */
+  --background: #1A201A;
+  --foreground: #FCF6E6;
+  --accent-h: 25;
+  --accent-s: 100%;
+  --accent-l: 50%;
+  --accent-dark: #E65A00;
+  --muted: #808880;
+  --border: #606960;
+  --surface: var(--background);
+  --link-hover: #FF6B00;
+  --background-overlay: rgba(0, 0, 0, 0.7);
+  --dark-header-footer-bg: var(--background);
+  --light-text-on-dark-bg: var(--foreground);
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
+  }
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+  }
+  body {
+    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+  }
+  a,
+  button {
+    @apply outline-offset-1 focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.max-w-app {
+  @apply max-w-3xl;
+}
+
+.active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-4;
+}
+
+/* Fix for dark backgrounds */
+.bg-dark-header-footer-bg {
+    background-color: var(--dark-header-footer-bg);
+}
+.text-light-text-on-dark-bg {
+    color: var(--light-text-on-dark-bg);
+}
+
+/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
+:target {
+  scroll-margin-block: 1rem;
+}
+
+
+/* Custom styles for full-width hero section */
+.hero-full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  max-width: none !important;
+  box-sizing: border-box;
+}
+
+.hero-full-width .max-w-app {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 639px) {
+  .hero-full-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.event-card-text-overlay {
+  background-color: var(--background-overlay) !important;
+}
+
+.prose strong {
+  color: var(--accent) !important;
+}

@@ -1,0 +1,23 @@
+---
+const { name, class: className, ...props } = Astro.props;
+
+let svgContent = '';
+
+try {
+  const iconModule = await import(`../assets/icons/${name}.svg?raw`);
+  svgContent = iconModule.default;
+} catch (error) {
+  console.warn(`Icon "${name}" not found.`, error);
+}
+---
+
+{svgContent ? (
+  <span 
+    {...props} 
+    class={`inline-block fill-current ${className || ''}`} 
+    set:html={svgContent} 
+    aria-hidden="true"
+  />
+) : (
+  <span aria-hidden="true" />
+)}
