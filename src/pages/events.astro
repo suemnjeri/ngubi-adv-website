@@ -6,8 +6,9 @@ import Main from '../layouts/Main.astro';
 import LinkButton from '../components/LinkButton.astro';
 
 // Upcoming Events Data
-import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
-import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
+import { eventData as communityDay4thOct } from './events/community-day-4th-oct-2025.astro';
+// import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
+// import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
 
 // Gallery Images Data
 const pastEvents = [
@@ -18,8 +19,9 @@ const pastEvents = [
 
 // Combine all upcoming events into a single array
 const allEvents = [
-  { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
-  { data: birdWatchingData, href: '/events/bird-watching-tour' },
+  { data: communityDay4thOct, href: '/events/community-day-4th-oct-2025' },
+  // { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
+  // { data: birdWatchingData, href: '/events/bird-watching-tour' },
 ];
 
 // Sort the events by date
@@ -66,7 +68,7 @@ function formatDate(date: Date): string {
                     {data.eventTime && ` at ${data.eventTime}`}
                     {data.location && ` | ${data.location}`}
                   </p>
-                  <p class="text-foreground-light-bg mb-4">{data.description}</p>
+                  <p class="text-foreground-light-bg mb-4">{data.summary}</p>
                   {data.price && (
                     <p class="text-lg font-semibold mb-4 text-accent">{data.price}</p>
                   )}

@@ -17,13 +17,15 @@ import SvgIcon from '../components/SvgIcon.astro';
 
 // --- REMOVED THE OLD getCollection METHOD ---
 // --- Replaced with manual event imports and list ---
-import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
-import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
+import { eventData as communityDay4thOct } from './events/community-day-4th-oct-2025.astro';
+// import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
+// import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
 
 // This is the new, simple list of your events
 const allEvents = [
-  { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
-  { data: birdWatchingData, href: '/events/bird-watching-tour' },
+  { data: communityDay4thOct, href: '/events/community-day-4th-oct-2025' },
+  // { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
+  // { data: birdWatchingData, href: '/events/bird-watching-tour' },
 ];
 
 function formatDate(date: Date): string {
