@@ -7,12 +7,14 @@ import Footer from '../components/Footer.astro';
 import LinkButton from '../components/LinkButton.astro';
 
 // Import the service title image
-import ServicesTitleImage from '/public/images/title-services-page3.webp';
+import ServicesTitleImage from '/public/images/title-services-page1.webp';
 
 // NEW: Import the three service group icons
 import iconForestAdventures from '/public/images/icon-forest-adventures.png';
 import iconGroupAdventure from '/public/images/icon-group-adventure.png';
 import iconConservationPrograms from '/public/images/icon-conservation-programs.png';
+import iconFeatures from '/public/images/icon-features.png';
+
 ---
 <Layout title="Our Services - Ngubi Adventure Forest Camp">
   <Header />
@@ -44,11 +46,15 @@ import iconConservationPrograms from '/public/images/icon-conservation-programs.
     <div class="max-w-5xl mx-auto px-4 py-8 hidden md:block"> {/* ADDED hidden md:block */}
       {/* Table Header Row (Features Column + Service Columns) */}
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 font-bold text-lg text-center md:text-left text-accent border-b-2 border-accent pb-2">
-        <div class="hidden md:block">Features</div>
+        <!-- <div class="hidden md:block">Features</div> -->
+        <div class="hidden md:flex flex-col items-center">
+          <img src={iconFeatures.src} alt="Features Icon" class="h-24 w-24 rounded-full mb-2" />
+          <div class="font-bold text-lg">Features</div>
+        </div>
         <!-- <div>Hiking, Biking and Picnic Forest Adventures</div>
         <div>Camping, Team Building and Group Adventure</div>
         <div>Biodiversity & Conservation Programs</div> -->
-        <div class="flex flex-col items-center">
+          <div class="flex flex-col items-center">
               <a href="/services/forest-adventures" aria-label="Explore Forest Adventures">
                   <img src={iconForestAdventures.src} alt="Forest Adventures Icon" class="h-12 w-12 rounded-full mb-2"/>
               </a>
@@ -166,9 +172,12 @@ import iconConservationPrograms from '/public/images/icon-conservation-programs.
 
     {/* NEW: Mobile View - Stacked Service Cards */}
     <div class="max-w-app mx-auto px-4 py-8 md:hidden"> {/* ADDED md:hidden to hide on desktop */}
-      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center text-accent">
-        Our Adventures & Experiences
-      </h2>
+      <div class="flex flex-col items-center mb-12">
+        <img src={iconFeatures.src} alt="Adventures Icon" class="h-28 w-28 rounded-full mb-2" />
+        <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent">
+          Our Adventures & Experiences
+        </h2>
+      </div>
       <!-- <div class="grid grid-cols-1 gap-8"> {/* Single column for mobile cards */} -->
 
       {/* Mobile Card 1: Forest Stopover & Picnic - REVISED */}
@@ -179,7 +188,7 @@ import iconConservationPrograms from '/public/images/icon-conservation-programs.
             <a href="/services/forest-adventures" aria-label="Explore Forest Adventures">
                 <img src={iconForestAdventures.src} alt="Forest Adventures Icon" class="h-16 w-16 rounded-full mx-auto mb-2"/>
             </a>
-            <h3 class="text-2xl font-semibold mb-2 text-accent text-center">Hiking, Biking and Picnic Forest Adventures</h3> {/* ADDED text-center */}
+            <h3 class="text-2xl font-semibold mb-2 text-accent text-center">Hiking, Biking and Picnic Forest Adventures</h3> 
         </div>
 
         <div class="text-center mb-10"> {/* Centering wrapper for feature blocks */}
@@ -309,7 +318,7 @@ import iconConservationPrograms from '/public/images/icon-conservation-programs.
             {/* Learn more button*/}
             <div class="text-center mb-2">
                 <a
-                    href="/services/group-adventure"
+                    href="/services/group-teambuilding"
                     class="inline-flex items-center text-accent font-medium hover:underline group mx-auto"
                     aria-label="Learn more about Group Adventures"
                 >

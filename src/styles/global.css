@@ -13,13 +13,13 @@ html[data-theme="light"] {
   --background: #F8F4F0;
   --foreground: #2A322A;
   --accent-h: 25;
-  --accent-s: 70%;
-  --accent-l: 59%;
-  --accent-dark: #B85C1A;
+  --accent-s: 100%;
+  --accent-l: 50%;
+  --accent-dark: #E65A00;
   --muted: #504C48;
   --border: #C0BCB8;
   --surface: var(--background);
-  --link-hover: #D2691E;
+  --link-hover: #FF6B00;
   --background-overlay: rgba(0, 0, 0, 0.7);
   --dark-header-footer-bg: #2A322A;
   --light-text-on-dark-bg: #FCF6E9;

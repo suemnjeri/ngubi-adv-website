@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 // import Main from '../layouts/Main.astro';
+import Main from '../layouts/Main.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import BookingTitleImage from '/public/images/title-booking-page.webp';
+import BookingTitleImage from '/public/images/title-booking-page2.webp';
 
 import SvgIcon from '../components/SvgIcon.astro';
 
@@ -11,7 +12,8 @@ import SvgIcon from '../components/SvgIcon.astro';
 
 <Layout title="Book Your Adventure - Ngubi Adventure Forest Camp">
   <Header />
-  <main class="pt-24 bg-surface text-foreground"> {/* Changed <Main> to <main> and added classes directly */}
+  <Main pageTitle=""
+    pageDesc="" class="pt-24 bg-surface text-foreground"> {/* Changed <Main> to <main> and added classes directly */}
 
     {/* Playful Image Title */}
     <h1 class="sr-only">Book Your Forest Adventure</h1> {/* Hidden H1 for SEO/Accessibility */}
@@ -32,9 +34,9 @@ import SvgIcon from '../components/SvgIcon.astro';
     {/* Booking Inquiry Form */}
     <section class="max-w-app mx-auto px-4 py-8">
 
-      <p class="text-xl italic font-light text-center text-foreground mb-8">
+      <!-- <p class="text-xl italic font-light text-center text-foreground mb-8">
         <strong class="text-accent">Opening Soon!</strong> We are not yet open for bookings. Please submit a general inquiry below, and we will contact you as soon as we begin accepting reservations. Thank you for your patience!
-      </p>
+      </p> -->
 
       <form name="booking-inquiry" method="POST" data-netlify="true" class="max-w-3xl mx-auto p-8 bg-surface rounded-lg shadow-lg" action="/thank-you"> {/*  border border-border */}
         <input type="hidden" name="form-name" value="booking-inquiry" /> {/* Required for Netlify Forms */}
@@ -79,25 +81,25 @@ import SvgIcon from '../components/SvgIcon.astro';
                   <select id="serviceType" name="serviceType" required class="appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-white text-foreground dark:bg-gray-700 dark:text-white border-border">
                     <option value="">-- Please select a service --</option>
                     <option value="Hiking">Hiking</option>
-                    <option value="Mountain Biking">Mountain Biking</option>
-                    <option value="Group Adventure">Group Adventure</option>
+                    <option value="Mountain Biking">Mountain Biking Escarpment Escapade!</option>
+                    <option value="Group Adventure">Group Teambuilding</option>
                     <option value="Forest Stopover & Picnic">Forest Picnic</option>
                     <option value="Overnight Camping">Overnight Camping</option>
-                    <option value="Biodiversity & Conservation Programs">Conservation Program</option>
+                    <option value="Biodiversity & Conservation Programs">Conservation Education Program</option>
                     <option value="Other / General Inquiry">Other / General Inquiry</option>
                 </select>
             </div>
 
              {/* The date field is hidden for pre-launch */}
-            <!-- <div>
+            <div>
               <label for="preferredDate" class="block text-foreground text-sm font-bold mb-2">Preferred Date:</label>
               <input type="date" id="preferredDate" name="preferredDate" required class="appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-white text-foreground dark:bg-gray-700 dark:text-white border-border" min="2025-11-15"/> earliest selectable date -->
-            <!-- </div> -->
+            </div>
             
-            <!-- <div>
+            <div>
               <label for="preferredTime" class="block text-foreground text-sm font-bold mb-2">Preferred Time (e.g. 9:00 AM):</label>
               <input type="time" id="preferredTime" name="preferredTime" class="appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-white text-foreground dark:bg-gray-700 dark:text-white border-border" />
-            </div> -->
+            </div>
 
             <div>
               <label for="groupSize" class="block text-foreground text-sm font-bold mb-2">Approximate Number of Participants:</label>
@@ -150,6 +152,6 @@ import SvgIcon from '../components/SvgIcon.astro';
             <li>Picnic access is generally flexible for walk-ins, but booking helps us anticipate demand and prepare for your arrival.</li>
         </ul>
     </section>
-  </main>
+  </Main>
   <Footer />
 </Layout>
