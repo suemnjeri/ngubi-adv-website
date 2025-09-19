@@ -38,9 +38,8 @@ import SvgIcon from '../components/SvgIcon.astro';
         <strong class="text-accent">Opening Soon!</strong> We are not yet open for bookings. Please submit a general inquiry below, and we will contact you as soon as we begin accepting reservations. Thank you for your patience!
       </p> -->
 
-      <form name="booking-inquiry" method="POST" data-netlify="true" class="max-w-3xl mx-auto p-8 bg-surface rounded-lg shadow-lg"> {/*  border border-border */}
+      <form name="booking-inquiry" method="POST" data-netlify="true" class="max-w-3xl mx-auto p-8 bg-surface rounded-lg shadow-lg" action="/thank-you"> {/*  border border-border */}
         <input type="hidden" name="form-name" value="booking-inquiry" /> {/* Required for Netlify Forms */}
-        <input type="hidden" name="redirect" value="/thank-you/" />
 
         {/* Section 1: Contact Details */}
         <div class="mb-8 p-6">
