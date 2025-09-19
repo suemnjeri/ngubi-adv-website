@@ -40,9 +40,8 @@ import ContactTitleImage from '/public/images/title-contact-page.webp';
       {/* Column 1: Contact Form */}
       <div>
         <h2 class="text-3xl font-bold mb-6 text-accent md:hidden">Send Us a Message</h2>
-        <form name="contact" method="POST" data-netlify="true" class="p-8 bg-surface rounded-lg shadow-lg">
+        <form name="contact" method="POST" data-netlify="true" action="/thank-you" class="p-8 bg-surface rounded-lg shadow-lg">
           <input type="hidden" name="form-name" value="contact" />
-          <input type="hidden" name="redirect" value="/thank-you/" />
 
           <div class="mb-5">
             <label for="name" class="block text-foreground text-sm font-bold mb-2">Your Name:</label>
