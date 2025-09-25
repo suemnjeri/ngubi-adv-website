@@ -12,11 +12,23 @@ export const eventData = {
     eventTime: '10:00 AM to 3:00 PM',
     location: 'Ngubi Forest',
     mapLink: 'https://maps.app.goo.gl/iRSc4j8szD3pPj9h7', // REPLACE with your actual Google Maps URL
-    eventImage: '/images/events/ngubi-4th-flyer.jpg',
+    eventImage: '/images/events/ngubi-orange-4th2.jpg',
     featured: true, // Set to 'true' to show on the homepage
     isFree: false,
-    price: 'KES 1500 per adult / KES 700 per child (under 12)',
+    price: 'KES 1500 regular attendee / KES 700 per child under 12',
     registerLink: 'https://paystack.shop/pay/ngubi-community-day-4th-october', // <-- Update this link!
+
+     // 💡 NEW LOGISTICS 💡
+    accessNote: 'We are located approximately 500m off the Limuru-Mai Mahiu Highway.',
+    parking: 'Ample and secure parking is available on site.',
+    restrooms: 'Clean and well-maintained washrooms are provided for all attendees.',
+    
+    // 💡 NEW SUSTAINABILITY/PREPARATION 💡
+    sustainabilityPolicy: 'Help us keep the forest clean! We strictly enforce a NO single-use plastics policy. Please bring your own reusable water bottle.',
+    dressCode: 'Please wear warm, comfortable layered clothing and sturdy hiking shoes suitable for forest trails.',
+
+    // 💡 UPDATE LUNCH DESCRIPTION 💡
+    lunchDescription: 'A delicious and satisfying simple African lunch will be served.',
 
  // NEW: The short description for the events page
     summary: 'Welcome all naturalists! Join us for a day of fun and conservation with a 5K hike, community activities, and delicious food!',
@@ -25,7 +37,7 @@ export const eventData = {
     whatsToExpect: [
         'A scenic 5K hike',
         'A delicious lunch',
-        'Fun forest activities for all ages',
+        'Competitive Team Challenges & Forest Games for all ages',
         'A chance to participate in our conservation efforts',
         'Inspirational community voices and reflections',
     ],
@@ -42,7 +54,7 @@ export const eventData = {
         },
         {
             time: '1:00 PM - 3:00 PM',
-            activity: 'Fun Forest Activities & Community Voices: The afternoon is filled with engaging, family and kid-friendly activities in the forest, including a chance to participate in our conservation efforts. We will also have a moment for "Community Voices" for shared reflections.'
+            activity: 'Fun Forest Activities & Community Voices: The afternoon is filled with engaging, family-friendly team competitions involving balance, movement, and water challenges (like the Sack Race and Water Pipeline). Kids will also participate in hands-on nature learning (leaves, pollination, and soil) while competing for fun. We will conclude with shared "Community Voices."'
         }
     ]
 };
@@ -91,6 +103,8 @@ export const eventData = {
                 )}
             </div>
 
+
+
             <h2><strong>What to Expect</strong></h2>
             <ul class="list-disc list-inside space-y-2 mb-6">
                 {eventData.whatsToExpect.map(item => (
@@ -98,7 +112,34 @@ export const eventData = {
                 ))}
             </ul>
 
-            <h2>The Day's Schedule</h2>
+            <h2 class="font-bold">Logistics and Prep</h2>
+            <ul class="space-y-3 list-disc list-inside mb-6">
+                
+                {eventData.accessNote && <li><strong>Access:</strong> {eventData.accessNote}</li>}
+                {eventData.parking && <li><strong>Parking:</strong> {eventData.parking}</li>}
+                {eventData.restrooms && <li><strong>Facilities:</strong> {eventData.restrooms}</li>}
+                
+                {eventData.dressCode && 
+                    <li><strong>
+                        Preparation:</strong> {eventData.dressCode}
+                    </li>
+                }
+                
+                {eventData.sustainabilityPolicy && 
+                    <li>
+                        <strong>Sustainability: </strong>{eventData.sustainabilityPolicy}
+                    </li>
+                }
+                
+                <!-- {eventData.lunchDescription && 
+                    <li class="text-sm italic pt-2">
+                        *Lunch will be a: {eventData.lunchDescription}
+                    </li>
+                } -->
+
+            </ul>
+
+            <h2><strong>The Day's Schedule</strong></h2>
             <div class="space-y-6">
                 {eventData.schedule.map(item => (
                     <div>
