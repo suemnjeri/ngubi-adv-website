@@ -7,6 +7,8 @@ import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
+import IconInsta from "@/assets/icons/IconInsta.svg";
+import IconTiktok from "@/assets/icons/IconTiktok.svg";
 import { SITE } from "@/config";
 
 interface Social {
@@ -25,22 +27,40 @@ export const SOCIALS: Social[] = [
   // },
   {
     name: "X",
-    href: "https://x.com/username",
+    href: "https://x.com/ngubiadventures",
     linkTitle: `${SITE.title} on X`,
     icon: IconBrandX,
   },
   {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/username/",
-    linkTitle: `${SITE.title} on LinkedIn`,
-    icon: IconLinkedin,
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61581434246452",
+    linkTitle: `${SITE.title} on Facebook`,
+    icon: IconFacebook,
   },
   {
-    name: "Mail",
-    href: "mailto:yourmail@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
-    icon: IconMail,
+    name: "Instagram",
+    href: "https://www.instagram.com/ngubiadventures/",
+    linkTitle: `${SITE.title} on Instagram`,
+    icon: IconInsta,
   },
+  {
+    name: "Tiktok",
+    href: "https://www.tiktok.com/@ngubiadventures",
+    linkTitle: `${SITE.title} on Tiktok`,
+    icon: IconTiktok,
+  },
+  // {
+  //   name: "LinkedIn",
+  //   href: "https://www.linkedin.com/in/username/",
+  //   linkTitle: `${SITE.title} on LinkedIn`,
+  //   icon: IconLinkedin,
+  // },
+  // {
+  //   name: "Mail",
+  //   href: "mailto:yourmail@gmail.com",
+  //   linkTitle: `Send an email to ${SITE.title}`,
+  //   icon: IconMail,
+  // },
 ] as const;
 
 export const SHARE_LINKS: Social[] = [
