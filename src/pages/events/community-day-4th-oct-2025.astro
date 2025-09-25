@@ -11,6 +11,7 @@ export const eventData = {
     eventDate: new Date('2025-10-04'),
     eventTime: '10:00 AM to 3:00 PM',
     location: 'Ngubi Forest',
+    mapLink: 'https://maps.app.goo.gl/iRSc4j8szD3pPj9h7', // REPLACE with your actual Google Maps URL
     eventImage: '/images/events/Ngubi 4th Flyer.jpg',
     featured: true, // Set to 'true' to show on the homepage
     isFree: false,
@@ -18,7 +19,7 @@ export const eventData = {
     registerLink: 'https://forms.gle/your-registration-link', // <-- Update this link!
 
  // NEW: The short description for the events page
-    summary: 'Join us for a day of fun and conservation with a 5K hike, community activities, and delicious food!',
+    summary: 'Welcome all naturalists! Join us for a day of fun and conservation with a 5K hike, community activities, and delicious food!',
     
     // NEW: List of what to expect
     whatsToExpect: [
@@ -41,7 +42,7 @@ export const eventData = {
         },
         {
             time: '1:00 PM - 3:00 PM',
-            activity: 'Fun Forest Activities & Community Voices: The afternoon is filled with engaging, family-friendly activities in the forest, including a chance to participate in our conservation efforts. We will also have a moment for "Community Voices" for shared reflections.'
+            activity: 'Fun Forest Activities & Community Voices: The afternoon is filled with engaging, family and kid-friendly activities in the forest, including a chance to participate in our conservation efforts. We will also have a moment for "Community Voices" for shared reflections.'
         }
     ]
 };
@@ -67,14 +68,30 @@ export const eventData = {
                     </div>
                 )}
                 {eventData.location && (
-                    <div class="flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <span>{eventData.location}</span>
-                    </div>
-                )}
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        
+                        <span>{eventData.location}</span>
+                        
+                        {eventData.mapLink && (
+                            <span class="text-sm">
+                                | 
+                                <a 
+                                    href={eventData.mapLink} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="ml-2 underline text-blue-500 hover:text-blue-700" 
+                                    title={`View ${eventData.location} on Google Maps`}
+                                >
+                                    View on Google Maps
+                                </a>
+                            </span>
+                        )}
+                    </div>
+                )}
             </div>
 
-            <h2>What to Expect</h2>
+            <h2><strong>What to Expect</strong></h2>
             <ul class="list-disc list-inside space-y-2 mb-6">
                 {eventData.whatsToExpect.map(item => (
                     <li>{item}</li>
@@ -85,7 +102,7 @@ export const eventData = {
             <div class="space-y-6">
                 {eventData.schedule.map(item => (
                     <div>
-                        <h4>{item.time}</h4>
+                        <h4><strong>{item.time}</strong></h4>
                         <p>{item.activity}</p>
                     </div>
                 ))}

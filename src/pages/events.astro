@@ -12,7 +12,8 @@ import { eventData as communityDay4thOct } from './events/community-day-4th-oct-
 
 // Gallery Images Data
 const pastEvents = [
-  { alt: 'Family Fun Day in the Forest', src: '/images/events/event1-family.jpg' },
+  { alt: 'Family Fun Day in the Forest', src: '/images/events/ngubi-past-event.jpg' },
+  
   // Add more past events here as needed
   // { alt: 'Another Past Event', src: '/images/events/another-past-event.webp' },
 ];
@@ -68,6 +69,7 @@ function formatDate(date: Date): string {
                     {data.eventTime && ` at ${data.eventTime}`}
                     {data.location && ` | ${data.location}`}
                   </p>
+                  
                   <p class="text-foreground-light-bg mb-4">{data.summary}</p>
                   {data.price && (
                     <p class="text-lg font-semibold mb-4 text-accent">{data.price}</p>
@@ -78,7 +80,7 @@ function formatDate(date: Date): string {
                     aria-label={`View details for ${data.title}`}
                     title={`View details for ${data.title}`}
                   >
-                    View Details
+                    Learn More & Book Your Spot
                   </a>
                 </div>
               </div>
