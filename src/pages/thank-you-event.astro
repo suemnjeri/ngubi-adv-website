@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+// import Main from '../../layouts/Main.astro'; // <--- ADDED MAIN IMPORT
+import Main from '../layouts/Main.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LinkButton from '../components/LinkButton.astro';
+---
+
+<Layout title="Registration Confirmed! - Ngubi Adventure Forest Camp">
+  <Header />
+  
+  {/* The outer container is now the imported Main component */}
+  <Main pageTitle="Thank You" pageDesc="Event Registration Confirmed"> 
+    <div class="text-center max-w-3xl mx-auto px-4 py-8">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-accent">Registration Complete! 🎉</h1>
+      
+      <p class="text-xl text-text-muted mb-8">
+        Your spot for the Ngubi Community Day is now secured! The adventure is confirmed.
+      </p>
+
+      <!-- {/* --- CONFIRMATION & NEXT STEPS --- */}
+      <div class="bg-gray-100 p-6 rounded-lg text-left shadow-inner mb-8">
+        <h2 class="text-2xl font-semibold mb-3 text-gray-800">Your Next Steps:</h2>
+        <ul class="list-disc list-outside ml-6 space-y-2 text-lg text-gray-700">
+            <li>
+                <strong>Check Your Email:</strong> Your payment receipt and ticket details have been sent to the address used in Paystack. Please check your spam folder!
+            </li>
+            <li>
+                <strong>Need Help?</strong> If you have any concerns about your email or registration, please contact us directly at <strong>[Your Contact Email or Phone Number]</strong>.
+            </li>
+        </ul>
+      </div> -->
+
+      {/* --- ESSENTIAL LOGISTICS --- */}
+      <div class="bg-surface p-4 rounded-lg text-left border border-accent">
+        <h2 class="text-xl font-bold mb-2 text-accent">Essentials for Your Day:</h2>
+        <ul class="space-y-1 text-gray-700 text-base">
+            <li><strong>Dress Code:</strong> Wear <strong>warm, comfortable layered clothing</strong> and sturdy hiking shoes.</li>
+            <li><strong>Sustainability:</strong> This is a <strong>Single-Use Plastic Free</strong> event. Please <strong>bring your own reusable water bottle</strong> for refills.</li>
+            <li><strong>Facilities:</strong> We offer <strong>clean and fully equipped restrooms</strong> on site for your comfort.</li>
+            <li><strong>Access:</strong> We are just <strong>500m off the Limuru–Mai Mahiu Highway</strong>. Ample, secure parking is available on site.</li>
+        </ul>
+      </div>
+
+      {/* --- NAVIGATION BUTTONS --- */}
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+        <LinkButton
+          href="/"
+          class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
+          ariaLabel="Return to Homepage"
+          title="Return to Homepage"
+        >
+          Back to Ngubi Home
+        </LinkButton>
+        <LinkButton
+          href="/events"
+          class="inline-block px-8 py-4 text-lg bg-white text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          ariaLabel="View All Events"
+          title="View All Events"
+        >
+          View All Events
+        </LinkButton>
+      </div>
+    </div>
+  </Main>
+  <Footer />
+</Layout>
