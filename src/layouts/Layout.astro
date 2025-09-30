@@ -137,6 +137,23 @@ const structuredData = {
 
     <ClientRouter />
 
+    <script is:inline>
+      // This event fires every time Astro finishes a View Transition (a 'soft' navigation)
+      document.addEventListener('astro:page-load', () => {
+        // The gtag function is defined by the script injected via partytown config
+        if (typeof gtag === 'function') {
+          // Manually push a page_view event with the new URL and title.
+          // The 'send_to' argument is CRITICAL for it to associate with your GA4 property.
+          gtag('event', 'page_view', {
+            page_title: document.title,
+            page_location: window.location.href,
+            'send_to': 'G-PNRTD16ZK6' // ⬅️ Replace with your actual Measurement ID if different
+          });
+          console.log('GA4 page_view fired after Astro transition.');
+        }
+      });
+    </script>
+
     <script is:inline src="/toggle-theme.js"></script>
   </head>
   <body>
