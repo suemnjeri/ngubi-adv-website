@@ -13,6 +13,9 @@ import { SITE } from "./src/config";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 
+// 1. IMPORT the partytown integration
+import partytown from "@astrojs/partytown"; 
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -22,6 +25,14 @@ export default defineConfig({
     }),
     mdx(),
     tailwind(),
+
+  // ADD the partytown integration block here
+    partytown({
+      config: {
+        // !!! REPLACE 'YOUR_GA_MEASUREMENT_ID' with your actual GA Measurement ID (e.g., G-A1B2C3D4) !!!
+        gtag: "G-PNRTD16ZK6", 
+      }
+    }),
   ],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
