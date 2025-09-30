@@ -61,6 +61,22 @@ const structuredData = {
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { window.dataLayer.push(arguments); };
+    </script>
+
+    <script 
+      async 
+      type="text/partytown" 
+      src="https://www.googletagmanager.com/gtag/js?id=G-PNRTD16ZK6"
+    ></script>
+
+    <script type="text/partytown">
+      gtag('js', new Date());
+      gtag('config', 'G-PNRTD16ZK6');
+    </script>
+
    
 
     <!-- General Meta Tags -->
@@ -147,7 +163,8 @@ const structuredData = {
           gtag('event', 'page_view', {
             page_title: document.title,
             page_location: window.location.href,
-            'send_to': 'G-PNRTD16ZK6' // ⬅️ Replace with your actual Measurement ID if different
+            'send_to': 'G-PNRTD16ZK6' // ⬅️ 
+            // G-PNRTD16ZK6 Replace with your actual Measurement ID if different
           });
           console.log('GA4 page_view fired after Astro transition.');
         }
