@@ -31,6 +31,7 @@ export default defineConfig({
       config: {
         // !!! REPLACE 'YOUR_GA_MEASUREMENT_ID' with your actual GA Measurement ID (e.g., G-A1B2C3D4) !!!
         gtag: "G-PNRTD16ZK6", 
+        forward: ["dataLayer.push"],
       }
     }),
   ],
