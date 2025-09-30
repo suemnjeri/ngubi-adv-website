@@ -61,6 +61,19 @@ const structuredData = {
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PNRTD16ZK6"
+    ></script>
+
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PNRTD16ZK6');
+    </script>
+
     <!-- General Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
