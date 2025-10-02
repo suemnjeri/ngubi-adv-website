@@ -1,9 +1,9 @@
 export const SITE = {
-  website: "https://ngubiadventure.com/", // replace this with your deployed domain
-  author: "Ngubi Adventure Forest Camp",
+  website: "https://ngubiadventures.or.ke/", // replace this with your deployed domain
+  author: "Ngubi Adventures Forest Camp",
   profile: "https://github.com/suemnjeri", // UNCOMMENT THIS LINE AND ADD A URL HERE
-  desc: "Ngubi Adventure Forest Camp: Enriching nature experiences, fostering teamwork, and promoting conservation in the Kikuyu escarpment forest.",
-  title: "Ngubi Adventure Forest Camp",
+  desc: "Ngubi Adventures Forest Camp: Enriching nature experiences, fostering teamwork, and promoting conservation in the Kikuyu escarpment forest.",
+  title: "Ngubi Adventures Forest Camp",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
