@@ -112,7 +112,25 @@ import ContactTitleImage from '/public/images/title-contact-page.webp';
     {/* Embedded Map Section */}
     <section class="max-w-app mx-auto mt-12 mb-8 px-4">
         <h2 class="text-3xl font-bold mb-6 text-center text-accent">Find Us On The Map</h2>
-        <div class="relative" style="padding-bottom: 56.25%;">
+
+        {/* NEW FALLBACK LINK */}
+        <p class="text-center mb-1 text-lg">
+        <!-- <span class="font-semibold text-text-muted">Having trouble viewing the embedded map?</span> Get direct directions now: -->
+        <!-- <br /> -->
+        {/* The link below uses the coordinates from your iframe, properly formatted for Google Maps URL */}
+        <a
+        href="https://maps.app.goo.gl/W3YivGRxdsSwU3ej9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center bg-accent text-white font-bold py-2 px-4 rounded-lg mt-2 hover:bg-accent-dark transition-colors duration-200 shadow-md mb-6">
+        <SvgIcon name="IconMapPin" class="w-5 h-5 mr-2 " />
+        Open Directions in Google Maps
+        </a>
+        </p>
+
+
+
+        <div class="relative rounded-lg shadow-xl overflow-hidden" style="padding-bottom: 56.25%;">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3651.4648879298934!2d36.60864307496526!3d-1.100368998889065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMDYnMDEuMyJTIDM2wrAzNic0MC40IkU!5e1!3m2!1sen!2ske!4v1752139646492!5m2!1sen!2ske"
             width="100%"
