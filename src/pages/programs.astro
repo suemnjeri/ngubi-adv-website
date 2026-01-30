@@ -135,7 +135,10 @@ import ProgramClub from '/public/images/program-club1.webp';
       <p class="text-lg text-text-muted mb-8 max-w-2xl mx-auto">
         Our team will work with you to tailor a unique program that aligns with your group's specific learning objectives or curriculum needs. From a few hours to a full day, we create unforgettable conservation experiences.
       </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+      <!-- <div class="flex flex-col sm:flex-row justify-center gap-4"> -->
+       {/* CHANGED: Expanded button group to include "See All Services" */}
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
         <LinkButton
           href="/booking"
           class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
@@ -146,11 +149,19 @@ import ProgramClub from '/public/images/program-club1.webp';
         </LinkButton>
         <LinkButton
           href="/contact"
-          class="inline-block px-8 py-4 text-lg bg-white text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
           ariaLabel="Contact Us For More Info"
           title="Contact Us For More Info"
         >
           Contact Us For More Info
+        </LinkButton>
+        <LinkButton
+          href="/services"
+          class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-300 transition-colors duration-200 shadow-md text-center"
+          ariaLabel="See All Services"
+          title="Back to All Services"
+        >
+          See All Services
         </LinkButton>
       </div>
     </section>

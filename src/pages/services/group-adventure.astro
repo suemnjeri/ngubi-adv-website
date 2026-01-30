@@ -54,7 +54,10 @@ import TeambuildingImage from '/public/images/teambuilding-zigzag-1.webp';
         <p class="mb-4">
           <strong>Includes:</strong> Campsite access, clean facilities, guided activities, bonfire, and catered meals.
         </p>
-        <div class="text-center md:text-left mt-8">
+
+        {/* CHANGED: Added flex container and "See All Services" button */}
+        <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
+        <!-- <div class="text-center md:text-left mt-8"> -->
             <LinkButton
                 href="/booking"
                 class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
@@ -62,6 +65,14 @@ import TeambuildingImage from '/public/images/teambuilding-zigzag-1.webp';
                 title="Book Your Camping Adventure"
             >
                 Book Now
+            </LinkButton>
+            <LinkButton
+                href="/services"
+                class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-50 transition-colors duration-200 shadow-md text-center"
+                ariaLabel="See All Services"
+                title="Back to All Services"
+            >
+                See All Services
             </LinkButton>
         </div>
       </div>
@@ -81,7 +92,7 @@ import TeambuildingImage from '/public/images/teambuilding-zigzag-1.webp';
         <p class="mb-4">
           <strong>Includes:</strong> Guided trail walks, scavenger hunts, conservation activities, and a catered lunch.
         </p>
-        <div class="text-center md:text-left mt-8">
+        <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
             <LinkButton
                 href="/booking"
                 class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
@@ -89,6 +100,14 @@ import TeambuildingImage from '/public/images/teambuilding-zigzag-1.webp';
                 title="Book Your Group Day Adventure"
             >
                 Book Now
+            </LinkButton>
+            <LinkButton
+                href="/services"
+                class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-50 transition-colors duration-200 shadow-md text-center"
+                ariaLabel="See All Services"
+                title="Back to All Services"
+            >
+                See All Services
             </LinkButton>
         </div>
       </div>
@@ -108,7 +127,7 @@ import TeambuildingImage from '/public/images/teambuilding-zigzag-1.webp';
         <p class="mb-4">
           <strong>Includes:</strong> Ground-based obstacle courses, forest trail quests, custom team challenges, and a catered lunch.
         </p>
-        <div class="text-center md:text-left mt-8">
+        <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
             <LinkButton
                 href="/booking"
                 class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
@@ -116,6 +135,14 @@ import TeambuildingImage from '/public/images/teambuilding-zigzag-1.webp';
                 title="Book Your Team Building Event"
             >
                 Book Now
+            </LinkButton>
+            <LinkButton
+                href="/services"
+                class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-50 transition-colors duration-200 shadow-md text-center"
+                ariaLabel="See All Services"
+                title="Back to All Services"
+            >
+                See All Services
             </LinkButton>
         </div>
       </div>
