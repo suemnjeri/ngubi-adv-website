@@ -2,21 +2,20 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import EventForm from '../../components/EventForm.astro';
-
+// Removed EventForm import since it's no longer needed
 
 // --- IMPORTANT: This is the data that gets imported by events.astro and index.astro ---
 export const eventData = {
-    title: 'Bird Watching',
-    eventDate: new Date('2025-10-25'),
-    eventTime: '9:00 AM',
-    location: 'Ngubi Forest Trailhead',
-    eventImage: '/images/events/event3-birds.jpg',
-    description: 'Join us for an enlightening guided walk through the forest. Discover the hidden life of the Kikuyu Escarpment, learn about native flora and fauna, and understand the importance of biodiversity in our ecosystem.',
-    featured: true, // Set to 'true' to show on the homepage
-    isFree: false, // <--- ADD THIS LINE
-    price: 'Ksh 500 per person',
-    registerLink: 'https://forms.gle/your-registration-link', 
+    title: 'Wednesday Morning Birdwalk',
+    eventDate: new Date('2026-2-18'),
+    eventTime: '8:30 AM',
+    location: 'Ngubi Forest - Ngubi Adventures Forest Camp',
+    eventImage: '/images/events/bird-walk-18th-feb-26.webp',
+    description: 'Join us for a Wednesday Morning Birdwalk in partnership with Nature Kenya to explore the vibrant birdlife of the Kikuyu Escarpment.🌿 Meet at the Ngubi Adventures Forest Camp parking at 8:30 am. Discover forest specialists like the Hartlaubs Turaco and the endemic Kikuyu White-eye. Contact 0712505845 for more information.',
+    featured: true, 
+    isFree: true,
+    price: 'Ksh 0 per person',
+    // registerLink removed
 };
 ---
 
@@ -26,7 +25,7 @@ export const eventData = {
         <section class="prose py-12">
             <h1>{eventData.title}</h1>
             <img src={eventData.eventImage} alt={eventData.title} class="rounded-lg shadow-lg mb-6 w-full max-w-md mx-auto" />
-            <!-- <img src={eventData.eventImage} alt={eventData.title} class="rounded-lg shadow-lg mb-6 w-full max-w-xl mx-auto" /> -->
+
             <div class="flex flex-col sm:flex-row sm:space-x-4 mb-6">
                 <div class="flex items-center space-x-2">
                     <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
@@ -52,18 +51,18 @@ export const eventData = {
                 <p class="text-xl font-semibold my-4">Price: {eventData.price}</p>
             )}
             
-            {eventData.isFree ? (
-            <EventForm />
-            ) : (
-            <a 
-                href={eventData.registerLink} 
-                class="inline-block px-6 py-3 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark transition-colors duration-200 shadow-lg"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Register Now
-            </a>
-            )}
+            {/* CHANGED: Removed the form/registration logic and replaced with a Call/WhatsApp CTA */}
+            <div class="mt-8">
+                <a 
+                    href="https://wa.me/254712505845?text=Hi%20Ngubi%20Adventures!%20I'm%20interested%20in%20joining%20the%20Mountain%20Bike%20Ride%20event." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark transition-colors duration-200 shadow-lg no-underline"
+                >
+                    Whatsapp to Join: 0712505845
+                </a>
+                <p class="text-sm text-text-muted mt-3">Reach out via phone or WhatsApp to secure your spot!</p>
+            </div>
         </section>
     </main>
     <Footer />

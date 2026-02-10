@@ -13,21 +13,24 @@ import iconHiking from '/public/images/icon-hiking.png';
 import iconMtb from '/public/images/icon-mtb.png';
 import iconCamping from '/public/images/icon-camping.png';
 
+
 import SvgIcon from '../components/SvgIcon.astro';
 
 // --- REMOVED THE OLD getCollection METHOD ---
 // --- Replaced with manual event imports and list ---
 // import { eventData as communityDay4thOct } from './events/community-day-4th-oct-2025.astro';
-import { eventData as mtb7thfeb26 } from './events/mtb-ngubi-escarpment.astro';
+// import { eventData as mtb7thfeb26 } from './events/mtb-ngubi-escarpment.astro';
 // import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
 // import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
+import { eventData as birdwalk18thfeb26 } from './events/bird-walk-nature-kenya-18-feb-26.astro';
 
 // This is the new, simple list of your events
 const allEvents = [
   // { data: communityDay4thOct, href: '/events/community-day-4th-oct-2025' },
   // { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
   // { data: birdWatchingData, href: '/events/bird-watching-tour' },
-  { data: mtb7thfeb26, href: '/events/mtb-ngubi-escarpment' },
+  // { data: mtb7thfeb26, href: '/events/mtb-ngubi-escarpment' },
+  { data: birdwalk18thfeb26, href: '/events/bird-walk-nature-kenya-18-feb-26' },
 ];
 
 function formatDate(date: Date): string {
@@ -266,6 +269,10 @@ function formatDate(date: Date): string {
 
                 <div class="bg-surface p-4 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32">
                     <img src="/images/partner-kfs.png" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
+                </div>
+
+                <div class="bg-surface p-4 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32">
+                    <img src="/images/partner-nature-kenya.png" alt="Partner Nature Kenya Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
                 </div>
             </div>
         </div>
