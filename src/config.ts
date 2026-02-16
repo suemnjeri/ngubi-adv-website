@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://github.com/suemnjeri", // UNCOMMENT THIS LINE AND ADD A URL HERE
   desc: "Ngubi Adventures Forest Camp: Enriching nature experiences, fostering teamwork, and promoting conservation in the Kikuyu escarpment forest.",
   title: "Ngubi Adventures Forest Camp",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "ngubi-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
@@ -16,7 +16,7 @@ export const SITE = {
     text: "Edit page",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
-  dynamicOgImage: true,
+  dynamicOgImage: false,
   dir: "ltr", // "rtl" | "auto"
   lang: "en", // html lang code. Set this empty and default will be "en"
   timezone: "Africa/Nairobi", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
