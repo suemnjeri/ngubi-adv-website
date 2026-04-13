@@ -53,7 +53,7 @@ function formatDate(date: Date): string {
       muted
       loop
       playsinline
-      preload="none" 
+      preload="metadata" 
       class="hidden md:block absolute inset-0 w-full h-full object-cover"
     >
       <source src="/videos/hero-background-video3.webm" type="video/webm" />
@@ -119,13 +119,13 @@ function formatDate(date: Date): string {
           
           {/* Partner Logo 1 */}
           <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-museums.png" alt="Partner Museums Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="eager"
+            <img src="/images/partner-museums.png" alt="Partner Museums Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy"
 decoding="async">
           </div>
 
           {/* Partner Logo 2 */}
           <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-kfs.png" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="eager"
+            <img src="/images/partner-kfs.png" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy"
 decoding="async">
           </div>
 
