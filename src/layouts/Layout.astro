@@ -181,10 +181,18 @@ const structuredData = {
 </html>
 
 <style>
-  html,
+  html {
+    margin: 0;
+    width: 100%;
+    /* Changed: This allows the page to grow but stay at least one screen high */
+    min-height: 100%;
+  }
   body {
     margin: 0;
     width: 100%;
-    height: 100%;
+    /* Changed: Removing height: 100% fixes the "double scroll" issue */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 </style>
