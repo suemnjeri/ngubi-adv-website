@@ -62,8 +62,9 @@ function formatDate(date: Date): string {
     <img 
       src="/images/hero-mobile-fallback2.webp" 
       class="block md:hidden absolute inset-0 w-full h-full object-cover" 
-      alt="Ngubi Forest" loading="eager"
-decoding="sync"
+      alt="Ngubi Forest" loading="eager" 
+  fetchpriority="high" 
+  decoding="async"
     />
 
     {/* Content Container: Positioned at the bottom */}
@@ -119,25 +120,25 @@ decoding="sync"
           {/* Partner Logo 1 */}
           <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
             <img src="/images/partner-museums.png" alt="Partner Museums Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="eager"
-decoding="sync">
+decoding="async">
           </div>
 
           {/* Partner Logo 2 */}
           <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
             <img src="/images/partner-kfs.png" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="eager"
-decoding="sync">
+decoding="async">
           </div>
 
           {/* Partner Logo 3 */}
           <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-nature-kenya.png" alt="Partner Nature Kenya Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="eager"
-decoding="sync">
+            <img src="/images/partner-nature-kenya.png" alt="Partner Nature Kenya Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy" 
+  decoding="async">
           </div>
 
           {/* Partner Logo 4 */}
           <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-kijabe.png" alt="Partner Kijabe Forest Trust Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="eager"
-decoding="sync">
+            <img src="/images/partner-kijabe.png" alt="Partner Kijabe Forest Trust Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy" 
+  decoding="async">
           </div>
 
         </div>
@@ -160,8 +161,8 @@ decoding="sync">
           
           {/* CARD 1: Transformative Forest Camping */}
           <a href="/services/camping" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
-            <img src={iconCamping.src} alt="Camping icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="eager"
-decoding="sync"/>
+            <img src={iconCamping.src} alt="Camping icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="lazy" 
+  decoding="async"/>
             <h3 class="text-xl font-semibold mb-2 text-accent text-center">Transformative Forest Camping</h3>
             <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
               Experience the magic of Ngubi Forest under the stars. Our secure, full-board camping packages are designed for groups seeking a true immersion into nature.
@@ -178,8 +179,8 @@ decoding="sync"/>
 
           {/* CARD 2: Field Study Center (Schools) */}
           <a href="/services/school-programs" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
-            <img src={iconConservation.src} alt="Education icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="eager"
-decoding="sync"/>
+            <img src={iconConservation.src} alt="Education icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="lazy" 
+  decoding="async""/>
             <h3 class="text-xl font-semibold mb-2 text-accent text-center">Field Study Center (Schools)</h3>
             <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
               We bridge the gap between classroom theory and real-world application, anchored by a comprehensive Biodiversity report by the National Museums of Kenya.
@@ -194,8 +195,8 @@ decoding="sync"/>
 
           {/* CARD 3: Exclusive Venue Hosting */}
           <a href="/services/venue-hosting" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
-            <img src={iconTeambuilding.src} alt="Venue hosting icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="eager"
-decoding="sync"/>
+            <img src={iconTeambuilding.src} alt="Venue hosting icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="lazy" 
+  decoding="async"/>
             <h3 class="text-xl font-semibold mb-2 text-accent text-center">Exclusive Venue Hosting</h3>
             <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
               Host your next corporate retreat, wedding, or chama in a location that commands focus. We offer private access to our Canopy Hall and expansive grass fields.
@@ -210,8 +211,8 @@ decoding="sync"/>
 
           {/* CARD 4: Event Partnerships */}
           <a href="/services/events2" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
-            <img src={iconMtb.src} alt="Event partnership icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="eager"
-decoding="sync"/>
+            <img src={iconMtb.src} alt="Event partnership icon" class="mx-auto h-15 w-15 mb-2 rounded-full" loading="lazy" 
+  decoding="async"/>
             <h3 class="text-xl font-semibold mb-2 text-accent text-center">Event Partnerships</h3>
             <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
               Partner with us for world-class specialized activities like trail runs, MT bike challenges, exercise bootcamps, wellness workshops, and outdoor fairs.
@@ -266,7 +267,8 @@ decoding="sync"/>
           <img 
             src="/images/gallery-1.webp" 
             alt="Professional infrastructure at Ngubi Forest Camp" 
-            loading="lazy"
+            loading="lazy" 
+  decoding="async"
             class="w-full h-[250px] sm:h-[300px] object-cover"
           />
           {/* Optional: A subtle dark gradient at the bottom for depth */}
@@ -457,7 +459,8 @@ decoding="sync"/>
                 src="/images/highlight-birding.webp" 
                 alt="Birding with Nature Kenya" 
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
+                loading="lazy" 
+  decoding="async"
               />
               {/* Badge: Can be changed to "Upcoming Event" if needed */}
               <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -482,7 +485,8 @@ decoding="sync"/>
                 src="/images/highlight-mtb.webp" 
                 alt="MTB Escarpment Ride" 
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
+                loading="lazy" 
+  decoding="async"
               />
               <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                 Recent Highlight
