@@ -47,7 +47,7 @@ function formatDate(date: Date): string {
 
   
   {/* --- START OF FULL-WIDTH HERO SECTION (VIDEO BACKGROUND) --- */}
-  <section id="hero" class="relative hero-full-width py-40 sm:py-52 overflow-hidden min-h-[95vh] pb-10 sm-pb-0">
+  <section id="hero" class="relative hero-full-width min-h-[95vh] flex flex-col justify-end overflow-hidden pb-10 sm:pb-18">
     <video
       autoplay
       muted
@@ -62,30 +62,24 @@ function formatDate(date: Date): string {
       Your browser does not support the video tag.
     </video>
 
-    
-    <!-- <div class="relative z-10 max-w-app mx-auto px-4 pt-40 sm:pt-60 text-center"> -->
-     <div class="relative z-10 max-w-app mx-auto px-4 mt-[30vh] sm:mt-[35vh] text-center">
+    {/* Content Container: Positioned at the bottom */}
+    <div class="relative z-10 max-w-app mx-auto px-4 text-center w-full">
       
-        {/*The glass box with the words */}
-        <div class="max-w-2xl mx-auto bg-black/20 backdrop-blur-xl py-4 px-8 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] mb-4">
-            
-             <h1 class="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)]">
-              Ngubi Adventures Forest Camp
-            </h1>
-            <p class="text-lg sm:text-xl mt-4 mb-2 font-normal text-white">
-                Group Camping. School Expeditions. Exclusive Venues. Event Partnerships.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4">
-              </div>
-        </div>
+      {/* The glass box */}
+      <div class="max-w-2xl mx-auto bg-black/20 backdrop-blur-xl py-4 px-8 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] mb-6">
+          <h1 class="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)]">
+            Ngubi Adventures Forest Camp
+          </h1>
+          <p class="text-lg sm:text-xl mt-4 mb-2 font-normal text-white">
+            Group Camping. School Expeditions. Exclusive Venues. Event Partnerships.
+          </p>
+      </div>
 
-
-      {/*The buttons */}
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      {/* The buttons */}
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
         <LinkButton
           href="/booking"
-          class="inline-block px-6 py-2 text-lg bg-accent text-white rounded-2xl font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg  flex justify-center items-center"
+          class="w-full sm:w-auto px-6 py-2 text-lg bg-accent text-white rounded-2xl font-semibold hover:bg-accent-dark transition-colors duration-200 shadow-lg flex justify-center items-center"
           ariaLabel="Book Your Adventure Now"
           title="Book Your Adventure Now"
         >
@@ -96,7 +90,7 @@ function formatDate(date: Date): string {
           href="/documents/Ngubi_Biodiversity_Summary.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block px-6 py-2 text-lg bg-white/40 text-black rounded-2xl font-bold border border-white/40 shadow-lg flex justify-center items-center backdrop-brightness-110"
+          class="w-full sm:w-auto px-6 py-2 text-lg bg-white/40 text-black rounded-2xl font-bold border border-white/40 shadow-lg flex justify-center items-center backdrop-blur-md"
           ariaLabel="View Our Biodiversity Report"
           title="View our Biodiversity"
         >
@@ -105,7 +99,6 @@ function formatDate(date: Date): string {
       </div>
     </div>
   </section>
-  {/* --- END OF FULL-WIDTH HERO SECTION (VIDEO BACKGROUND) --- */}
 
 
   <main id="main-content" class="pt-1">
