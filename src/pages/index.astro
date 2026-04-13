@@ -48,7 +48,7 @@ function formatDate(date: Date): string {
   
   {/* --- START OF FULL-WIDTH HERO SECTION (VIDEO BACKGROUND) --- */}
   <section id="hero" class="relative hero-full-width min-h-[95vh] flex flex-col justify-end overflow-hidden pb-10 sm:pb-18">
-    <video
+    <!-- <video
       autoplay
       muted
       loop
@@ -57,14 +57,15 @@ function formatDate(date: Date): string {
       class="hidden md:block absolute inset-0 w-full h-full object-cover"
     >
       <source src="/videos/hero-background-video3.webm" type="video/webm" />
-    </video>
+    </video> -->
 
     <img 
       src="/images/hero-mobile-fallback2.webp" 
-      class="block md:hidden absolute inset-0 w-full h-full object-cover" 
-      alt="Ngubi Forest" loading="eager" 
-  fetchpriority="high" 
-  decoding="async"
+      class="absolute inset-0 w-full h-full object-cover" 
+      alt="Ngubi Forest Camp" 
+      loading="eager" 
+      fetchpriority="high" 
+      decoding="async"
     />
 
     {/* Content Container: Positioned at the bottom */}
