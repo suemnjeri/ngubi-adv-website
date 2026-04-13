@@ -149,106 +149,44 @@ const isActive = (path: string) => {
 </header>
 
 <script>
-
-  // ----------------------------------------------------
-  // NEW: Loading Indicator Function
-  // This is called just before the page changes to show a brief loader.
-  // ----------------------------------------------------
-  function showLoadingIndicator() {
-      const loader = document.getElementById('page-loader');
-      if (loader) {
-          // Use a short delay before adding classes to ensure the DOM is ready 
-          // and the menu has closed.
-          setTimeout(() => {
-              loader.classList.remove('opacity-0', 'pointer-events-none');
-              loader.classList.add('opacity-100');
-          }, 50); 
-      }
-  }
-
-  // ----------------------------------------------------
-  // Refactored: Centralized Menu Opening/Closing Logic
-  // ----------------------------------------------------
-  function closeMenu() {
-      const menuBtn = document.querySelector("#menu-btn");
-      const menuItems = document.querySelector("#menu-items");
-      const menuIcon = document.querySelector("#menu-icon");
-      const closeIcon = document.querySelector("#close-icon");
-
-      if (menuBtn && menuItems && menuIcon && closeIcon) {
-          // Check if menu is open
-          if (menuBtn.getAttribute("aria-expanded") === "true") {
-              menuBtn.setAttribute("aria-expanded", "false");
-              menuBtn.setAttribute("aria-label", "Open Menu");
-              menuItems.classList.add("hidden"); // Force close the menu
-              menuIcon.classList.remove("hidden"); // Show hamburger
-              closeIcon.classList.add("hidden"); // Hide X
-          }
-      }
-  }
-
-
-  
-  function toggleNav() {
+  function setupHeader() {
     const menuBtn = document.querySelector("#menu-btn");
     const menuItems = document.querySelector("#menu-items");
     const menuIcon = document.querySelector("#menu-icon");
     const closeIcon = document.querySelector("#close-icon");
+    const themeBtn = document.getElementById("theme-btn");
 
-    if (!menuBtn || !menuItems || !menuIcon || !closeIcon) return;
-
-    menuBtn.addEventListener("click", () => {
-      const openMenu = menuBtn.getAttribute("aria-expanded") === "true";
-
-      menuBtn.setAttribute("aria-expanded", openMenu ? "false" : "true");
-      menuBtn.setAttribute("aria-label", openMenu ? "Open Menu" : "Close Menu");
-
-      // Standard toggle functionality
-      menuItems.classList.toggle("hidden");
-      menuIcon.classList.toggle("hidden");
-      closeIcon.classList.toggle("hidden");
+    // Toggle Menu
+    menuBtn?.addEventListener("click", () => {
+      const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+      menuBtn.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+      menuItems?.classList.toggle("hidden");
+      menuIcon?.classList.toggle("hidden");
+      closeIcon?.classList.toggle("hidden");
     });
-  }
 
-  // ----------------------------------------------------
-  // NEW: Function to close menu when a link is clicked
-  // ----------------------------------------------------
-  function setupMobileNavLinks() {
-      // Selects all <a> tags within the menu item list
-      const menuLinks = document.querySelectorAll("#menu-items li a"); 
-      
-      menuLinks.forEach(link => {
-          // Remove any previous listeners before adding a new one (important for astro:after-swap)
-          link.removeEventListener('click', handleLinkClick);
-          link.addEventListener('click', handleLinkClick);
+    // Close menu when any link is clicked
+    const navLinks = document.querySelectorAll("#menu-items a");
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        menuItems?.classList.add("hidden");
+        menuBtn?.setAttribute("aria-expanded", "false");
+        menuIcon?.classList.remove("hidden");
+        closeIcon?.classList.add("hidden");
       });
-      
-      function handleLinkClick() {
-          // 1. Force the menu to disappear immediately
-          closeMenu();
+    });
 
-          // 2. Show the loading indicator for visual confirmation
-          showLoadingIndicator();
-      }
-  }
-
-  
-
-  // Initialize all functions on page load and after Astro View Transition
-  toggleNav();
-  setupMobileNavLinks();
-
-  document.addEventListener("astro:after-swap", () => {
-      toggleNav();
-      setupMobileNavLinks(); // Re-initialize listeners after navigation
-  });
-
-  const themeBtn = document.getElementById("theme-btn");
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
+    // Theme Toggle
+    themeBtn?.addEventListener("click", () => {
       const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-      themeBtn.setAttribute("aria-label", isDark ? "dark" : "light");
+      const theme = isDark ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
     });
   }
+
+  // Initialize on first load
+  setupHeader();
+  // Re-initialize after Astro swapped the page content
+  document.addEventListener("astro:after-swap", setupHeader);
 </script>
