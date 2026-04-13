@@ -29,7 +29,7 @@ const { noMarginTop = false } = Astro.props;
     </div>
 
     {/* Column 2: Navigation Links */}
-    <div class="text-center md:text-left text-light-text-on-dark-bg"> {/* ADDED text-light-text-on-dark-bg */}
+    <!-- <div class="text-center md:text-left text-light-text-on-dark-bg"> {/* ADDED text-light-text-on-dark-bg */}
       <h3 class="text-lg font-semibold mb-4 text-accent">Quick Links</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="/services" class="hover:text-accent transition-colors">Our Services</a></li>
@@ -37,8 +37,27 @@ const { noMarginTop = false } = Astro.props;
         <li><a href="/gallery" class="hover:text-accent transition-colors">Gallery</a></li>
         <li><a href="/programs" class="hover:text-accent transition-colors">Conservation Programs</a></li>
         <li><a href="/contact" class="hover:text-accent transition-colors">Contact Us</a></li>
-        <!-- <li><a href="/posts" class="hover:text-accent transition-colors">Our Blog</a></li> -->
         <li><a href="/about" class="hover:text-accent transition-colors">About Us</a></li>
+      </ul>
+    </div> -->
+
+    {/* Column 2: Navigation Links */}
+    <div class="text-center md:text-left text-light-text-on-dark-bg">
+      <h3 class="text-lg font-semibold mb-4 text-accent">Explore Ngubi</h3>
+      <ul class="space-y-3 text-sm">
+        {/* The 4 Pillars / Services */}
+        <li><a href="/services/camping" class="hover:text-accent transition-colors">Forest Camping</a></li>
+        <li><a href="/services/school-programs" class="hover:text-accent transition-colors">Academic Programs</a></li>
+        <li><a href="/services/venue-hosting" class="hover:text-accent transition-colors">Private Bookings</a></li>
+        
+        {/* The Community / Activity Links */}
+        <li><a href="/services/events2" class="hover:text-accent transition-colors">Partner Events</a></li>
+        <li><a href="/partners" class="hover:text-accent transition-colors">Our Partner Network</a></li>
+        
+        {/* The Gallery & Story */}
+        <li><a href="/gallery" class="hover:text-accent transition-colors">Gallery</a></li>
+        <li><a href="/about" class="hover:text-accent transition-colors">About Us</a></li>
+        <li><a href="/contact" class="hover:text-accent transition-colors">Contact Us</a></li>
       </ul>
     </div>
 
@@ -47,9 +66,9 @@ const { noMarginTop = false } = Astro.props;
       <h3 class="text-lg font-semibold mb-4 text-accent">Get In Touch</h3>
       <div class="space-y-2">
         <p class="text-sm mb-4">Ngubi Forest<br/>Kikuyu Escarpment Forest<br/>Limuru-Maai Mahiu Road<br/>Limuru, Kiambu County, Kenya</p>
-        <p class="text-sm mb-4"><span class="text-accent">Open:</span> Mon-Sun, 8 AM - 5 PM</p>
-        <p class="text-sm"><span class="text-accent">Email:</span> <a href="mailto:info@ngubiadventure.or.ke" class="hover:text-accent transition-colors">info@ngubiadventures.or.ke</a></p>
-        <p class="text-sm"><span class="text-accent">Phone:</span> <a href="tel:+254702428654" class="hover:text-accent transition-colors">+254 702 428 654</a></p>
+        <p class="text-sm mb-4"><span class="text-accent">Open:</span> Mon-Sun, 9 AM - 5 PM</p>
+        <p class="text-sm"><span class="text-accent">Email:</span> <a href="mailto:info@ngubiadventures.or.ke" class="hover:text-accent transition-colors">info@ngubiadventures.or.ke</a></p>
+        <p class="text-sm"><span class="text-accent">Phone:</span> <a href="tel:+254702428654" class="hover:text-accent transition-colors">+254 702 428 654</a> or <a href="tel:+254712505845" class="hover:text-accent transition-colors">+254 712 505 845</a></p>
       </div>
     </div>
   </div>

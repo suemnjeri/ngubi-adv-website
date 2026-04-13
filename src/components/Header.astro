@@ -13,11 +13,19 @@ const { pathname } = Astro.url;
 const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
-const isActive = (path: string) => {
-  const currentPathArray = currentPath.split("/").filter(p => p.trim());
-  const pathArray = path.split("/").filter(p => p.trim());
+// const isActive = (path: string) => {
+//   const currentPathArray = currentPath.split("/").filter(p => p.trim());
+//   const pathArray = path.split("/").filter(p => p.trim());
 
-  return currentPath === path || currentPathArray[0] === pathArray[0];
+//   return currentPath === path || currentPathArray[0] === pathArray[0];
+// };
+
+const isActive = (path: string) => {
+  // Remove trailing slashes to ensure /services/camping matches /services/camping/
+  const cleanCurrent = currentPath.replace(/\/$/, "") || "/";
+  const cleanPath = path.replace(/\/$/, "") || "/";
+
+  return cleanCurrent === cleanPath;
 };
 ---
 
@@ -74,24 +82,30 @@ const isActive = (path: string) => {
             </a>
           </li>
           <li>
-            <a href="/services" class:list={{ "active-nav": isActive("/services") }}>
-              Services
+            <a href="/services/camping" class:list={{ "active-nav": isActive("/services/camping") }}>
+              Forest Camping
             </a>
           </li>
           <li>
-            <a href="/events" class:list={{ "active-nav": isActive("/events") }}>
-              Upcoming Events
+            <a href="/services/school-programs" class:list={{ "active-nav": isActive("/services/school-programs") }}>
+              School Programs
             </a>
           </li>
           <li>
-            <a href="/gallery" class:list={{ "active-nav": isActive("/gallery") }}>
-              Gallery
+            <a href="/services/venue-hosting" class:list={{ "active-nav": isActive("/services/venue-hosting") }}>
+              Venue Hire
+            </a>
+          </li>
+
+          <li>
+            <a href="/services/events2" class:list={{ "active-nav": isActive("/services/events2") }}>
+              Partner Events
             </a>
           </li>
           
           <li>
             <a href="/contact" class:list={{ "active-nav": isActive("/contact") }}>
-              Contact
+              Contact Us
             </a>
           </li>
 

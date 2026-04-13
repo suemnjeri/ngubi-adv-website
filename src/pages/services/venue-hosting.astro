@@ -1,0 +1,267 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Main from '../../layouts/Main.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LinkButton from '../../components/LinkButton.astro';
+import Hr from "../../components/Hr.astro";
+
+// Import the service title image
+import ConservationServiceTitleImage from '/public/images/title-venue.webp';
+
+// Import your imagery
+import VenueHeroImg from '/public/images/venue-hero.webp'; // Update with your image path
+import CanopyHallImg from '/public/images/gallery-2.webp';
+import CateringImg from '/public/images/catering2.webp';
+import ValuesImg from '/public/images/values-service.webp';
+---
+
+<Layout title="Exclusive Venue Hosting - Ngubi Adventure Forest Camp">
+  <Header />
+  <Main pageTitle=""
+    pageDesc="" class="pt-24 bg-surface text-foreground"> {/* Ensure these classes are on the Main component */}
+    
+    {/* Playful Image Title */}
+    <h1 class="sr-only">Biodiversity & Conservation Programs</h1>
+    <div class="text-center mb-8 mx-auto max-w-4xl px-4">
+        <img
+            src={ConservationServiceTitleImage.src}
+            alt="Biodiversity & Conservation Programs"
+            width={ConservationServiceTitleImage.width}
+            height={ConservationServiceTitleImage.height}
+            class="w-full h-auto object-contain"
+        />
+    </div>
+    {/* END Playful Image Title */}
+
+    {/* Programs Introduction */}
+    <section id="venue-infrastructure" class="mb-12">
+      <p class="text-lg text-center text-text-muted max-w-2xl mx-auto">
+        Your private sanctuary for counseling, collaboration and celebration. We provide the versatile forest infrastructure, and you bring the vision.
+      </p>
+      <blockquote class="text-xl italic font-light text-center text-foreground mt-8 px-4 border-l-4 border-accent pl-4 max-w-xl mx-auto">
+        "If you want to go fast, go alone. If you want to go far, go together."
+        <cite class="block text-sm not-italic mt-2">- African Proverb</cite>
+      </blockquote>
+    </section>
+
+    <Hr />
+
+
+    {/* 1. Infrastructure Grid */}
+    <section class="max-w-app mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-center mb-4 text-accent">Versatile Infrastructure</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+        {/* Canopy Hall */}
+        <div class="bg-surface p-2 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
+        <img src="/images/canopy-hall.webp" alt="Canopy Hall" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm"/>
+        <h3 class="text-xl font-bold mb-3 text-foreground">The Canopy Hall</h3>
+        <p class="text-text-muted">A multi-purpose open-sided hall, providing a sheltered, atmospheric space for briefings, formal dining, or creative workshops.</p>
+        </div>
+
+        {/* Multi-Functional Fields */}
+        <div class="bg-surface p-2 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
+        <img src="/images/fields.webp" alt="Multi-functional Fields" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm"/>
+        <h3 class="text-xl font-bold mb-3 text-foreground">Multi-Functional Fields</h3>
+        <p class="text-text-muted">Two expansive grass fields perfect for tent setups, outdoor lounging, or high-energy team events.</p>
+        </div>
+
+        {/* Essential Support */}
+        <div class="bg-surface p-2 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
+        <img src="/images/support.webp" alt="Essential Support" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm"/>
+        <h3 class="text-xl font-bold mb-2 text-foreground">Essential Support</h3>
+        <p class="text-text-muted">We provide a commercial kitchen, modern washrooms, secure parking, and professional waste management.</p>
+        </div>
+    </div>
+    </section>
+
+    <Hr />
+    
+
+    {/* 2. Occasions & Photography (The "Backdrop" Section) */}
+    <section class="max-w-app mx-auto px-4 py-8">
+        {/* Title and Intro */}
+        <h2 class="text-2xl font-bold text-center mb-4 text-accent">A Backdrop for Every Occasion</h2>
+        <p class="text-center text-text-muted max-w-2xl mx-auto mb-2">
+            Situated in a 100-year-old cedar plantation, Ngubi offers an inspirational serenity that transforms ordinary events into memorable milestones.
+        </p>
+        {/* Landscape Image spanning the full width */}
+        <div class="mb-2">
+            <img 
+                src="/images/scenery1.webp" 
+                alt="Ngubi Forest Scenery" 
+                class="w-full h-[150px] object-cover rounded-3xl shadow-lg"
+            />
+            <!-- relative h-[150px] sm:h-[200px] w-full overflow-hidden rounded-3xl -->
+        </div>
+        
+        {/* 3-Column Grid */}
+        <div class="grid md:grid-cols-3 text-center gap-6">
+            
+            {/* Column 1: Mentorship & Retreats */}
+            <div class="p-6 bg-surface rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                <div class="mb-1 flex justify-center">
+                    <img 
+                        src="/images/icon-mentorship.jpg" 
+                        alt="An icon of a candle flame" 
+                        class="w-12 h-12 rounded-full object-cover border-2 border-accent shadow-inner"
+                    />
+                </div>
+                <h4 class="font-bold text-lg mb-2 text-foreground">Mentorship & Retreats</h4>
+                <p class="text-sm text-text-muted">An ideal sanctuary for Christian youth camps and leadership retreats, allowing for spiritual conversations, deep connections, and value-based growth.</p>
+            </div>
+
+            {/* Column 2: Life's Milestones */}
+            <div class="p-6 bg-surface rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                <div class="mb-1 flex justify-center">
+                    <img 
+                        src="/images/icon-milestones.jpg" 
+                        alt="An icon of arch-shaped leaves" 
+                        class="w-12 h-12 rounded-full object-cover border-2 border-accent shadow-inner"
+                    />
+                </div>
+                <h4 class="font-bold text-lg mb-2 text-foreground">Life's Milestones</h4>
+                <p class="text-sm text-text-muted">A natural "cathedral" for weddings, intimate birthdays, and private family celebrations where the forest canopy provides the perfect guest list.</p>
+            </div>
+
+            {/* Column 3: Content & Forest Bathing */}
+            <div class="p-6 bg-surface rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                <div class="mb-1 flex justify-center">
+                    <img 
+                        src="/images/icon-forest-bathing.jpg" 
+                        alt="An icon of the sun behing 2 trees" 
+                        class="w-12 h-12 rounded-full object-cover border-2 border-accent shadow-inner"
+                    />
+                </div>
+                <h4 class="font-bold text-lg mb-2 text-foreground">Content & Forest Bathing</h4>
+                <p class="text-sm text-text-muted">Dramatic Rift Valley vistas for photographers and influencers, paired with "Shinrin-yoku" (forest bathing) sessions to restore your creative energy.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <Hr />
+
+    {/* 3. Signature Catering */}
+    <section id="signature-catering" class="bg-surface-alt py-8">
+        <div class="max-w-app mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src={CateringImg.src} alt="Catering" class="rounded-3xl shadow-xl w-full"/>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-2xl font-bold mb-2 text-accent">Signature Catering</h2>
+                <p class="text-lg text-text-muted mb-2">Great food is the heart of every gathering. We partner with expert local chefs to prioritize quality, freshness, and community impact.</p>
+                <ul class="space-y-4 text-text-muted">
+                    <li>
+                        <span class="text-accent font-bold mr-2">✓</span>
+                        <strong>Locally Sourced:</strong> Supporting nearby farmers and reducing carbon footprint.
+                    </li>
+                    <li>
+                        <span class="text-accent font-bold mr-2">✓</span>
+                        <strong>Fully Customized:</strong> Tailored quotations based on your specific culinary preferences.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <Hr />
+
+
+    {/* 4. Values-Driven Environment */}
+    <section class="max-w-4xl mx-auto px-4 py-8">
+    <div class="bg-accent rounded-3xl p-8 md:p-12 text-white shadow-2xl">
+        
+        <h2 class="text-3xl font-bold text-center mb-2">A Values-Driven Environment</h2>
+        
+        <div class="space-y-8">
+        
+        {/* Integrity Row */}
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 flex-shrink-0 bg-white/20 rounded-2xl flex items-center justify-center">
+                {/* Placeholder for SVG icon */}
+                <span class="text-2xl">⚖️</span> 
+            </div>
+            <div>
+            <h4 class="font-bold text-xl mb-2">Rooted in Integrity</h4>
+            <p class="text-white/90 leading-relaxed">
+                Our operations are guided by Christian values of stewardship, faith, and respect for all guests, creating an atmosphere that feels like a home away from home.
+            </p>
+            </div>
+        </div>
+
+        {/* Family-Friendly Row */}
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 flex-shrink-0 bg-white/20 rounded-2xl flex items-center justify-center">
+                {/* Placeholder for SVG icon */}
+                <span class="text-2xl">🛡️</span>
+            </div>
+            <div>
+            <h4 class="font-bold text-xl mb-2">Family-Friendly Atmosphere</h4>
+            <p class="text-white/90 leading-relaxed">
+                To ensure a safe and professional environment for all, we maintain a strict No Alcohol Policy, keeping our space focused on connection and serenity.
+            </p>
+            </div>
+        </div>
+
+        {/* Safety Row */}
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 flex-shrink-0 bg-white/20 rounded-2xl flex items-center justify-center">
+                {/* Placeholder for SVG icon */}
+                <span class="text-2xl">📍</span>
+            </div>
+            <div>
+            <h4 class="font-bold text-xl mb-2">Uncompromising Safety</h4>
+            <p class="text-white/90 leading-relaxed">
+                Peace of mind is guaranteed through 24/7 security and close proximity to a KFS camp. For larger events, we utilize KFS guards for dedicated security escorts.
+            </p>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    </section>
+
+
+    <Hr />
+
+
+
+   
+
+    {/* Final CTA */}
+    <section class="py-8 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-accent">Ready to reserve your date?</h2>
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+        <LinkButton
+          href="/booking"
+          class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
+          ariaLabel="Inquire About Conservation Programs"
+          title="Inquire About Conservation Programs"
+        >
+          Reserve your Date
+        </LinkButton>
+        <LinkButton
+          href="/contact"
+          class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          ariaLabel="Contact Us For More Info"
+          title="Contact Us For More Info"
+        >
+          Contact Us
+        </LinkButton>
+
+        <LinkButton
+          href="https://wa.me/254712505845?text=Hi! I'm interested in a venue hire for my group."
+          target="_blank"
+          class="inline-block px-8 py-4 text-lg bg-surface text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          ariaLabel="Contact Us For More Info"
+          title="Contact Us For More Info"
+        >
+          Send Inquiry (WhatsApp)
+        </LinkButton>
+    </section>
+
+  </Main>
+  <Footer />
+</Layout>

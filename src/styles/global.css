@@ -1,10 +1,10 @@
 /* src/styles/global.css - Final, Cleaned up and Corrected Version */
-
+ 
 @import "@splidejs/splide/dist/css/splide.min.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./typography.css";  
+@import "./typography.css"; 
 
 /* --- Color Variables --- */
 
@@ -112,4 +112,18 @@ html[data-theme="dark"] { /* Dark Theme */
 
 .prose strong {
   color: var(--accent) !important;
+}
+
+/* Custom highlight classes for the 'How We Do It' section */
+.text-highlight-blue { 
+    color: #2563eb !important; /* Tailwind blue-600 */
+    font-weight: 600; 
+}
+.text-highlight-green { 
+    color: #15803d !important; /* Tailwind green-700 */
+    font-weight: 600; 
+}
+.text-highlight-accent { 
+    color: var(--color-accent) !important; /* Uses your site's defined accent color */
+    font-weight: 600; 
 }

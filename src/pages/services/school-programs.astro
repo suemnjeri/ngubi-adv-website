@@ -1,0 +1,319 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Main from '../../layouts/Main.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LinkButton from '../../components/LinkButton.astro';
+import Hr from "../../components/Hr.astro";
+
+// Import the service title image
+import ConservationServiceTitleImage from '/public/images/title-field-center.webp';
+
+// Import your facility images here
+import ForestImage from '/public/images/forest-image.webp';
+import HallImage from '/public/images/hall-image.webp';
+import SafetyImage from '/public/images/safety-image.webp';
+
+// Use placeholders for your images
+import ScientificAuthorityImg from '/public/images/program-discoverers2.webp'; 
+import EducationAlignmentImg from '/public/images/program-junior1.webp';
+import TailoredProgramsImg from '/public/images/program-leadership2.webp';
+import FacilitiesImg from '/public/images/program-workshops1.webp';
+import ClubsImg from '/public/images/program-club1.webp';
+---
+<Layout title="Conservation & Research Programs - Ngubi Adventure Forest Camp">
+  <Header />
+  <Main pageTitle=""
+    pageDesc="" class="pt-24 bg-surface text-foreground"> {/* Ensure these classes are on the Main component */}
+
+{/* Playful Image Title */}
+    <h1 class="sr-only">Biodiversity & Conservation Programs</h1>
+    <div class="text-center mb-8 mx-auto max-w-4xl px-4">
+        <img
+            src={ConservationServiceTitleImage.src}
+            alt="Biodiversity & Conservation Programs"
+            width={ConservationServiceTitleImage.width}
+            height={ConservationServiceTitleImage.height}
+            class="w-full h-auto object-contain"
+        />
+    </div>
+    {/* END Playful Image Title */}
+
+    {/* Programs Introduction */}
+    <section class="mb-12">
+      <p class="text-lg text-center text-text-muted max-w-2xl mx-auto">
+        At Ngubi Adventures Forest Camp, we offer dynamic, hands-on educational programs designed to connect learners of all ages with the vital ecosystems of the Kikuyu Escarpment Forest. Each program is crafted to forge curiosity, deepen scientific understanding, and inspire active environmental stewardship.
+      </p>
+      <blockquote class="text-xl italic font-light text-center text-foreground mt-8 px-4 border-l-4 border-accent pl-4 max-w-xl mx-auto">
+        "Look deep into nature, and then you will understand everything better."
+        <cite class="block text-sm not-italic mt-2">- Albert Einstein</cite>
+      </blockquote>
+    </section>
+
+
+    <Hr />
+
+    {/* 1. Anchored in Scientific Authority */}
+    <section class="max-w-app mx-auto px-4 py-2 sm:py-4 flex flex-col md:flex-row items-center md:space-x-8 mb-1">
+      <div class="md:w-1/2 mb-2 md:mb-0 relative rounded-lg overflow-hidden shadow-lg aspect-w-4 aspect-h-3 md:aspect-h-4">
+        <img src={ScientificAuthorityImg.src} alt="Junior Forest Explorers Program" class="w-full h-full object-cover rounded-lg">
+        <div class="absolute inset-0 bg-black opacity-20 rounded-lg"></div>
+      </div>
+      <div class="md:w-1/2 text-text-muted">
+        <h2 class="text-2xl font-bold mb-2 text-accent">Anchored in Scientific Authority</h2>
+        <p class="text-text-muted mb-2 leading-relaxed">
+          Our programs are built on a comprehensive Biodiversity Report by the National Museums of Kenya. We are situated in an ecosystem of global significance within a recognized <strong>Important Bird Area (IBA)</strong> and a Global <strong>Key Biodiversity Area (KBA)</strong>.
+        </p>
+        {/* TAXA GRID WITH COLORED INDICATORS */}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-bold mb-2">
+            <div class="flex items-center bg-surface p-1 rounded-xl border border-gray-100 shadow-sm">
+                <span class="w-3 h-3 rounded-full bg-green-500 mr-3"></span>
+                <span class="text-foreground">139 Plant Species</span>
+            </div>
+            <div class="flex items-center bg-surface p-1 rounded-xl border border-gray-100 shadow-sm">
+                <span class="w-3 h-3 rounded-full bg-blue-400 mr-3"></span>
+                <span class="text-foreground">74 Bird Species</span>
+            </div>
+            <div class="flex items-center bg-surface p-1 rounded-xl border border-gray-100 shadow-sm">
+                <span class="w-3 h-3 rounded-full bg-yellow-500 mr-3"></span>
+                <span class="text-foreground">132 Invertebrate Species</span>
+            </div>
+            <div class="flex items-center bg-surface p-1 rounded-xl border border-gray-100 shadow-sm">
+                <span class="w-3 h-3 rounded-full bg-orange-600 mr-3"></span>
+                <span class="text-foreground">26 Mammal Species</span>
+            </div>
+            <div class="flex items-center bg-surface p-1 rounded-xl border border-gray-100 shadow-sm">
+                <span class="w-3 h-3 rounded-full bg-purple-500 mr-3"></span>
+                <span class="text-foreground">55 Fungi Species</span>
+            </div>
+            <div class="flex items-center bg-surface p-1 rounded-xl border border-gray-100 shadow-sm">
+                <span class="w-3 h-3 rounded-full bg-emerald-600 mr-3"></span>
+                <span class="text-foreground">10 Herpetofauna</span>
+            </div>
+        </div>
+        {/* DOWNLOAD BUTTON */}
+
+        {/* UPDATED DOWNLOAD BUTTON: Opens PDF in a new tab */}
+        <div class="flex mt-8">
+          <LinkButton
+            
+            href="/documents/Ngubi_Biodiversity_Summary.pdf"
+            target="_blank"
+            class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-accent hover:text-white transition-all duration-200 shadow-lg"
+            ariaLabel="View Biodiversity Overview PDF"
+            title="View Biodiversity Overview"
+          >
+            View Biodiversity Overview
+          </LinkButton>
+        </div>
+
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* 2. Alignment with Kenyan Education */}
+    <section class="max-w-app mx-auto px-4 py-2 sm:py-4 flex flex-col md:flex-row items-center md:space-x-8 mb-1">
+      
+      
+
+      <div class="md:w-1/2 text-text-muted">
+        <h2 class="text-2xl font-bold mb-2 text-accent">Aligned with the Kenyan School Education System</h2>
+        <p class="mb-2">
+          Our facility is designed to provide tangible, real-world evidence for School-Based Assessments (SBA). We offer a space where students can practice core competencies such as <strong>critical thinking, collaboration, and communication</strong> through hands-on interaction with nature. Students engage in <strong>experiential learning</strong> that turns abstract concepts into lasting knowledge and a sense of environmental stewardship.
+        </p>
+      </div>
+
+      <div class="md:w-1/2 mb-2 md:mb-0 relative rounded-lg overflow-hidden shadow-lg aspect-w-4 aspect-h-3 md:aspect-h-4">
+        <img src={EducationAlignmentImg.src} alt="Junior Forest Explorers Program" class="w-full h-full object-cover rounded-lg">
+        <div class="absolute inset-0 bg-black opacity-20 rounded-lg"></div>
+      </div>
+
+    </section>
+
+    <Hr />
+
+    {/* 3. Tailored Programs - Full Width Layout */}
+    <section id="programs-for-every-level" class="max-w-app mx-auto px-4 py-8">
+      
+      {/* TOP ROW: Large Landscape Image */}
+      <div class="mb-8">
+        <div class="relative h-[150px] sm:h-[200px] w-full overflow-hidden rounded-3xl shadow-2xl">
+          <img 
+            src={TailoredProgramsImg.src} 
+            alt="Tailored Programs at Ngubi Forest" 
+            class="w-full h-full object-cover"
+          />
+          {/* Overlay for aesthetic depth */}
+          <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-2xl sm:text-2xl font-bold text-accent shadow-lg bg-black/30 px-6 py-3 rounded-xl backdrop-blur-sm">
+              Programs for Every Level
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      {/* BOTTOM ROW: The Cards in a 2x2 Grid */}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        
+        {/* Card 1: Primary */}
+        <div class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-green-500 hover:shadow-xl transition-all duration-300">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-[10px] uppercase tracking-widest bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">Primary School</span>
+          </div>
+          <h3 class="text-xl font-bold text-foreground">Junior Forest Explorers</h3>
+          <p class="text-text-muted leading-relaxed">
+            Focuses on <strong>sensory-rich discovery</strong>. Students use their senses to identify textures, sounds, and smells through our Junior Scavenger Hunt.
+          </p>
+        </div>
+
+        {/* Card 2: Secondary */}
+        <div class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-blue-500 hover:shadow-xl transition-all duration-300">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-[10px] uppercase tracking-widest bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-bold">Secondary School</span>
+          </div>
+          <h3 class="text-xl font-bold text-foreground">Ecosystem Discoverers</h3>
+          <p class="text-text-muted leading-relaxed">
+            Applied observation and problem-solving. Features the <strong>Ngubi Trail Quest</strong> team challenge and <strong>Conservation Hackathons</strong>.
+          </p>
+        </div>
+
+        {/* Card 3: University */}
+        <div class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-purple-500 hover:shadow-xl transition-all duration-300">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-[10px] uppercase tracking-widest bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-bold">College & University</span>
+          </div>
+          <h3 class="text-xl font-bold text-foreground">Conservation Leadership</h3>
+          <p class="text-text-muted leading-relaxed">
+            Immersive programs building research and leadership skills. Participants practice advanced field methods and analyze interdisciplinary threats.
+          </p>
+        </div>
+
+        {/* Card 4: Expert */}
+        <div id="research-workshops" class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-orange-500 hover:shadow-xl transition-all duration-300">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-[10px] uppercase tracking-widest bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-bold">Specialized Research</span>
+          </div>
+          <h3 class="text-xl font-bold text-foreground">Specialized Workshops</h3>
+          <p class="text-text-muted leading-relaxed">
+            Expert-led, tailored programs for specific academic departments (e.g., Botany, Zoology, Ornithology) or researchers seeking technical site access.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  <Hr />
+    
+    {/* 4. Professional Facilities */}
+    <section class="bg-surface-alt py-4">
+        <div class="max-w-app mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-2 text-accent">Built for Scientific Inquiry</h2>
+            <p class="text-text-muted mb-4 max-w-2xl mx-auto">
+                Our campus is specifically equipped to support rigorous field study, group collaboration, and safe, immersive forest exploration.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                {/* Card 1 */}
+                <div class="p-6 bg-surface rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 flex flex-col items-center">
+                    {/* Changed rounded-full to rounded-xl for rectangle effect */}
+                    <img src={ForestImage.src} alt="Ngubi Forest" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" />
+                    <h4 class="font-bold mb-2 text-foreground">1,950-Hectare Forest</h4>
+                    <p class="text-text-muted text-sm leading-relaxed">A vast, high-altitude (2,100m–2,300m) living laboratory for all ages.</p>
+                </div>
+
+                {/* Card 2 */}
+                <div class="p-6 bg-surface rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 flex flex-col items-center">
+                    <img src={HallImage.src} alt="Canopy Hall" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" />
+                    <h4 class="font-bold mb-2 text-foreground">Canopy Hall & Field Labs</h4>
+                    <p class="text-text-muted text-sm leading-relaxed">Open-sided 15m x 12m hall and dedicated fields for simulations and experiments.</p>
+                </div>
+
+                {/* Card 3 */}
+                <div class="p-6 bg-surface rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 flex flex-col items-center">
+                    <img src={SafetyImage.src} alt="Safety & Logistics" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" />
+                    <h4 class="font-bold mb-2 text-foreground">Safety & Logistics</h4>
+                    <p class="text-text-muted text-sm leading-relaxed">24/7 security, KFS partnership, secure bus parking, and fully equipped kitchen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Hr />
+
+    {/* 5. Mazingira Club Movement (The Closing Hook) */}
+    <section class="max-w-app mx-auto px-4 py-4">
+      <div class="relative bg-accent rounded-3xl overflow-hidden shadow-2xl p-8 md:p-16 text-center">
+        {/* Decorative background overlay */}
+        <div class="absolute inset-0 opacity-10 bg-[url('/images/pattern-leaves.png')] bg-repeat"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-3xl font-bold text-white mb-6">
+            Join the Mazingira Club Movement
+          </h2>
+          <p class="text-lg md:text-xl text-white/90 leading-relaxed mb-8">
+            We partner with schools to run the <strong>Mazingira Club</strong>, a program that takes students beyond the desk and into nature. Backed by <strong>KFS</strong> and <strong>National Museums of Kenya</strong>, our progressive curriculum turns environmental studies into a hands-on reality for every child. 
+          </p>
+          <p class="text-lg text-white font-medium mb-8 italic">
+            "We provide the tools for students to become world-class stewards of Kenya’s green future."
+          </p>
+
+          <LinkButton
+            href="/contact"
+            class="inline-block px-10 py-4 bg-white text-accent rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+            ariaLabel="Inquire about starting a Mazingira Club"
+            title="Start a Club"
+          >
+            Start a Mazingira Club
+          </LinkButton>
+        </div>
+      </div>
+    </section>
+
+    <Hr />
+
+
+
+    {/* Final CTA */}
+    <section class="py-6 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-accent">Ready to bring your students to Ngubi?</h2>
+
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+        <LinkButton
+          href="/booking"
+          class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
+          ariaLabel="Inquire About Conservation Programs"
+          title="Inquire About Conservation Programs"
+        >
+          Book/Inquire
+        </LinkButton>
+        <LinkButton
+          href="/contact"
+          class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          ariaLabel="Contact Us For More Info"
+          title="Contact Us For More Info"
+        >
+          Contact Us
+        </LinkButton>
+
+        <LinkButton
+          href="https://wa.me/254712505845?text=Hi! I'm interested in a school program for my group."
+          target="_blank"
+          class="inline-block px-8 py-4 text-lg bg-surface text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          ariaLabel="Contact Us For More Info"
+          title="Contact Us For More Info"
+        >
+          Send Inquiry (WhatsApp)
+        </LinkButton>
+
+
+      <!-- <LinkButton 
+        href="https://wa.me/254712505845?text=Hi! I'm interested in an Educational Conservation Program for my school." 
+        class="bg-accent text-white px-10 py-4 rounded-full text-xl font-bold"
+      >
+        Inquire about a Program
+      </LinkButton> -->
+    </section>
+
+  </Main>
+  <Footer />
+</Layout>

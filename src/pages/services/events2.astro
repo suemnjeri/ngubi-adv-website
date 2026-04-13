@@ -1,0 +1,255 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Main from '../../layouts/Main.astro';
+import LinkButton from '../../components/LinkButton.astro';
+import Hr from "../../components/Hr.astro";
+import SvgIcon from '../../components/SvgIcon.astro';
+import PartnershipLandscape from '/public/images/partner-image.webp';
+
+/// Upcoming Events Data
+// import { eventData as communityDay4thOct } from './events/community-day-4th-oct-2025.astro';
+// import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
+// import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
+// import { eventData as mtb7thfeb26 } from './events/mtb-ngubi-escarpment.astro';
+import { eventData as birdwalk18thfeb26 } from './../events/bird-walk-nature-kenya-18-feb-26.astro';
+
+// Gallery Images Data
+const pastEvents = [
+  {alt: 'Birding with Nature Kenya', src: '/images/events/bird-walk-18th-feb-26.webp' }, 
+  {alt: 'Mt Bike Escarpment View Ride', src: '/images/events/mtb-7th-feb-26.webp' },
+  {alt: 'Family Fun Day in the Forest', src: '/images/events/ngubi-orange-4th2.jpg' },
+  { alt: 'Family Fun Day in the Forest', src: '/images/events/ngubi-past-event.jpg' },
+  
+  
+  
+  
+  // Add more past events here as needed
+  // { alt: 'Another Past Event', src: '/images/events/another-past-event.webp' },
+];
+
+// Combine all upcoming events into a single array
+const allEvents = [
+  // { data: communityDay4thOct, href: '/events/community-day-4th-oct-2025' },
+  // { data: forestEcologyWalkData, href: '/events/forest-ecology-walk' },
+  // { data: birdWatchingData, href: '/events/bird-watching-tour' },
+  // { data: mtb7thfeb26, href: '/events/mtb-ngubi-escarpment' },
+  // { data: birdwalk18thfeb26, href: '/events/bird-walk-nature-kenya-18-feb-26' },
+];
+
+// Sort the events by date
+allEvents.sort((a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf());
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+}
+---
+
+<Layout title="Events & Infrastructure Partnerships">
+  <Header />
+  
+  <Main pageTitle="" pageDesc="" class="max-w-app mx-auto px-4 pt-24">
+    
+    {/* --- SECTION 1: HEADER & INTRO --- */}
+    <div class="text-center mb-12">
+      <img src="/images/title-events.webp" alt="Events & Partnerships" class="mb-6 w-full max-w-4xl mx-auto" />
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        We partner with event organizers to provide the secure, professional, and sustainable foundation for high-impact forest experiences.
+      </p>
+      <blockquote class="text-xl italic font-light text-center mt-8 px-4 border-l-4 border-accent pl-4 max-w-xl mx-auto">
+        "Coming together is a beginning, staying together is progress, and working together is success."
+        <cite class="block text-sm not-italic mt-2">- Henry Ford</cite>
+      </blockquote>
+    </div>
+
+    <Hr />
+
+    {/* --- SECTION 2: UPCOMING EVENTS (The "Now") --- */}
+    <section class="py-4 sm:py-8">
+      <div class="max-w-app mx-auto px-4">
+        <!-- <h2 class="text-3xl font-bold mb-4 text-center text-accent">Upcoming Events</h1> -->
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-accent">Upcoming Events</h2>
+        <!-- <p class="text-lg text-center max-w-2xl mx-auto mb-12 text-foreground-light-bg">
+          Join us for upcoming unique experiences and special programs designed to help you connect with nature and your community.
+        </p> -->
+
+        <div class="space-y-12">
+          {allEvents.length === 0 ? (
+            <div class="p-12 border-2 border-dashed border-gray-200 rounded-2xl text-center">
+            <p class="text-text-muted italic">No upcoming public events at the moment. Check back soon!.</p>
+          </div>
+            // <p class="col-span-full text-center text-text-muted">No upcoming public events at the moment. Check back soon!</p>
+          ) : (
+            allEvents.map(({ data, href }) => (
+              <div class="flex flex-col md:flex-row items-center gap-8 p-6 bg-surface rounded-lg shadow-lg">
+                <div class="flex-shrink-0 w-full md:w-1/3">
+                  <img
+                    src={data.eventImage}
+                    alt={data.title}
+                    class="rounded-lg object-cover w-full h-48 md:h-full"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <h2 class="text-3xl font-bold mb-2 text-accent">{data.title}</h2>
+                  <p class="text-foreground-light-bg mb-4">
+                    <span class="font-bold">{formatDate(data.eventDate)}</span>
+                    {data.eventTime && ` at ${data.eventTime}`}
+                    {data.location && ` | ${data.location}`}
+                  </p>
+                  
+                  <p class="text-foreground-light-bg mb-4">{data.summary}</p>
+                  {data.price && (
+                    <p class="text-lg font-semibold mb-4 text-accent">{data.price}</p>
+                  )}
+                  <a
+                    href={href}
+                    class="inline-block px-6 py-2 text-md bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200"
+                    aria-label={`View details for ${data.title}`}
+                    title={`View details for ${data.title}`}
+                  >
+                    Learn More & Book Your Spot
+                  </a>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+
+      </div>
+    </section>
+    {/* --- END OF UPCOMING EVENTS (The "Now") --- */}
+
+
+    <Hr />
+
+
+    {/* --- SECTION 3: INFRASTRUCTURE (The "Capability") --- */}
+    <section id = "event-infra" class="py-8">
+      <div class="text-center mb-2">
+        <h2 class="text-3xl font-bold text-accent mb-4">Event Infrastructure Partnerships</h2>
+        <p class="text-muted-foreground max-w-2xl mx-auto">
+          We partner with organizers to provide the strategic assets and professional forest environment required to bring large-scale visions to life.
+        </p>
+      </div>
+           {/* Partnership Landscape Image */}
+        <div  class="w-full px-4 mt-4">
+            <div class="max-w-app mx-auto overflow-hidden rounded-2xl shadow-lg">
+                <img 
+                    src={PartnershipLandscape.src} 
+                    alt="Mountain biking and trail running terrain at Ngubi" 
+                    class="w-full h-[250px] object-cover object-center"
+                />
+            </div>
+        </div>
+
+        {/* 4-Column Professional Partnership Pillars */}
+        <section class="max-w-app mx-auto px-4 py-2">
+
+        {/* 4-Column Professional Partnership Pillars - Fixed to 2x2 for better readability */}
+        <section  class="max-w-app mx-auto px-4 py-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                {/* 1. Logistics */}
+                <div class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-blue-500 hover:shadow-xl transition-all duration-300">
+                    <div class="flex mb-3">
+                        <span class="text-[10px] uppercase tracking-widest bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full font-bold">Infrastructure</span>
+                    </div>
+                    <h4 class="font-bold text-foreground mb-3 text-lg">Logistical Staging</h4>
+                    <p class="text-sm text-text-muted leading-relaxed">A managed complex just 500m off the Limuru - Maai Mahiu highway for easy "load-in" and streamlined participant flow.</p>
+                </div>
+
+                {/* 2. Terrain */}
+                <div class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-green-500 hover:shadow-xl transition-all duration-300">
+                    <div class="flex mb-3">
+                        <span class="text-[10px] uppercase tracking-widest bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 px-3 py-1 rounded-full font-bold">Capability</span>
+                    </div>
+                    <h4 class="font-bold text-foreground mb-3 text-lg">Versatile Terrain</h4>
+                    <p class="text-sm text-text-muted leading-relaxed">A premier natural stage for trail runs, cycling challenges, fitness bootcamps, and expeditions.</p>
+                </div>
+
+                {/* 3. Compliance */}
+                <div class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-purple-500 hover:shadow-xl transition-all duration-300">
+                    <div class="flex mb-3">
+                        <span class="text-[10px] uppercase tracking-widest bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full font-bold">Reliability</span>
+                    </div>
+                    <h4 class="font-bold text-foreground mb-3 text-lg">Compliance</h4>
+                    <p class="text-sm text-text-muted leading-relaxed">Officially commissioned with KFS/CFA coordination for secure environments and professional security.</p>
+                </div>
+
+                {/* 4. Sustainability */}
+                <div class="bg-surface p-8 rounded-2xl shadow-md border-t-8 border-orange-500 hover:shadow-xl transition-all duration-300">
+                    <div class="flex mb-3">
+                        <span class="text-[10px] uppercase tracking-widest bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 px-3 py-1 rounded-full font-bold">Impact</span>
+                    </div>
+                    <h4 class="font-bold text-foreground mb-3 text-lg">Sustainability</h4>
+                    <p class="text-sm text-text-muted leading-relaxed">Zero-single-use plastic facility, "Leave No Trace" philosophy, and local community priority employment.</p>
+                </div>
+
+            </div>
+        </section>
+    {/* --- END OF INFRASTRUCTURE SECTION --- */}
+      
+    <Hr />
+
+    {/* --- START OF PAST EVENTS --- */}
+    <section class="py-12 sm:py-16">
+      <div class="max-w-app mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">Our Past Events</h2>
+        <p class="text-lg text-center max-w-2xl mx-auto mb-12 text-foreground-light-bg">
+          Take a look at some of the memorable moments from our recent events.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {pastEvents.map((image) => (
+            <div class="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    {/* --- END OF PAST EVENTS --- */}
+
+    <Hr />
+
+    {/* SECTION 5: Bespoke Partnership Models */}
+    <section id="bespoke-models" class="max-w-3xl mx-auto px-4 py-12 text-center">
+        <h2 class="text-2xl font-bold text-accent mb-6">Bespoke Partnership Models</h2>
+        <p class="text-muted-foreground mb-8">
+            Whether you are hosting a community-focused walk, a commercial race, or a private outdoor fair, we offer flexible partnership models tailored to your needs. We provide the infrastructure and expertise to ensure your event is both impactful and seamless.
+        </p>
+        <LinkButton
+          href="/contact"
+          class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg"
+          ariaLabel="Inquire About Event Partnership"
+          title="Inquire About Event Partnership"
+        >
+            Discuss a Partnership
+        </LinkButton>
+
+        <LinkButton
+          href="https://wa.me/254712505845?text=Hi! I'm interested in a partnership for an event."
+          target="_blank"
+          class="inline-block px-8 py-4 text-lg bg-surface text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg"
+          ariaLabel="Contact Us For More Info"
+          title="Contact Us For More Info"
+        >
+          Send Inquiry (WhatsApp)
+        </LinkButton>
+
+    </section>
+
+    <Hr />
+
+
+  </Main>
+  <Footer />
+</Layout>

@@ -1,14 +1,14 @@
 ---
-const { name, class: className, ...props } = Astro.props;
+import { iconMap, type IconName } from '../utils/iconMap';
 
-let svgContent = '';
-
-try {
-  const iconModule = await import(`../assets/icons/${name}.svg?raw`);
-  svgContent = iconModule.default;
-} catch (error) {
-  console.warn(`Icon "${name}" not found.`, error);
+interface Props {
+  name: IconName;
+  class?: string;
+  [key: string]: any;
 }
+
+const { name, class: className, ...props } = Astro.props;
+const svgContent = iconMap[name];
 ---
 
 {svgContent ? (

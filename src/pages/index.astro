@@ -7,11 +7,11 @@ import Hr from "../components/Hr.astro";
 
 // Import service icon images
 import iconPicnic from '/public/images/icon-picnic.png';
-import iconTeambuilding from '/public/images/icon-teambuilding.png';
-import iconConservation from '/public/images/icon-conservation.png';
+import iconTeambuilding from '/public/images/icon-teambuilding2.png';
+import iconConservation from '/public/images/icon-conservation2.png';
 import iconHiking from '/public/images/icon-hiking.png';
-import iconMtb from '/public/images/icon-mtb.png';
-import iconCamping from '/public/images/icon-camping.png';
+import iconMtb from '/public/images/icon-mtb2.png';
+import iconCamping from '/public/images/icon-camping2.png';
 
 
 import SvgIcon from '../components/SvgIcon.astro';
@@ -47,7 +47,7 @@ function formatDate(date: Date): string {
 
   
   {/* --- START OF FULL-WIDTH HERO SECTION (VIDEO BACKGROUND) --- */}
-  <section id="hero" class="relative hero-full-width py-40 sm:py-52 overflow-hidden min-h-screen">
+  <section id="hero" class="relative hero-full-width py-40 sm:py-52 overflow-hidden min-h-[95vh] pb-10 sm-pb-0">
     <video
       autoplay
       muted
@@ -57,38 +57,50 @@ function formatDate(date: Date): string {
       class="absolute inset-0 w-full h-full object-cover"
       aria-label="Background video of Ngubi Forest activities"
     >
-      <source src="/videos/hero-background-video.webm" type="video/webm" />
-      <source src="/videos/hero-background-video.mp4" type="video/mp4" />
+      <source src="/videos/hero-background-video3.webm" type="video/webm" />
+      <source src="/videos/hero-background-video3.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
-    <div class="absolute inset-0 bg-black opacity-20"></div>
+    
+    <!-- <div class="relative z-10 max-w-app mx-auto px-4 pt-40 sm:pt-60 text-center"> -->
+     <div class="relative z-10 max-w-app mx-auto px-4 mt-[30vh] sm:mt-[35vh] text-center">
+      
+        {/*The glass box with the words */}
+        <div class="max-w-2xl mx-auto bg-black/20 backdrop-blur-xl py-4 px-8 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] mb-4">
+            
+             <h1 class="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)]">
+              Ngubi Adventures Forest Camp
+            </h1>
+            <p class="text-lg sm:text-xl mt-4 mb-2 font-normal text-white">
+                Group Camping. School Expeditions. Exclusive Venues. Event Partnerships.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              </div>
+        </div>
 
-    <div class="relative z-10 max-w-app mx-auto px-4 pt-40">
-      <h1 class="my-4 text-2xl font-bold sm:my-8 sm:text-4xl leading-tight text-white">
-        Unleash Your Potential in Ngubi Forest
-      </h1>
-      <p class="text-lg sm:text-xl mt-4 mb-12 font-light text-white">
-        <!-- <strong class="text-accent">Opening Soon!</strong> -->
-        <!-- Experience enriching nature-based adventures, foster teamwork, and connect with Kenya's vital Kikuyu Escarpment Forest. -->
-         Experience fun, active, and enriching nature-based adventures, forge teamwork, and connect with Kenya's vital Kikuyu Escarpment Forest for a deeper sense of conservation.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
+
+      {/*The buttons */}
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <LinkButton
           href="/booking"
-          class="inline-block px-6 py-2 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg  flex justify-center items-center"
+          class="inline-block px-6 py-2 text-lg bg-accent text-white rounded-2xl font-semibold whitespace-nowrap hover:bg-accent-dark hover:text-white transition-colors duration-200 shadow-lg  flex justify-center items-center"
           ariaLabel="Book Your Adventure Now"
           title="Book Your Adventure Now"
         >
-          Book Your Adventure Now
+          Book Your Adventure
         </LinkButton>
+        
         <LinkButton
-          href="/services"
-          class="inline-block px-6 py-2 text-lg bg-white text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-200 hover:text-accent transition-colors duration-200 shadow-lg  flex justify-center items-center"
-          ariaLabel="Explore Our Adventures"
-          title="Explore Our Adventures"
+          href="/documents/Ngubi_Biodiversity_Summary.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block px-6 py-2 text-lg bg-white/40 text-black rounded-2xl font-bold border border-white/40 shadow-lg flex justify-center items-center backdrop-brightness-110"
+          ariaLabel="View Our Biodiversity Report"
+          title="View our Biodiversity"
         >
-          Explore Our Adventures
+          View our Biodiversity
         </LinkButton>
       </div>
     </div>
@@ -99,102 +111,114 @@ function formatDate(date: Date): string {
   <main id="main-content" class="pt-1">
     <Hr />
 
-    {/* --- START OF SERVICES SECTION --- */}
-    <section class="py-12 sm:py-16 bg-surface text-foreground">
-      <div class="max-w-app mx-auto px-4">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
-          Our Adventures & Experiences
-        </h2>
-        <!-- <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
-          (Coming Soon!)
-        </h2> -->
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+    {/* --- START OF PARTNERS/ACCREDITATION SECTION --- */}
+    <section class="py-2 sm:py-4 bg-surface text-foreground">
+      <div class="max-w-app mx-auto px-2">
+        
+        {/* Flexbox container centers the children dynamically */}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-12 justify-items-center">
+        <!-- <div class="flex flex-wrap justify-center items-center gap-4"> -->
           
-          {/* CARD 1: Hiking Adventures */}
-          <a href="/services/forest-adventures/#hiking" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <img src={iconHiking.src} alt="Hiking icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
-            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Hiking Adventures</h3>
-            <p class="text-foreground-light-bg mb-4 text-center">
-              <!-- Step onto our scenic, well-maintained trails for a guided hike. -->
-              Follow guided trails in Ngubi forest and along the scenic Rift Valley Escarpment
+          {/* Partner Logo 1 */}
+          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
+            <img src="/images/partner-museums.png" alt="Partner Museums Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
+          </div>
+
+          {/* Partner Logo 2 */}
+          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
+            <img src="/images/partner-kfs.png" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
+          </div>
+
+          {/* Partner Logo 3 */}
+          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
+            <img src="/images/partner-nature-kenya.png" alt="Partner Nature Kenya Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
+          </div>
+
+          {/* Partner Logo 4 */}
+          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
+            <img src="/images/partner-kijabe.png" alt="Partner Kijabe Forest Trust Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
+          </div>
+
+        </div>
+      </div>
+    </section>
+    {/* --- END OF PARTNERS/ACCREDITATION SECTION --- */}
+
+    <Hr />
+
+
+    {/* --- START OF SERVICES SECTION (WHAT WE DO) --- */}
+    <section class="py-4 sm:py-6 bg-surface text-foreground">
+      <div class="max-w-app mx-auto px-4">
+        <h2 class="text-3xl sm:text-3xl font-bold mb-2 text-center text-accent">
+          What We Do
+        </h2>
+
+        {/* Updated Grid: 1 column on mobile, 2 columns on medium screens and up */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 max-w-3xl mx-auto">
+          
+          {/* CARD 1: Transformative Forest Camping */}
+          <a href="/services/camping" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
+            <img src={iconCamping.src} alt="Camping icon" class="mx-auto h-15 w-15 mb-2 rounded-full"/>
+            <h3 class="text-xl font-semibold mb-2 text-accent text-center">Transformative Forest Camping</h3>
+            <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
+              Experience the magic of Ngubi Forest under the stars. Our secure, full-board camping packages are designed for groups seeking a true immersion into nature.
             </p>
-            <span class="inline-flex items-center text-accent font-medium group mx-auto">
-              Learn More
-              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
-            </span>
+            <div class="flex justify-center">
+              <span class="inline-flex items-center text-accent font-medium group">
+                Learn More
+                <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-1px] group-hover:translate-x-1 transition-transform duration-200" />
+              </span>
+            </div>
           </a>
 
-          {/* CARD 2: Mountain Biking */}
-          <a href="/services/forest-adventures/#mt-biking" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <img src={iconMtb.src} alt="Mountain biking icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
-            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Mountain Biking</h3>
-            <p class="text-foreground-light-bg mb-4 text-center">
-              Escarpment Escapades! Conquer thrilling trails built against the dramatic Rift Valley Escarpment
-            </p>
-            <span class="inline-flex items-center text-accent font-medium group mx-auto">
-              Learn More
-              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
+          
 
-            </span>
+          {/* CARD 2: Field Study Center (Schools) */}
+          <a href="/services/school-programs" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
+            <img src={iconConservation.src} alt="Education icon" class="mx-auto h-15 w-15 mb-2 rounded-full"/>
+            <h3 class="text-xl font-semibold mb-2 text-accent text-center">Field Study Center (Schools)</h3>
+            <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
+              We bridge the gap between classroom theory and real-world application, anchored by a comprehensive Biodiversity report by the National Museums of Kenya.
+            </p>
+            <div class="flex justify-center">
+              <span class="inline-flex items-center text-accent font-medium group">
+                Learn More
+                <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-1px] group-hover:translate-x-1 transition-transform duration-200" />
+              </span>
+            </div>
           </a>
 
-          {/* CARD 3: Overnight Camping (NEW) */}
-          <a href="/services/group-adventure/#camping" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <img src={iconCamping.src} alt="Camping icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
-            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Overnight Camping</h3>
-            <p class="text-foreground-light-bg mb-4 text-center">
-              Experience the magic of Ngubi Forest under the stars with bonfires and storytelling.
+          {/* CARD 3: Exclusive Venue Hosting */}
+          <a href="/services/venue-hosting" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
+            <img src={iconTeambuilding.src} alt="Venue hosting icon" class="mx-auto h-15 w-15 mb-2 rounded-full"/>
+            <h3 class="text-xl font-semibold mb-2 text-accent text-center">Exclusive Venue Hosting</h3>
+            <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
+              Host your next corporate retreat, wedding, or chama in a location that commands focus. We offer private access to our Canopy Hall and expansive grass fields.
             </p>
-            <span class="inline-flex items-center text-accent font-medium group mx-auto">
-              Learn More
-              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
-
-            </span>
+            <div class="flex justify-center">
+              <span class="inline-flex items-center text-accent font-medium group">
+                Learn More
+                <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-1px] group-hover:translate-x-1 transition-transform duration-200" />
+              </span>
+            </div>
           </a>
 
-          {/* CARD 4: Forest stopover and Picnic */}
-          <a href="/services/forest-adventures/#picnic" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <img src={iconPicnic.src} alt="Picnic icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
-            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Forest stopover and Picnic</h3>
-            <p class="text-foreground-light-bg mb-4 text-center">
-              <!-- Enjoy a serene spot in the forest for a tranquil escape. -->
-              Find your tranquil escape in a serene spot within the Ngubi Forest.
+          {/* CARD 4: Event Partnerships */}
+          <a href="/services/events2" class="block bg-surface p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100">
+            <img src={iconMtb.src} alt="Event partnership icon" class="mx-auto h-15 w-15 mb-2 rounded-full"/>
+            <h3 class="text-xl font-semibold mb-2 text-accent text-center">Event Partnerships</h3>
+            <p class="text-foreground-light-bg mb-2 text-center leading-relaxed">
+              Partner with us for world-class specialized activities like trail runs, MT bike challenges, exercise bootcamps, wellness workshops, and outdoor fairs.
             </p>
-            <span class="inline-flex items-center text-accent font-medium group mx-auto">
-              Learn More
-              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
-
-            </span>
+            <div class="flex justify-center">
+              <span class="inline-flex items-center text-accent font-medium group">
+                Learn More
+                <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-1px] group-hover:translate-x-1 transition-transform duration-200" />
+              </span>
+            </div>
           </a>
 
-          {/* CARD 5: Group Adventure (MODIFIED) */}
-          <a href="/services/group-adventure/#day-adventures" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <img src={iconTeambuilding.src} alt="Group adventure icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
-            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Group Adventure and Teambuilding</h3>
-            <p class="text-foreground-light-bg mb-4 text-center">
-              For groups, clubs, and youth looking for a day of thrilling activities and teambuilding.
-            </p>
-            <span class="inline-flex items-center text-accent font-medium group mx-auto">
-              Learn More
-              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
-
-            </span>
-          </a>
-
-          {/* CARD 6: Biodiversity & Conservation Programs */}
-          <a href="/programs" class="block bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <img src={iconConservation.src} alt="Conservation icon" class="mx-auto h-16 w-16 mb-4 rounded-full"/>
-            <h3 class="text-2xl font-semibold mb-3 text-accent text-center">Biodiversity Conservation Programs</h3>
-            <p class="text-foreground-light-bg mb-4 text-center">
-              Immerse in the Kikuyu Escarpment's vibrant ecosystem through hands-on conservation learning.
-            </p>
-            <span class="inline-flex items-center text-accent font-medium group mx-auto">
-              Learn More
-              <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4 relative top-[-3px] group-hover:translate-x-1 transition-transform duration-200" />
-
-            </span>
-          </a>
         </div>
       </div>
     </section>
@@ -202,84 +226,290 @@ function formatDate(date: Date): string {
 
     <Hr />
 
-    {/* --- START OF UPCOMING EVENTS SECTION --- */}
-    <section class="py-12 sm:py-16 bg-surface">
+    {/* --- START OF HOW WE DO IT SECTION --- */}
+    <section class="py-8 bg-surface text-foreground">
       <div class="max-w-app mx-auto px-4">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
-          Upcoming Special Events
-        </h2>
-        <p class="text-lg text-center max-w-2xl mx-auto mb-12 text-foreground-light-bg">
-          Click on a flyer below to learn more and register.
-        </p>
-
-        {/* Dynamic Grid for Events */}
-        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12 items-start justify-center">
-          {allEvents.length === 0 ? (
-            <p class="col-span-full text-center text-text-muted">No upcoming events at the moment. Check back soon!</p>
-          ) : (
-            allEvents.map(({ data, href }, index) => (
-              <a
-                href={href}
-                class:list={[
-                  "block rounded-lg shadow-lg overflow-hidden w-60 mx-auto transform transition-transform duration-300 hover:scale-105",
-                  {"hidden": index >= 3} /* Only show the first 3 */
-                ]}
-                aria-label={`View details for ${data.title}`}
-                title={`View details for ${data.title}`}
-              >
-                <img
-                  src={data.eventImage}
-                  alt={`Flyer for ${data.title}`}
-                  class="w-full h-full object-cover"
-                />
-              </a>
-            ))
-          )}
-        </div>
         
-        {/* View All Events button that appears when there's at least one event */}
-        {allEvents.length > 0 && (
-          <div class="my-8 text-center">
-            <LinkButton id="load-more-events-btn" class="text-foreground-light-bg" href="/events">
-              View All Events
-              <SvgIcon name="IconArrowRight" class="inline-block ml-2 w-4 h-4" />
-            </LinkButton>
-          </div>
-        )}
+        {/* Text Section - Centered and Readable */}
+        <div class="max-w-3xl mx-auto text-justify mb-2">
+          <!-- <h2 class="text-sm uppercase tracking-[0.2em] text-accent font-bold mb-3">The Ngubi Way</h2> -->
+          <h3 class="text-3xl sm:text-3xl font-bold text-accent mb-2 text-center">How We Do It</h3>
+          <!-- <p class="font-medium mb-2 leading-relaxed">
+            <strong>We blend expert forest knowledge with professional facilities to create a safe, organized space for your group to thrive.</strong>
+          </p> -->
+
+          <p class="text-muted-foreground leading-relaxed">
+            We integrate 
+            <span class="text-highlight-green">professional infrastructure</span> 
+            and 
+            <span class="text-highlight-green">official partnerships</span> 
+            to offer a 
+            <span class="text-highlight-accent">secure, managed destination</span> 
+            in the heart of the 
+            <span class="text-highlight-accent">Kikuyu Escarpment Forest</span>. 
+            This provides a 
+            <span class="text-highlight-green">reliable, exclusive forest sanctuary</span> 
+            that gives your group the 
+            <span class="text-highlight-accent">safety, facilities, and 
+            expert insights</span> 
+            needed for 
+            <span class="text-highlight-green">high-impact and transformative nature experiences</span>.
+          </p>
+
+        {/* Hero-Style Image - Spanning the full container width */}
+        <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+          <img 
+            src="/images/gallery-1.webp" 
+            alt="Professional infrastructure at Ngubi Forest Camp" 
+            class="w-full h-[250px] sm:h-[300px] object-cover"
+          />
+          {/* Optional: A subtle dark gradient at the bottom for depth */}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        </div>
+        {/* Quick Benefits List */}
+        <div class="grid grid-cols-4 gap-4 pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-2">
+                <span class="text-accent">✔</span>
+                <span class="text-sm font-semibold">Managed Safety</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-accent">✔</span>
+                <span class="text-sm font-semibold">Expert Insights</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-accent">✔</span>
+                <span class="text-sm font-semibold">Secure Sanctuary</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-accent">✔</span>
+                <span class="text-sm font-semibold">Seamless Operations</span>
+            </div>
+        </div>
 
       </div>
     </section>
-    {/* --- END OF UPCOMING EVENTS SECTION --- */}
+    {/* --- END OF HOW WE DO IT SECTION --- */}
+
+
+    {/* --- START OF WHO WE SERVE SECTION --- */}
+    <section class="py-8 bg-surface">
+      <div class="max-w-app mx-auto px-4">
+        <div class="text-center mb-2">
+          <h2 class="text-3xl sm:text-3xl font-bold text-accent mb-2">Who We Serve</h2>
+          <p class="text-muted-foreground max-w-2xl mx-auto">
+            We provide the professional environment and expertise required to meet diverse nature-focused goals.
+          </p>
+        </div>
+
+        {/* 2x2 Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          {/* 1. Campers */}
+          <div class="group bg-surface p-6 rounded-2xl shadow-md border-b-4 border-purple-500 transition-all hover:-translate-y-2">
+            <img src="/images/who-adventures.webp" class="w-full h-48 object-cover rounded-xl mb-4" alt="Research" />
+            <h3 class="text-xl font-semibold text-accent mb-2">Campers and Adventure Groups</h3>
+            <p class="text-sm text-foreground-light-bg">We provide a secure, all-inclusive environment for groups seeking to reconnect and grow through transformative overnight camping and forest immersion.</p>
+            {/* Update this link in your Who We Serve section */}
+            <a href="/services/camping#camping-adventure" class="mt-4 inline-flex items-center text-accent font-bold text-sm hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          {/* 2. Education */}
+          <div class="group bg-surface p-6 rounded-2xl shadow-md border-b-4 border-green-500 transition-all hover:-translate-y-2">
+            <img src="/images/who-enthusiasts.webp" class="w-full h-48 object-cover rounded-xl mb-4" alt="Education" />
+            <h3 class="text-xl font-semibold text-accent mb-2">Academic Institutions and Specialized Enthusiasts</h3>
+            <p class="text-sm text-foreground-light-bg">We provide students and nature enthusiasts an immersive forest environment where theory meets real-world scientific discovery and hands-on conservation.</p>
+            {/* Change the link in your Partnership page card */}
+            <a href="/services/school-programs#programs-for-every-level" class="mt-4 inline-flex items-center text-accent font-bold text-sm hover:underline">
+              Learn more →
+            </a>
+          </div>
+
+          {/* 3. Corporate */}
+          <div class="group bg-surface p-6 rounded-2xl shadow-md border-b-4 border-blue-500 transition-all hover:-translate-y-2">
+            <img src="/images/who-groups.webp" class="w-full h-48 object-cover rounded-xl mb-4" alt="Corporate" />
+            <h3 class="text-xl font-semibold text-accent mb-2">Corporate and Organized Groups</h3>
+            <p class="text-sm text-foreground-light-bg">We offer a unique, effective, and socially responsible environment for groups to foster teamwork, reflection, and collective problem-solving.</p>
+            <a href="/services/venue-hosting#venue-infrastructure" class="mt-4 inline-flex items-center text-accent font-bold text-sm hover:underline">
+              Learn more →
+            </a>
+          </div>
+
+          {/* 4. Event Organizers */}
+          <div class="group bg-surface p-6 rounded-2xl shadow-md border-b-4 border-orange-500 transition-all hover:-translate-y-2">
+            <img src="/images/who-events.webp" class="w-full h-48 object-cover rounded-xl mb-4" alt="Events" />
+            <h3 class="text-xl font-semibold text-accent mb-2">Event Organizers</h3>
+            <p class="text-sm text-foreground-light-bg">We deliver the secure, accessible, and compliant forest infrastructure required to host world-class public or private events.</p>
+            <a href="/services/events2#event-infra" class="mt-4 inline-flex items-center text-accent font-bold text-sm hover:underline">
+              Learn more →
+            </a>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </section>
+    {/* --- END OF WHO WE SERVE SECTION --- */}
+
 
     <Hr />
 
-    {/* --- START OF PARTNERS/ACCREDITATION SECTION --- */}
-    <section class="py-12 sm:py-16 bg-surface text-foreground">
+    {/* --- START OF WHY CHOOSE US SECTION --- */}
+    <section class="py-8 bg-surface">
       <div class="max-w-app mx-auto px-4">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-accent">
-          Our Valued Partners
-        </h2>
-        {/* NEW: Flexbox container for centering the grid */}
-        <div class="flex justify-center">
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
-                {/* Partner Logos */}
-                <div class="bg-surface p-4 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32">
-                    <img src="/images/partner-museums.png" alt="Partner Museums Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
-                </div>
-
-                <div class="bg-surface p-4 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32">
-                    <img src="/images/partner-kfs.png" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
-                </div>
-
-                <div class="bg-surface p-4 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32">
-                    <img src="/images/partner-nature-kenya.png" alt="Partner Nature Kenya Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300">
-                </div>
+        <h2 class="text-3xl text-accent font-bold text-center mb-6">Why Choose Ngubi?</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* 1. Safety */}
+          <div class="flex flex-col items-center text-center group">
+            <div class="mb-6 p-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center w-16 h-16 group-hover:scale-110 transition-transform">
+                <SvgIcon name="IconHash" class="w-8 h-8 ml-1" />
             </div>
+            <h4 class="text-lg font-bold mb-2">Safety & Security</h4>
+            <p class="text-sm text-foreground-light-bg">24/7 on-site security and KFS partnership for secure forest escorts.</p>
+          </div>
+
+          {/* 2. Values */}
+          <div class="flex flex-col items-center text-center group">
+            <div class="mb-6 p-4 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center w-16 h-16 group-hover:scale-110 transition-transform">
+                <SvgIcon name="IconSun" class="w-8 h-8 ml-1" />
+            </div>
+            <h4 class="text-lg font-bold mb-2">Values-Driven</h4>
+            <p class="text-sm text-foreground-light-bg">Rooted in integrity and stewardship, with a strict No Alcohol policy.</p>
+          </div>
+
+          {/* 3. Science */}
+          <div class="flex flex-col items-center text-center group">
+            <div class="mb-6 p-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center w-16 h-16 group-hover:scale-110 transition-transform">
+                <SvgIcon name="IconSearch" class="w-8 h-8 ml-1" />
+            </div>
+            <h4 class="text-lg font-bold mb-2">Scientifically Anchored</h4>
+            <p class="text-sm text-foreground-light-bg">Guided by a biodiversity report from the National Museums of Kenya.</p>
+          </div>
+
+          {/* 4. Infrastructure */}
+          <div class="flex flex-col items-center text-center group">
+            <div class="mb-6 p-4 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center w-16 h-16 group-hover:scale-110 transition-transform">
+                <SvgIcon name="IconMenuDeep" class="w-8 h-8 ml-1" />
+            </div>
+            <h4 class="text-lg font-bold mb-2">Professional Infrastructure</h4>
+            <p class="text-sm text-foreground-light-bg">Well-managed facilities with robust, system-led operational standards.</p>
+          </div>
+
+          {/* 5. Sustainability */}
+          <div class="flex flex-col items-center text-center group">
+            <div class="mb-6 p-4 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center w-16 h-16 group-hover:scale-110 transition-transform">
+                <SvgIcon name="IconSunHigh" class="w-8 h-8 ml-1" />
+            </div>
+            <h4 class="text-lg font-bold mb-2">Sustainable Operations</h4>
+            <p class="text-sm text-foreground-light-bg">Zero-waste processes, no single-use plastics, and community-first partnerships.</p>
+          </div>
+
+          {/* 6. Accessibility */}
+          <div class="flex flex-col items-center text-center group">
+            <div class="mb-6 p-4 rounded-full bg-red-100 text-red-600 flex items-center justify-center w-16 h-16 group-hover:scale-110 transition-transform">
+                <SvgIcon name="IconArrowRight" class="w-8 h-8 ml-1" />
+            </div>
+            <h4 class="text-lg font-bold mb-2">Strategic Accessibility</h4>
+            <p class="text-sm text-foreground-light-bg">Located 500m off the main highway, just 45 minutes from Nairobi.</p>
+          </div>
+
         </div>
       </div>
     </section>
-    {/* --- END OF PARTNERS/ACCREDITATION SECTION --- */}
+    {/* --- END OF WHY CHOOSE US SECTION --- */}
 
+
+    
+    <Hr />
+
+
+    {/* --- START OF FOREST HIGHLIGHTS & COMMUNITY EVENTS SECTION --- */}
+    <section class="py-4 sm:py-8 bg-surface">
+      <div class="max-w-app mx-auto px-4">
+        
+        {/* Section Header */}
+        <div class="text-center mb-2">
+          <h2 class="text-3xl sm:text-4xl font-bold text-accent mb-2">
+            Forest Highlights & Community Events
+          </h2>
+          <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Discover our recent community-led journeys or partner with us to bring your own vision to the forest.
+          </p>
+        </div>
+
+        {/* 2x2 Grid Container */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          {/* 1. Birding Highlight Card */}
+          <div class="group overflow-hidden rounded-2xl bg-surface shadow-md border border-gray-100 transition-all hover:shadow-xl">
+            <div class="relative h-64 overflow-hidden">
+              <img 
+                src="/images/highlight-birding.webp" 
+                alt="Birding with Nature Kenya" 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Badge: Can be changed to "Upcoming Event" if needed */}
+              <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Recent Highlight
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-accent mb-2">Birding with Nature Kenya</h3>
+              <p class="text-foreground-light-bg leading-relaxed mb-2">
+                We regularly host expert-led birdwalks to explore the vibrant birdlife of the Kikuyu Escarpment. Discover over 74 documented species, including the Hartlaub's Turaco.
+              </p>
+              <a href="/events" class="inline-flex items-center font-bold text-accent hover:underline">
+                View Birding Events <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* 2. MTB Highlight Card */}
+          <div class="group overflow-hidden rounded-2xl bg-surface shadow-md border border-gray-100 transition-all hover:shadow-xl">
+            <div class="relative h-64 overflow-hidden">
+              <img 
+                src="/images/highlight-mtb.webp" 
+                alt="MTB Escarpment Ride" 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Recent Highlight
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-accent mb-2">Escarpment View MTB Rides</h3>
+              <p class="text-foreground-light-bg leading-relaxed mb-2">
+                Our technical trails play host to community group rides designed for rewarding views of the Rift Valley Escarpment.
+              </p>
+              <a href="/events" class="inline-flex items-center font-bold text-accent hover:underline">
+                Explore Cycling Events <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* 3. Event Organizer CTA (Targets Pillar 4) */}
+        <div class="mt-12 p-4 bg-accent/5 rounded-3xl border-2 border-dashed border-accent/20 text-center">
+          <!-- <h3 class="text-xl font-bold text-accent mb-2">Have a vision for a forest event?</h3> -->
+          <p class="text-muted-foreground font-bold mb-6">We transform the wild forest into a secure sanctuary for discovery, connection, and adventure.</p>
+          <LinkButton href="/services/events2#bespoke-models" class="bg-accent text-white px-8 py-3 rounded-2xl font-bold shadow-lg hover:bg-accent-dark transition-all">
+            Partner With Us
+          </LinkButton>
+        </div>
+
+      </div>
+    </section>
+    {/* --- END OF FOREST HIGHLIGHTS & COMMUNITY EVENTS SECTION --- */}
+
+
+    <Hr />
+
+    
   </main>
 
   <Footer class="bg-background" />

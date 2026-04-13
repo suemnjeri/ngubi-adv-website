@@ -7,10 +7,13 @@ import Footer from '../components/Footer.astro';
 // import LinkButton from '../components/LinkButton.astro';
 
 // Import title image
-import AboutTitleImage from '/public/images/title-about-page1.webp';
+import AboutTitleImage from '/public/images/title-our-story.webp';
 // Import images for content sections
 import StoryBackground from '/public/images/about-our-story-bg1.webp'; // Placeholder for the background of the history section
 import FounderImage from '/public/images/gitau-njoroge.webp'; // Placeholder for the founder's photo
+
+// Import the group image for the guides section
+import GuidesGroupImage from '/public/images/ngubi-guides-team.webp';
 ---
 <Layout title="About Us - Ngubi Adventure Forest Camp">
   <Header />
@@ -33,60 +36,81 @@ import FounderImage from '/public/images/gitau-njoroge.webp'; // Placeholder for
     {/* Section 1: Our Journey and History */}
     <section class="relative hero-full-width h-[500px] sm:h-[500px]  mb-2 flex items-center bg-cover bg-center" style={`background-image: url('${StoryBackground.src}');`}>
         <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative z-10 max-w-2xl mx-auto px-4 py-8 sm:py-12 text-white text-center">
-            <h2 class="text-4xl sm:text-5xl font-bold mb-4">Our Journey</h2>
-            <p class="text-lg sm:text-xl leading-relaxed">
-                Our story began in 2017 with a bold government tender application to lease a piece of the Ngubi Forest, within the greater Uplands forest system. Eight years later, after countless government offices, helpful staff, meticulous paperwork, and the support of many dedicated individuals, we have learnt lessons in  patience, faith, and immense gratitude.
+        
+        <div class="relative z-10 max-w-2xl mx-auto px-6 py-6 sm:py-12 text-white text-center bg-black/50 backdrop-blur-sm rounded-3xl border border-white/10">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-2">Our Journey</h2>
+            <p class=" sm:text-xl leading-relaxed">
+                Our story began in 2017 with a bold government tender application to lease a piece of the Ngubi Forest, within the greater Uplands forest system. Eight years later, after countless government offices, helpful staff, meticulous paperwork, and the support of many dedicated individuals, we have learnt lessons in patience, faith, and immense gratitude.
             </p>
-            <p class="text-lg sm:text-xl leading-relaxed mt-4">
+            <p class="text-lg sm:text-xl leading-relaxed mt-6">
                 Today, our doors are finally open, and we are ready to welcome you to this wonderful piece of God's creation. We invite you to create memories, share adventures, and discover the wonder of this special forest alongside us.
             </p>
         </div>
+
     </section>
 
 
-    <!-- {/* Section 1: Our Journey and History - Shorter Banner Version */}
-    <section class="relative w-full h-[300px] sm:h-[400px] mb-12 flex items-center justify-center bg-cover bg-center" style={`background-image: url('${StoryBackground.src}');`}>
-        <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative z-10 max-w-2xl px-4 text-white text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Our Journey</h2>
-            <p class="text-lg leading-relaxed hidden sm:block">
-                Our story began in 2017 with a bold application for a government lease for a piece of the Ngubi Forest, within the greater Uplands forest system. Over the next eight years, a journey of countless government offices, meticulous paperwork, and the support of many dedicated individuals taught us lessons in <strong>patience, faith, and immense gratitude.</strong>
+    {/* Section: Vision & Values - Stacked Layout */}
+    <section class="max-w-app mx-auto px-6 py-10 bg-surface">
+        <div class="max-w-4xl mx-auto text-center mb-2">
+            <h2 class="text-3xl font-bold mb-6 text-accent italic">A Sanctuary with a Purpose</h2>
+            <p class="text-lg text-foreground leading-relaxed mb-6">
+                Our vision is to lead as an eco-friendly sanctuary that harmonizes nature-based recreation with environmental stewardship. We are dedicated to empowering our local community and ensuring the long-term health of the Ngubi Forest.
+            </p>
+            <p class="text-lg text-foreground leading-relaxed">
+                At Ngubi, we offer more than adventure; we provide an opportunity to become an active contributor to conservation. Our success is inextricably linked to the well-being of the forest and the community that calls it home.
             </p>
         </div>
-    </section> -->
-    
-    {/* Section 2: Our Founder - Zigzag Layout */}
-    <section class="max-w-app mx-auto px-4 py-8 sm:py-12 mb-4 text-foreground">
-        <div class="text-center">
-            <h2 class="text-4xl sm:text-5xl font-bold mb-8 text-accent">Our Founder</h2>
+
+        {/* Horizontal Values Bar */}
+        <div class="bg-surface-dark p-6 rounded-2xl border border-border shadow-sm">
+            <h3 class="text-center text-sm font-bold mb-6 text-foreground uppercase tracking-widest">Our Guiding Principles</h3>
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-text-muted font-medium">
+                <li class="flex items-center gap-2"><span class="text-accent">✔</span> Sustainability First</li>
+                <li class="flex items-center gap-2"><span class="text-accent">✔</span> Community Partnership</li>
+                <li class="flex items-center gap-2"><span class="text-accent">✔</span> Leave No Trace</li>
+                <li class="flex items-center gap-2"><span class="text-accent">✔</span> No Alcohol Policy</li>
+                <li class="flex items-center gap-2"><span class="text-accent">✔</span> Radical Transparency</li>
+            </ul>
         </div>
-        <div class="flex flex-col md:flex-row items-center md:space-x-8">
-            {/* Image on the left */}
-            <div class="md:w-1/2 mb-6 md:mb-0 relative rounded-lg overflow-hidden shadow-lg aspect-w-1 aspect-h-1 md:aspect-w-3 md:aspect-h-4">
-                <img
-                    src={FounderImage.src}
-                    alt="Photo of Gitau Njoroge, founder of Ngubi Adventure Forest Camp"
-                    width={FounderImage.width}
-                    height={FounderImage.height}
-                    class="w-full h-full object-cover rounded-lg"
-                />
-                <div class="absolute inset-0 bg-black opacity-20 rounded-lg"></div>
-            </div>
-            {/* Content on the right */}
-            <div class="md:w-1/2 text-text-muted">
-                <!-- <p class="text-lg mb-4">
-                    <strong>Gitau Njoroge</strong>
-                </p> -->
-                <p class="mb-2">
-                    <strong>Gitau Njoroge</strong> saw potential where many did not and followed through with a resilience few could muster. His journey was paved with the unwavering support of mentors, encouragers, cheerleaders, and prayer partners who believed in the vision. He brings a unique blend of business acumen and a profound connection to nature that is the very foundation of Ngubi Adventure Forest Camp.
+    </section>
+
+
+
+    {/* Section 3: The Guides */}
+    <section class="max-w-app mx-auto px-6 py-10 border-t border-border">
+        <div class="text-center mb-2">
+            <h2 class="text-4xl font-bold mb-4 text-accent italic">The Guides</h2>
+            <p class="text-muted-foreground max-w-2xl mx-auto italic">
+                Meticulous, passionate, and deeply connected to the land.
+            </p>
+        </div>
+
+        {/* Wide Team Image */}
+        <div class="relative overflow-hidden rounded-3xl mb-12 shadow-xl aspect-[21/9] bg-surface">
+            <img src={GuidesGroupImage.src} alt="The Ngubi team" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-2xl font-bold text-foreground mb-6">Stewards of the Escarpment</h3>
+            <div class="text-lg text-text-muted leading-relaxed space-y-6 text-justify sm:text-center">
+                <p>
+                    Behind every trail and every sensory journey at Ngubi is a dedicated group of conservationists, organizers, and forest lovers. Our guides are experts on the Uplands ecosystem, trained to bridge the gap between outdoor adventure and environmental education.
                 </p>
-                <p class="mb-4">
-                    With a deep passion for connecting people with nature, Gitau has a long history of organizing group hikes and outdoor activities. He is dedicated to conservation and promotes sustainable practices as a means of fostering community and environmental stewardship.
+                <p>
+                    The team coordinates everything from complex group logistics to biodiversity monitoring in partnership with the <strong>Kenya Forest Service (KFS)</strong>. We operate with a shared discipline rooted in faith and patience, maintaining a deep-seated gratitude for the opportunity to protect this piece of God’s creation.
+                </p>
+                <p>
+                    Your time in the forest — whether for a school program, a mentorship retreat, or a quiet camping experience — is our priority. We are committed to ensuring every visit remains undisturbed, safe, and truly restorative for the soul.
                 </p>
             </div>
         </div>
     </section>
+
+
+
+    
+
 
   </Main>
   <Footer />

@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Main from '../layouts/Main.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import BookingTitleImage from '/public/images/title-booking-page2.webp';
+import BookingTitleImage from '/public/images/title-booking.webp';
 
 import SvgIcon from '../components/SvgIcon.astro';
 
@@ -78,16 +78,16 @@ import SvgIcon from '../components/SvgIcon.astro';
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
             <div>
               <label for="serviceType" class="block text-foreground text-sm font-bold mb-2">Which service are you interested in?</label>
-                  <select id="serviceType" name="serviceType" required class="appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-white text-foreground dark:bg-gray-700 dark:text-white border-border">
-                    <option value="">-- Please select a service --</option>
-                    <option value="Hiking">Hiking</option>
-                    <option value="Mountain Biking">Mountain Biking Escarpment Escapade!</option>
-                    <option value="Group Adventure">Group Teambuilding</option>
-                    <option value="Forest Stopover & Picnic">Forest Picnic</option>
-                    <option value="Overnight Camping">Overnight Camping</option>
-                    <option value="Biodiversity & Conservation Programs">Conservation Education Program</option>
-                    <option value="Other / General Inquiry">Other / General Inquiry</option>
-                </select>
+              <select id="serviceType" name="serviceType" required class="appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-white text-foreground dark:bg-gray-700 dark:text-white border-border">
+                <option value="">-- Please select a service --</option>
+                
+                <option value="Overnight Camping">Overnight Forest Camping</option>
+                <option value="School Programs">School & Biodiversity Education Program</option>
+                <option value="Venue Hire"> Private Venue Hire </option>
+                <option value="Partnership Events">Event Partnership and collaboration </option>
+                
+                <option value="Other / General Inquiry">Other / General Inquiry</option>
+              </select>
             </div>
 
              {/* The date field is hidden for pre-launch min="2025-11-15"*/}
@@ -133,23 +133,24 @@ import SvgIcon from '../components/SvgIcon.astro';
         <div class="flex items-center justify-center text-foreground text-xl font-bold gap-x-2 mb-2">
             {/* Phone/ Whatsapp Icon SVG */}
             <SvgIcon name="IconWhatsapp" class="w-6 h-6 fill-current" />
-            <a href="tel:+2547XX000000" class="text-accent hover:underline">+254 702 428 654</a>
+            <a href="tel:+254702428654" class="text-accent hover:underline">+254 702 428 654</a> or <a href="tel:+254712505845" class="text-accent hover:underline">+254 712 505 845</a>
 
         </div>
         <div class="flex items-center justify-center text-foreground text-xl font-bold gap-x-2">
             {/* Email Icon SVG */}
             <SvgIcon name="IconMail" class="w-6 h-6 fill-current" />
 
-            <a href="mailto:info@ngubiadventure.com" class="text-accent hover:underline">info@ngubiadventures.or.ke</a>
+            <a href="mailto:info@ngubiadventures.or.ke" class="text-accent hover:underline">info@ngubiadventures.or.ke</a>
         </div>
     </div>
 
     {/* Optional Section: Important Notes */}
     <section class="max-w-3xl mx-auto mt-12 mb-6 p-6 bg-surface-dark border border-border rounded-lg shadow-md">
         <h3 class="text-xl font-bold mb-4 text-accent">Important Notes:</h3>
-        <ul class="list-disc list-inside text-text-muted space-y-2">
-            <li>For group bookings (especially corporate or school trips), we highly recommend booking in advance to ensure we can plan and prepare for your specific needs.</li>
-            <li>Picnic access is generally flexible for walk-ins, but booking helps us anticipate demand and prepare for your arrival.</li>
+        <ul class="list-disc list-outside text-text-muted space-y-2 text-justify">
+            <li>To maintain the serenity and security of the forest, we operate on a <strong>booking-only basis</strong> and kindly ask that all visits are scheduled at least 24 hours in advance.</li>
+            <li>We do not currently facilitate unscheduled walk-ins at the gate. This ensures we can manage forest capacity and prepare the grounds specifically for your arrival, providing your group with a truly dedicated experience.</li>
+            <li>By booking ahead, you help us maintain a peaceful, eco-conscious environment and ensure your group enjoys an undisturbed connection with nature.</li>
         </ul>
     </section>
   </Main>
