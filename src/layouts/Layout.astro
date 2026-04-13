@@ -154,18 +154,37 @@ const structuredData = {
 
     <ClientRouter />
 
-    <script is:inline>
-      // This event fires every time Astro finishes a View Transition (a 'soft' navigation)
+  <script is:inline>
+      // 1. LOADING BAR LOGIC
+      // Fires when a user clicks a link and the fetch starts
+      document.addEventListener('astro:before-preparation', () => {
+        const bar = document.getElementById('loading-bar');
+        if (bar) {
+          bar.style.width = '30%';
+          bar.style.opacity = '1';
+        }
+      });
+
+      // Fires when the new page content has been fetched and is ready to swap
+      document.addEventListener('astro:after-preparation', () => {
+        const bar = document.getElementById('loading-bar');
+        if (bar) {
+          bar.style.width = '100%';
+          setTimeout(() => {
+            bar.style.opacity = '0';
+            // Reset width after fade out so it can zoom again next time
+            setTimeout(() => { bar.style.width = '0%'; }, 300);
+          }, 300);
+        }
+      });
+
+      // 2. ANALYTICS LOGIC (Existing)
       document.addEventListener('astro:page-load', () => {
-        // The gtag function is defined by the script injected via partytown config
         if (typeof gtag === 'function') {
-          // Manually push a page_view event with the new URL and title.
-          // The 'send_to' argument is CRITICAL for it to associate with your GA4 property.
           gtag('event', 'page_view', {
             page_title: document.title,
             page_location: window.location.href,
-            'send_to': 'G-PNRTD16ZK6' // ⬅️ 
-            // G-PNRTD16ZK6 Replace with your actual Measurement ID if different
+            'send_to': 'G-PNRTD16ZK6'
           });
           console.log('GA4 page_view fired after Astro transition.');
         }
@@ -175,6 +194,7 @@ const structuredData = {
     <script is:inline src="/toggle-theme.js"></script>
   </head>
   <body class="overflow-x-hidden max-w-full">
+    <div id="loading-bar" class="fixed top-0 left-0 h-1 z-[100] transition-all duration-300 opacity-0 w-0" style="background-color: var(--accent-dark);"></div>
     <slot />
     <BackToTopButton /> {/* This line should be present */}
   </body>
