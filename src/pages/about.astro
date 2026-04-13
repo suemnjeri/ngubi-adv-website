@@ -34,19 +34,21 @@ import GuidesGroupImage from '/public/images/ngubi-guides-team.webp';
     {/* END Playful Image Title */}
 
     {/* Section 1: Our Journey and History */}
-    <section class="relative hero-full-width h-[500px] sm:h-[500px]  mb-12 flex items-center bg-cover bg-center" style={`background-image: url('${StoryBackground.src}');`}>
+    <section 
+        class="relative hero-full-width min-h-[500px] flex items-center bg-cover bg-center py-12" 
+        style={`background-image: url('${StoryBackground.src}');`}
+    >
         <div class="absolute inset-0 bg-black opacity-60"></div>
         
-        <div class="relative z-10 max-w-2xl mx-auto px-6 py-10 sm:py-14 text-white text-center bg-black/50 backdrop-blur-sm rounded-3xl border border-white/10">
-            <h2 class="text-4xl sm:text-5xl font-bold mb-2">Our Journey</h2>
-            <p class=" sm:text-xl leading-relaxed">
+        <div class="relative z-10 max-w-2xl mx-auto px-6 py-12 text-white text-center bg-black/50 backdrop-blur-md rounded-3xl border border-white/10 mx-4">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-4">Our Journey</h2>
+            <p class="text-base sm:text-xl leading-relaxed">
                 Our story began in 2017 with a bold government tender application to lease a piece of the Ngubi Forest, within the greater Uplands forest system. Eight years later, after countless government offices, helpful staff, meticulous paperwork, and the support of many dedicated individuals, we have learnt lessons in patience, faith, and immense gratitude.
             </p>
-            <p class="text-lg sm:text-xl leading-relaxed mt-6">
+            <p class="text-base sm:text-xl leading-relaxed mt-6">
                 Today, our doors are finally open, and we are ready to welcome you to this wonderful piece of God's creation. We invite you to create memories, share adventures, and discover the wonder of this special forest alongside us.
             </p>
         </div>
-
     </section>
 
 
@@ -93,7 +95,7 @@ import GuidesGroupImage from '/public/images/ngubi-guides-team.webp';
 
         <div class="max-w-4xl mx-auto text-center">
             <h3 class="text-2xl font-bold text-foreground mb-6">Stewards of the Escarpment</h3>
-            <div class="text-lg text-text-muted leading-relaxed space-y-6 text-justify sm:text-center">
+            <div class="text-lg text-text-muted leading-relaxed space-y-6 text-center sm:text-center">
                 <p>
                     Behind every trail and every sensory journey at Ngubi is a dedicated group of conservationists, organizers, and forest lovers. Our guides are experts on the Uplands ecosystem, trained to bridge the gap between outdoor adventure and environmental education.
                 </p>
