@@ -56,7 +56,7 @@ import ClubsImg from '/public/images/program-club1.webp';
     {/* 1. Anchored in Scientific Authority */}
     <section class="max-w-app mx-auto px-4 py-2 sm:py-4 flex flex-col md:flex-row items-center md:space-x-8 mb-1">
       <div class="md:w-1/2 mb-2 md:mb-0 relative rounded-lg overflow-hidden shadow-lg aspect-w-4 aspect-h-3 md:aspect-h-4">
-        <img src={ScientificAuthorityImg.src} alt="Junior Forest Explorers Program" class="w-full h-full object-cover rounded-lg">
+        <img src={ScientificAuthorityImg.src} alt="Junior Forest Explorers Program" class="w-full h-full object-cover rounded-lg" loading="lazy">
         <div class="absolute inset-0 bg-black opacity-20 rounded-lg"></div>
       </div>
       <div class="md:w-1/2 text-text-muted">
@@ -125,7 +125,7 @@ import ClubsImg from '/public/images/program-club1.webp';
       </div>
 
       <div class="md:w-1/2 mb-2 md:mb-0 relative rounded-lg overflow-hidden shadow-lg aspect-w-4 aspect-h-3 md:aspect-h-4">
-        <img src={EducationAlignmentImg.src} alt="Junior Forest Explorers Program" class="w-full h-full object-cover rounded-lg">
+        <img src={EducationAlignmentImg.src} alt="Junior Forest Explorers Program" class="w-full h-full object-cover rounded-lg" loading="lazy">
         <div class="absolute inset-0 bg-black opacity-20 rounded-lg"></div>
       </div>
 
@@ -143,6 +143,7 @@ import ClubsImg from '/public/images/program-club1.webp';
             src={TailoredProgramsImg.src} 
             alt="Tailored Programs at Ngubi Forest" 
             class="w-full h-full object-cover"
+            loading="lazy"
           />
           {/* Overlay for aesthetic depth */}
           <div class="absolute inset-0 flex items-center justify-center">
@@ -217,21 +218,21 @@ import ClubsImg from '/public/images/program-club1.webp';
                 {/* Card 1 */}
                 <div class="p-6 bg-surface rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 flex flex-col items-center">
                     {/* Changed rounded-full to rounded-xl for rectangle effect */}
-                    <img src={ForestImage.src} alt="Ngubi Forest" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" />
+                    <img src={ForestImage.src} alt="Ngubi Forest" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" loading="lazy"/>
                     <h4 class="font-bold mb-2 text-foreground">1,950-Hectare Forest</h4>
                     <p class="text-text-muted text-sm leading-relaxed">A vast, high-altitude (2,100m–2,300m) living laboratory for all ages.</p>
                 </div>
 
                 {/* Card 2 */}
                 <div class="p-6 bg-surface rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 flex flex-col items-center">
-                    <img src={HallImage.src} alt="Canopy Hall" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" />
+                    <img src={HallImage.src} alt="Canopy Hall" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" loading="lazy"/>
                     <h4 class="font-bold mb-2 text-foreground">Canopy Hall & Field Labs</h4>
                     <p class="text-text-muted text-sm leading-relaxed">Open-sided 15m x 12m hall and dedicated fields for simulations and experiments.</p>
                 </div>
 
                 {/* Card 3 */}
                 <div class="p-6 bg-surface rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 flex flex-col items-center">
-                    <img src={SafetyImage.src} alt="Safety & Logistics" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" />
+                    <img src={SafetyImage.src} alt="Safety & Logistics" class="w-full h-48 object-cover rounded-xl mb-6 border-2 border-accent p-1" loading="lazy"/>
                     <h4 class="font-bold mb-2 text-foreground">Safety & Logistics</h4>
                     <p class="text-text-muted text-sm leading-relaxed">24/7 security, KFS partnership, secure bus parking, and fully equipped kitchen.</p>
                 </div>

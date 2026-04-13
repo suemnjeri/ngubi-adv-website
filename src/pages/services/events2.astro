@@ -92,6 +92,7 @@ function formatDate(date: Date): string {
                     src={data.eventImage}
                     alt={data.title}
                     class="rounded-lg object-cover w-full h-48 md:h-full"
+                    loading="lazy"
                   />
                 </div>
                 <div class="flex-grow">
@@ -143,6 +144,7 @@ function formatDate(date: Date): string {
                     src={PartnershipLandscape.src} 
                     alt="Mountain biking and trail running terrain at Ngubi" 
                     class="w-full h-[250px] object-cover object-center"
+                    loading="lazy"
                 />
             </div>
         </div>
@@ -210,6 +212,7 @@ function formatDate(date: Date): string {
                 src={image.src}
                 alt={image.alt}
                 class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
               />
             </div>
           ))}

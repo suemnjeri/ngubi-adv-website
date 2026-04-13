@@ -55,21 +55,21 @@ import ValuesImg from '/public/images/values-service.webp';
     <div class="grid md:grid-cols-3 gap-8">
         {/* Canopy Hall */}
         <div class="bg-surface p-2 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
-        <img src="/images/canopy-hall.webp" alt="Canopy Hall" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm"/>
+        <img src="/images/canopy-hall.webp" alt="Canopy Hall" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm" loading="lazy"/>
         <h3 class="text-xl font-bold mb-3 text-foreground">The Canopy Hall</h3>
         <p class="text-text-muted">A multi-purpose open-sided hall, providing a sheltered, atmospheric space for briefings, formal dining, or creative workshops.</p>
         </div>
 
         {/* Multi-Functional Fields */}
         <div class="bg-surface p-2 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
-        <img src="/images/fields.webp" alt="Multi-functional Fields" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm"/>
+        <img src="/images/fields.webp" alt="Multi-functional Fields" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm" loading="lazy"/>
         <h3 class="text-xl font-bold mb-3 text-foreground">Multi-Functional Fields</h3>
         <p class="text-text-muted">Two expansive grass fields perfect for tent setups, outdoor lounging, or high-energy team events.</p>
         </div>
 
         {/* Essential Support */}
         <div class="bg-surface p-2 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
-        <img src="/images/support.webp" alt="Essential Support" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm"/>
+        <img src="/images/support.webp" alt="Essential Support" class="w-full h-48 object-cover rounded-xl mb-6 shadow-sm" loading="lazy"/>
         <h3 class="text-xl font-bold mb-2 text-foreground">Essential Support</h3>
         <p class="text-text-muted">We provide a commercial kitchen, modern washrooms, secure parking, and professional waste management.</p>
         </div>
@@ -92,6 +92,7 @@ import ValuesImg from '/public/images/values-service.webp';
                 src="/images/scenery1.webp" 
                 alt="Ngubi Forest Scenery" 
                 class="w-full h-[150px] object-cover rounded-3xl shadow-lg"
+                loading="lazy"
             />
             <!-- relative h-[150px] sm:h-[200px] w-full overflow-hidden rounded-3xl -->
         </div>
@@ -106,6 +107,7 @@ import ValuesImg from '/public/images/values-service.webp';
                         src="/images/icon-mentorship.jpg" 
                         alt="An icon of a candle flame" 
                         class="w-12 h-12 rounded-full object-cover border-2 border-accent shadow-inner"
+                        loading="lazy"
                     />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-foreground">Mentorship & Retreats</h4>
@@ -119,6 +121,7 @@ import ValuesImg from '/public/images/values-service.webp';
                         src="/images/icon-milestones.jpg" 
                         alt="An icon of arch-shaped leaves" 
                         class="w-12 h-12 rounded-full object-cover border-2 border-accent shadow-inner"
+                        loading="lazy"
                     />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-foreground">Life's Milestones</h4>
@@ -132,6 +135,7 @@ import ValuesImg from '/public/images/values-service.webp';
                         src="/images/icon-forest-bathing.jpg" 
                         alt="An icon of the sun behing 2 trees" 
                         class="w-12 h-12 rounded-full object-cover border-2 border-accent shadow-inner"
+                        loading="lazy"
                     />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-foreground">Content & Forest Bathing</h4>
@@ -147,7 +151,7 @@ import ValuesImg from '/public/images/values-service.webp';
     <section id="signature-catering" class="bg-surface-alt py-8">
         <div class="max-w-app mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
-                <img src={CateringImg.src} alt="Catering" class="rounded-3xl shadow-xl w-full"/>
+                <img src={CateringImg.src} alt="Catering" class="rounded-3xl shadow-xl w-full" loading="lazy"/>
             </div>
             <div class="md:w-1/2">
                 <h2 class="text-2xl font-bold mb-2 text-accent">Signature Catering</h2>

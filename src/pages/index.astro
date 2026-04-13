@@ -53,13 +53,12 @@ function formatDate(date: Date): string {
       muted
       loop
       playsinline
-      preload="auto" 
+      preload="metadata" 
+      poster="/images/hero-poster.jpg"
       class="absolute inset-0 w-full h-full object-cover"
-      aria-label="Background video of Ngubi Forest activities"
     >
       <source src="/videos/hero-background-video3.webm" type="video/webm" />
       <source src="/videos/hero-background-video3.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
     </video>
 
     {/* Content Container: Positioned at the bottom */}
@@ -254,6 +253,7 @@ function formatDate(date: Date): string {
           <img 
             src="/images/gallery-1.webp" 
             alt="Professional infrastructure at Ngubi Forest Camp" 
+            loading="lazy"
             class="w-full h-[250px] sm:h-[300px] object-cover"
           />
           {/* Optional: A subtle dark gradient at the bottom for depth */}
@@ -444,6 +444,7 @@ function formatDate(date: Date): string {
                 src="/images/highlight-birding.webp" 
                 alt="Birding with Nature Kenya" 
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               {/* Badge: Can be changed to "Upcoming Event" if needed */}
               <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -468,6 +469,7 @@ function formatDate(date: Date): string {
                 src="/images/highlight-mtb.webp" 
                 alt="MTB Escarpment Ride" 
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                 Recent Highlight
