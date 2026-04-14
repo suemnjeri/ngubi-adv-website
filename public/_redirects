@@ -1,11 +1,15 @@
 # Specific Old-to-New Mappings
-/events/forest-ecology-walk/   /services/events2             301
-/programs/                     /services/school-programs     301
-/events/                       /services/events2             301
-/services/forest-adventures/   /services/camping             301
+/events/forest-ecology-walk/    /services/events2             301
+/programs/                      /services/school-programs     301
+/events/                        /services/events2             301
+/services/forest-adventures/    /services/camping             301
+/services/group-adventure/      /services/camping             301
+/events/master-event-template/  /#our-services                301
+/services/forest-stopover-picnic/   /#our-services                301
+/search/                            /#our-services                301
 
 # General Cleanup
-/services                      /                             301
+/services                      /#our-services                301
 
 # DO NOT use /* / 301! unless you want to hide your entire site.
 # Instead, use a 404 fallback only for things that truly don't exist:
