@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Layout from "../../layouts/Layout.astro";
+import Main from "../../layouts/Main.astro";
+import { SITE } from "../../config";
+
+// 1. Fetch all unique tags from active markdown posts
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+---
+
+<Layout title={`Tags | ${SITE.title}`}>
+  <Header />
+  
+  {/* Using a margin-top div completely bypasses component property bugs */}
+  <Main pageTitle="" pageDesc="">
+    
+    {/* This inner container recreates the padding layer from your working pages */}
+    <div class="pt-10 pb-12 max-w-6xl mx-auto px-6 bg-surface text-foreground">
+      <h1 class="text-4xl font-bold mb-3 text-skin-base">Filter by Category</h1>
+      <p class="text-skin-muted mb-8">Select a category tag below to view related updates and announcements.</p>
+      
+      <ul class="flex flex-wrap gap-4 mt-8">
+        {tags.map(tag => (
+          <li>
+            <a
+              href={`/tags/${tag}/`}
+              class="inline-block bg-skin-card border border-skin-line rounded-lg px-5 py-3 text-lg font-medium text-skin-base hover:text-skin-accent hover:border-skin-accent transition-colors duration-200 shadow-sm"
+            >
+              #{tag}
+              <span class="text-sm text-skin-muted ml-1">
+                ({posts.filter(p => p.data.tags.includes(tag)).length})
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    </Main>
+  <!-- </div> -->
+  
+  <Footer />
+</Layout>

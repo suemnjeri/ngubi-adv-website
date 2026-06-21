@@ -1,0 +1,135 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Main from "../../layouts/Main.astro";
+import Datetime from "../../components/Datetime.astro";
+import LinkButton from "../../components/LinkButton.astro"; // Import the button component if theme uses it
+import { SITE } from "../../config";
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const sortedPosts = posts.sort(
+    (a, b) => new Date(b.data.pubDatetime).getTime() - new Date(a.data.pubDatetime).getTime()
+  );
+  return paginate(sortedPosts, { pageSize: SITE.postPerPage });
+}
+
+const { page } = Astro.props;
+
+// Fetch unique tags for the bottom navigation tray
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const uniqueTags = [...new Set(allPosts.flatMap(post => post.data.tags))].sort();
+---
+
+<Layout title={`News Center | ${SITE.title}`}>
+  <Header />
+  
+  <Main pageTitle="" pageDesc="">
+    <div class="pt-10 pb-12 max-w-6xl mx-auto px-6 bg-surface text-foreground">
+      
+      <h1 class="text-4xl font-bold mb-2 text-skin-base">News Center</h1>
+      <p class="text-skin-muted mb-10">Stay updated with our latest camp upgrades, upcoming events, and forest insights.</p>
+
+      {/* Main Grid */}
+      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {page.data.map(post => {
+          const imageUrl = typeof post.data.ogImage === 'string' 
+            ? post.data.ogImage 
+            : (post.data.ogImage?.src || "/assets/default-og.png");
+
+          return (
+            <li class="flex flex-col border border-skin-line rounded-lg overflow-hidden bg-skin-card shadow-sm transition-transform duration-200 hover:-translate-y-1 group">
+              <a href={`/news/${post.id}/`} class="block overflow-hidden aspect-video bg-neutral-200">
+                <img 
+                  src={imageUrl} 
+                  alt={post.data.title}
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </a>
+              
+              <div class="flex flex-col flex-grow p-5">
+                <a href={`/news/${post.id}/`} class="inline-block">
+                  <h3 class="text-xl font-semibold text-skin-base group-hover:text-skin-accent transition-colors duration-200 line-clamp-2 leading-snug">
+                    {post.data.title}
+                  </h3>
+                </a>
+                
+                <div class="mt-2 text-sm text-skin-muted">
+                  <Datetime pubDatetime={post.data.pubDatetime} modDatetime={post.data.modDatetime} />
+                </div>
+                
+                <p class="mt-3 text-skin-base opacity-80 text-sm line-clamp-2 mb-4">
+                  {post.data.description}
+                </p>
+
+                <div class="mt-auto pt-3 border-t border-skin-line flex flex-wrap gap-1.5">
+                  {post.data.tags.map(tag => (
+                    <a 
+                      href={`/tags/${tag}/`} 
+                      class="text-xs bg-neutral-100 dark:bg-neutral-800 hover:text-skin-accent px-2 py-0.5 rounded text-skin-muted font-medium transition-colors"
+                    >
+                      #{tag}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* RESTORED: Standard Pagination Navigation Block */}
+      {
+        (page.url.prev || page.url.next) && (
+          <nav class="flex justify-center items-center gap-4 mt-8 mb-2" aria-label="Pagination">
+            <LinkButton
+              disabled={!page.url.prev}
+              href={page.url.prev}
+              className={`px-4 py-2 bg-skin-card border border-skin-line rounded-md font-medium text-sm transition-colors ${!page.url.prev ? "opacity-50 pointer-events-none" : "hover:text-skin-accent hover:border-skin-accent"}`}
+              ariaLabel="Previous"
+            >
+              ← Previous
+            </LinkButton>
+            
+            <span class="text-sm font-medium text-skin-base">
+              Page {page.currentPage} of {page.lastPage}
+            </span>
+            
+            <LinkButton
+              disabled={!page.url.next}
+              href={page.url.next}
+              className={`px-4 py-2 bg-skin-card border border-skin-line rounded-md font-medium text-sm transition-colors ${!page.url.next ? "opacity-50 pointer-events-none" : "hover:text-skin-accent hover:border-skin-accent"}`}
+              ariaLabel="Next"
+            >
+              Next →
+            </LinkButton>
+          </nav>
+        )
+      }
+
+      {/* Explore by Category Layout Bar */}
+      <div class="mt-16 pt-4 border-t border-skin-line">
+        <span class="text-xs font-bold uppercase tracking-wider text-skin-muted block mb-3">Explore by Category:</span>
+        <div class="flex flex-wrap gap-2">
+          <a href="/tags/" class="bg-skin-accent/10 text-skin-accent px-3 py-1.5 rounded-md text-sm font-medium hover:bg-skin-accent hover:text-white transition-colors">
+            # All Categories
+          </a>
+          {uniqueTags.map(tag => (
+            <a 
+              href={`/tags/${tag}/`} 
+              class="bg-neutral-100 dark:bg-neutral-800 text-skin-base px-3 py-1.5 rounded-md text-sm font-medium hover:border-skin-accent hover:text-skin-accent border border-transparent transition-all"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </Main>
+  
+  <Footer />
+</Layout>
