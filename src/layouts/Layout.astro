@@ -62,6 +62,12 @@ const structuredData = {
     <meta name="generator" content={Astro.generator} />
 
     <script is:inline>
+      const currentTheme = localStorage.getItem("theme");
+      const themeValue = currentTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.firstElementChild.setAttribute("data-theme", themeValue);
+    </script>
+
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       window.gtag = function() { window.dataLayer.push(arguments); };
     </script>
@@ -191,7 +197,7 @@ const structuredData = {
       });
     </script>
 
-    <script is:inline src="/toggle-theme.js"></script>
+    <script is:inline defer src="/toggle-theme.js"></script>
   </head>
   <body class="overflow-x-hidden max-w-full">
     <div id="loading-bar" class="fixed top-0 left-0 h-1 z-[100] bg-accent transition-all duration-300 opacity-0 w-0"></div>

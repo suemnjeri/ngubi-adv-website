@@ -47,7 +47,7 @@ function reflectPreference() {
 }
 
 // set early so no page flashes / CSS is made aware
-reflectPreference();
+// reflectPreference();
 
 window.onload = () => {
   function setThemeFeature() {
