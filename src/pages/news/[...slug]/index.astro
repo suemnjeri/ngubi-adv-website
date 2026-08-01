@@ -20,6 +20,13 @@ const { post } = Astro.props;
 
 // Use the native render function passing the post object into it
 const { Content } = await render(post);
+
+// ogImage can be a plain string path (e.g. "/images/news/foo.webp")
+// or an Astro-optimized image object (from image() in the schema) — handle both.
+const heroImageUrl =
+  typeof post.data.ogImage === "string"
+    ? post.data.ogImage
+    : post.data.ogImage?.src || null;
 ---
 
 <Layout title={`${post.data.title} | ${SITE.title}`}>
@@ -35,6 +42,18 @@ const { Content } = await render(post);
         >
           ← Back to News Center
         </a>
+
+        {heroImageUrl && (
+          <div class="mb-8 rounded-2xl overflow-hidden shadow-lg aspect-video">
+            <img
+              src={heroImageUrl}
+              alt={post.data.title}
+              class="w-full h-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        )}
 
         <header class="mb-8">
           <h1 class="text-3xl sm:text-4xl font-bold text-skin-base tracking-tight mb-3">

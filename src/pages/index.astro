@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { TREE_STATS } from "../config";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LinkButton from "../components/LinkButton.astro";
@@ -40,6 +41,7 @@ function formatDate(date: Date): string {
     day: 'numeric',
   }).format(date);
 }
+
 ---
 
 <Layout>
@@ -150,6 +152,67 @@ decoding="async">
     {/* --- END OF PARTNERS/ACCREDITATION SECTION --- */}
 
     <Hr />
+
+     {/* --- START OF TREE PLANTING FEATURE SECTION --- */}
+    <section class="py-4 sm:py-6 bg-surface text-foreground">
+      <div class="max-w-app mx-auto px-4">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <img
+            src="/images/tree-planting-hero.webp"
+            alt="Tree planting with guests at Ngubi Forest"
+            class="w-full h-[340px] sm:h-[420px] object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          {/* Dark gradient so white text stays readable over any photo */}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10"></div>
+
+          <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
+            <span class="inline-block mb-3 text-xs font-bold uppercase tracking-widest text-white bg-accent px-3 py-1 rounded-full w-fit">
+              Conservation Partnership
+            </span>
+
+            <h2 class="text-2xl sm:text-4xl font-bold text-white mb-3 max-w-2xl [text-shadow:_0_2px_10px_rgb(0_0_0_/_60%)]">
+              Tree Planting at Ngubi Forest
+            </h2>
+
+            <p class="text-white/90 max-w-2xl mb-6 leading-relaxed">
+              We partner with individuals, groups, organisations and institutions to plant
+              indigenous trees in Ngubi Forest, working with Kijabe Forest Trust and Uplands
+              Forest Station to provide the seedlings, the land and a guide for every planting day.
+            </p>
+
+            {/* Stat strip — pulls from the shared constants in config.ts */}
+            <div class="flex flex-wrap gap-8 mb-6">
+              <div>
+                <p class="text-2xl sm:text-3xl font-bold text-white">{TREE_STATS.midTermTarget.toLocaleString()}+</p>
+                <p class="text-xs uppercase tracking-wide text-white/70">Trees by {TREE_STATS.midTermLabel}</p>
+              </div>
+              <div>
+                <p class="text-2xl sm:text-3xl font-bold text-white">{TREE_STATS.longTermTarget.toLocaleString()}</p>
+                <p class="text-xs uppercase tracking-wide text-white/70">Trees we are working toward by {TREE_STATS.longTermLabel}</p>
+              </div>
+            </div>
+
+            <div>
+              <LinkButton
+                href="/services/tree-planting"
+                class="inline-flex items-center px-8 py-3 bg-white text-accent rounded-full font-bold shadow-lg hover:bg-gray-100 transition-colors"
+                ariaLabel="Learn more about Tree Planting Partnerships"
+                title="Learn more about Tree Planting Partnerships"
+              >
+                Learn More
+                <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4" />
+              </LinkButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* --- END OF TREE PLANTING FEATURE SECTION --- */}
+
+    <Hr />
+
 
 
     {/* --- START OF SERVICES SECTION (WHAT WE DO) --- */}

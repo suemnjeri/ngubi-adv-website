@@ -1,0 +1,289 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Main from '../../layouts/Main.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LinkButton from '../../components/LinkButton.astro';
+import Hr from "../../components/Hr.astro";
+import SvgIcon from '../../components/SvgIcon.astro';
+import { TREE_STATS } from "../../config";
+
+// Replace these with your real photography once available.
+// Suggested shots: guests actively planting (hands in soil), a wide shot of
+// open/degraded ground within Ngubi ready for planting, a nursery seedling
+// tray shot (from KFT or Uplands), and a group/corporate team shot from a
+// past planting day if you have one.
+import HeroImg from '/public/images/tree-planting-guests2.webp';
+import SourcingImg from '/public/images/tree-planting-nursery.webp';
+import PlantingDayImg from '/public/images/tree-planting-guests.webp';
+---
+
+<Layout title="Tree Planting Partnerships - Ngubi Adventure Forest Camp">
+  <Header />
+  <Main pageTitle="" pageDesc="" class="bg-surface text-foreground">
+
+    {/* --- HERO --- */}
+    <section class="relative min-h-[70vh] flex flex-col justify-end overflow-hidden pb-10 sm:pb-16">
+      <img
+        src={HeroImg.src}
+        alt="Tree planting at Ngubi Forest"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10"></div>
+
+      <div class="relative z-10 max-w-app mx-auto px-4 sm:px-8 w-full">
+        <a href="/" class="inline-flex items-center gap-2 mb-6 text-white/80 hover:text-white text-sm font-medium">
+          ← Home
+        </a>
+        <span class="inline-block mb-4 text-xs font-bold uppercase tracking-widest text-white bg-accent px-3 py-1 rounded-full w-fit">
+          Conservation Partnership
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-bold text-white max-w-3xl mb-4 [text-shadow:_0_2px_10px_rgb(0_0_0_/_60%)]">
+          Tree Planting at Ngubi Forest
+        </h1>
+        <p class="text-lg sm:text-xl text-white/90 max-w-2xl leading-relaxed">
+          A tree planting partnership for individuals, groups, organisations and institutions,
+          based in Ngubi Forest and supported by Kenya Forest Service and Kijabe Forest Trust.
+        </p>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- OPENING NARRATIVE: THE STAKES --- */}
+    <section class="py-10 sm:py-14">
+      <div class="max-w-3xl mx-auto px-4">
+        <p class="text-lg leading-relaxed text-foreground-light-bg mb-5">
+          Kenya's forest cover has been below the level the country needs for a long time. As of
+          2021 it stood at under 9 percent, below the 10 percent minimum set out in the
+          Constitution. In response, the government has committed to planting 15 billion trees
+          by 2032, which would bring national tree cover to 30 percent and restore 10.6 million
+          hectares of degraded land.
+        </p>
+        <p class="text-lg leading-relaxed text-foreground-light-bg mb-5">
+          Reaching that target not only depends on how many go into the ground, but on whether the trees planted survive long enough to
+          become forest. This is something monitoring
+          groups have already raised; there is a gap between seedlings planted and trees that
+          actually take root, and it is the part that is harder to see and to track.
+        </p>
+        <p class="text-lg leading-relaxed text-foreground-light-bg">
+          When we approached the Kenya Forest Service for support, they advised us to plan in
+          thousands rather than in tens or hundreds, since planting at that scale, done in
+          phases, is more likely to add up to real, lasting forest cover. We have built our
+          tree planting partnership around that advice.
+        </p>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- WHO THIS IS FOR: CORPORATE FIRST --- */}
+    <section class="py-10 sm:py-14 bg-surface-alt">
+      <div class="max-w-app mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+          <h2 class="text-3xl sm:text-4xl font-bold text-accent mb-4">For Corporate and CSR Partners</h2>
+          <p class="text-lg text-foreground-light-bg leading-relaxed">
+            Tree planting has become a common item on CSR and ESG calendars, and increasingly
+            an item people ask questions about. At Ngubi, your organisation plants in a
+            specific, named part of Ngubi Forest, on a documented planting day, with partners
+            who can confirm what happens to the trees afterward.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-surface p-6 rounded-2xl shadow-md border-t-4 border-accent">
+            <h3 class="font-bold text-foreground mb-2">A Specific Location</h3>
+            <p class="text-sm text-foreground-light-bg leading-relaxed">
+              Your trees are planted at market locations in Ngubi Forest, and you can
+              return with your team and see the same ground again.
+            </p>
+          </div>
+          <div class="bg-surface p-6 rounded-2xl shadow-md border-t-4 border-accent">
+            <h3 class="font-bold text-foreground mb-2">Planting at Scale</h3>
+            <p class="text-sm text-foreground-light-bg leading-relaxed">
+              We plan planting days in the thousands phased across the year, in line with
+              KFS recommendations.
+            </p>
+          </div>
+          <div class="bg-surface p-6 rounded-2xl shadow-md border-t-4 border-accent">
+            <h3 class="font-bold text-foreground mb-2">Can Be Combined With Other Activities</h3>
+            <p class="text-sm text-foreground-light-bg leading-relaxed">
+              A planting day can be paired with team building, a guided forest walk, or an
+              overnight stay at our camp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- SOURCING STORY --- */}
+    <section class="max-w-app mx-auto px-4 py-10 sm:py-14 flex flex-col md:flex-row items-center md:space-x-10">
+      <div class="md:w-1/2 mb-8 md:mb-0 relative rounded-2xl overflow-hidden shadow-lg aspect-w-4 aspect-h-3">
+        <img src={SourcingImg.src} alt="Seedling nursery near Ngubi Forest" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-2xl sm:text-3xl font-bold text-accent mb-4">Where Our Seedlings Come From</h2>
+        <p class="text-foreground-light-bg leading-relaxed mb-4">
+          We do not yet grow our own seedlings. We source them from two established nurseries who
+          already know this forest.
+        </p>
+        <p class="text-foreground-light-bg leading-relaxed mb-4">
+          <strong class="text-foreground">Kijabe Forest Trust</strong>, our community
+          conservation partner, runs a nursery and restoration team across their roughly
+          6,000-hectare focal area of the Kikuyu Escarpment. Their seedlings are indigenous
+          species, grown for this specific forest.
+        </p>
+        <p class="text-foreground-light-bg leading-relaxed">
+          <strong class="text-foreground">Uplands Forest Station</strong>, the Kenya Forest
+          Service station Ngubi operates inside, propagates seedlings at larger volumes. Between the two, each
+          planting day is matched to seedlings suited to that particular ground.
+        </p>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- THE PLANTING DAY --- */}
+    <section class="max-w-app mx-auto px-4 py-10 sm:py-14 flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-10">
+      <div class="md:w-1/2 mb-8 md:mb-0 relative rounded-2xl overflow-hidden shadow-lg aspect-w-4 aspect-h-3">
+        <img src={PlantingDayImg.src} alt="Guests planting trees at Ngubi Forest" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-2xl sm:text-3xl font-bold text-accent mb-4">What Happens on a Planting Day</h2>
+        <p class="text-foreground-light-bg leading-relaxed mb-4">
+          A planting day at Ngubi is guided. Your group is taken to the specific section of
+          forest set aside for that day, briefed on what is being planted and why, and given
+          the tools and direction needed to plant properly.
+        </p>
+        <p class="text-foreground-light-bg leading-relaxed">
+          It can also be combined with our other services, with many  groups adding a
+          planting session onto a team-building activity or an overnight camp.
+        </p>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- CAPACITY / ROOM TO GROW --- */}
+    <section class="py-12 sm:py-16 bg-accent">
+      <div class="max-w-3xl mx-auto px-4 text-center text-white">
+        <p class="text-sm uppercase tracking-widest font-bold text-white/80 mb-3">Room to Grow</p>
+        <p class="text-4xl sm:text-6xl font-bold mb-4">{TREE_STATS.ngubiHectares.toLocaleString()} Hectares</p>
+        <p class="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
+          This is the size of the Ngubi block within Uplands Forest Station, our home ground.
+          Not all of it is under tree cover yet. Between open ground, thinning plantation
+          areas, and land set aside for restoration, there is space here for a partnership to
+          grow into over several years. We welcome partners who want to
+          help fill that space.
+        </p>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- OUR PROGRESS: THREE STAGES --- */}
+    <section class="py-10 sm:py-14">
+      <div class="max-w-app mx-auto px-4">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl sm:text-4xl font-bold text-accent mb-3">Where We Are Right Now</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+          {/* Stage 1: So far */}
+          <div class="bg-surface p-8 rounded-2xl shadow-md border border-gray-100">
+            <p class="text-xs uppercase tracking-widest font-bold text-accent mb-2">So Far</p>
+            <p class="text-4xl font-bold text-foreground mb-2">{TREE_STATS.plantedSinceJan.toLocaleString()}+</p>
+            <p class="text-foreground-light-bg leading-relaxed">
+              Trees planted with campers, schools, and visiting groups since January 2026.
+            </p>
+          </div>
+
+          {/* Stage 2: Mid-term */}
+          <div class="bg-surface p-8 rounded-2xl shadow-md border border-gray-100">
+            <p class="text-xs uppercase tracking-widest font-bold text-accent mb-2">By {TREE_STATS.midTermLabel}</p>
+            <p class="text-4xl font-bold text-foreground mb-2">{TREE_STATS.midTermTarget.toLocaleString()}+</p>
+            <p class="text-foreground-light-bg leading-relaxed">
+              Our first forest trail run takes place on Mazingira Day, 10 October 2026, and we
+              are working toward {TREE_STATS.midTermTarget.toLocaleString()} trees planted by the same day in 2027.
+            </p>
+          </div>
+
+          {/* Stage 3: Long-term */}
+          <div class="bg-surface p-8 rounded-2xl shadow-md border border-gray-100">
+            <p class="text-xs uppercase tracking-widest font-bold text-accent mb-2">By {TREE_STATS.longTermLabel}</p>
+            <p class="text-4xl font-bold text-foreground mb-2">{TREE_STATS.longTermTarget.toLocaleString()}</p>
+            <p class="text-foreground-light-bg leading-relaxed">
+              By 2035, our tenth year, we are working toward {TREE_STATS.longTermTarget.toLocaleString()} trees planted with our partners.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- PARTNERS STRIP --- */}
+    <section class="py-10 bg-surface-alt">
+      <div class="max-w-app mx-auto px-4 text-center">
+        <p class="text-sm uppercase tracking-widest font-bold text-foreground-light-bg mb-6">Backed By</p>
+        <div class="flex flex-wrap justify-center items-center gap-8">
+          <img src="/images/partner-kfs.webp" alt="Kenya Forest Service" class="h-16 object-contain" loading="lazy" />
+          <img src="/images/partner-kijabe.webp" alt="Kijabe Forest Trust" class="h-16 object-contain" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <Hr />
+
+    {/* --- FINAL CTA --- */}
+    <section class="py-12 sm:py-16">
+      <div class="max-w-2xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-accent mb-4">Plant Trees With Us</h2>
+        <p class="text-foreground-light-bg leading-relaxed mb-8">
+          Every partnership starts with a conversation, not a form. Call or WhatsApp us to talk
+          through numbers, dates, and what fits your group — or download our partner guide for
+          the full picture, including packages and costs, to share with your own team.
+        </p>
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+          
+            <!-- <LinkButton
+            href="/documents/Ngubi_Tree_Planting_Partner_Guide.pdf"
+            target="_blank"
+            class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark transition-colors duration-200 shadow-lg"
+            ariaLabel="Download the Tree Planting Partner Guide PDF"
+            title="Download the Partner Guide"
+          >
+            Download Partner Guide (PDF)
+          </LinkButton> -->
+
+          <LinkButton
+            href="https://wa.me/254712505845?text=Hi! I'm interested in a tree planting partnership at Ngubi."
+            target="_blank"
+            class="inline-block px-8 py-4 text-lg bg-white text-accent border-2 border-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+            ariaLabel="Send a WhatsApp Inquiry"
+            title="Send Inquiry (WhatsApp)"
+          >
+            Send Inquiry (WhatsApp)
+          </LinkButton>
+          <LinkButton
+            href="/contact"
+            class="inline-block px-8 py-4 text-lg bg-surface text-accent rounded-full font-semibold whitespace-nowrap hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+            ariaLabel="Contact Us"
+            title="Contact Us"
+          >
+            Contact Us
+          </LinkButton>
+        </div>
+      </div>
+    </section>
+
+  </Main>
+  <Footer />
+</Layout>
