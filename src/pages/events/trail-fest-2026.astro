@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LinkButton from '../../components/LinkButton.astro';
+
+// --- IMPORTANT: This is the data that gets imported by events.astro and index.astro ---
+export const eventData = {
+    title: 'Ngubi Forest Trail Fest',
+    eventDate: new Date('2026-10-10'),
+    eventTime: '8:00 AM - 2:00 PM',
+    location: 'Ngubi Adventures Forest Camp, Limuru',
+    eventImage: '/images/events/ngubi-trail-fest-2026-2.webp', // use a landscape crop of the flyer
+    description: 'Our first forest trail run, on Mazingira Day. Choose a 5KM, 10KM or 15KM route through the forest of the Kikuyu Escarpment.',
+    featured: true,
+    isFree: false,
+    priceAdult: 'KES 2,000',
+    priceKids: 'KES 1,000',
+    // NOTE: confirm this account number against the flyer before publishing —
+    // the flyer currently shows 845877 and the registration form shows 845817.
+    paybillNumber: '880100',
+    accountNumber: '845817',
+    accountName: 'ACACIA TRADERS LIMITED',
+    mapsLink: 'https://maps.app.goo.gl/W3YivGRxdsSwU3ej9',
+    registerLink: 'https://forms.gle/giSvcLCG4z1RSAa5A',
+};
+---
+
+<Layout title={eventData.title}>
+    <Header />
+    <main class="max-w-app mx-auto px-4 pt-20">
+        <section class="prose py-12 max-w-3xl mx-auto">
+
+            <p class="mb-2">
+                <a href="/services/events2" class="text-accent no-underline hover:underline">← Back to Events</a>
+            </p>
+
+            <h1>{eventData.title}</h1>
+            <img src={eventData.eventImage} alt={eventData.title} class="rounded-lg shadow-lg mb-6 w-full mx-auto" />
+
+            <div class="flex flex-col sm:flex-row sm:space-x-4 mb-6">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>{eventData.eventDate.toLocaleString('en-US', { dateStyle: 'long' })}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>{eventData.eventTime}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <a href={eventData.mapsLink} target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">{eventData.location}</a>
+                </div>
+            </div>
+
+            <p class="text-lg leading-relaxed text-justify">
+                The Ngubi Forest Trail Fest is our first forest trail run, held on <strong>Mazingira
+                Day, 10th October 2026</strong>, at Ngubi Adventures Forest Camp in Limuru. Choose
+                your distance - <strong>5KM, 10KM or 15KM</strong> - through the forest trails of
+                the Kikuyu Escarpment, at whatever pace suits you. Every entry includes your race
+                category, an <strong>event t-shirt</strong>, a <strong>tree seedling to plant on
+                the day</strong>, and a <strong>finisher medal</strong>, for <strong>{eventData.priceAdult}</strong> (age
+                13 and above) or <strong>{eventData.priceKids}</strong> (age 12 and under). The
+                course is marshaled throughout, with an on-site ambulance and first aid on hand,
+                and food and other vendors so you can make a morning of it with family and friends.
+            </p>
+
+            <br/>
+
+            <p class="text-lg leading-relaxed text-justify">
+                This run is also a planting day. We're aiming to plant over <strong>1,000
+                indigenous seedlings</strong> on the day, part of building toward
+                <strong>10,000 trees by Mazingira Day 2027</strong> and <strong>1,000,000 by
+                2035</strong> - targets we've set with the Kenya Forest Service as part of our
+                wider tree planting partnership.
+               
+            </p>
+            <br/>
+            <p>
+                <a href="/services/tree-planting" class="text-accent no-underline hover:underline font-semibold">
+                    Learn more about our tree planting partnership →
+                </a>
+            </p>
+            <br/>
+
+            <p class="text-lg leading-relaxed">
+                Pay via M-Pesa to <strong>Paybill {eventData.paybillNumber}, Account {eventData.accountNumber},
+                {eventData.accountName}</strong>, then register below with your M-Pesa confirmation
+                message.
+            </p>
+
+            <div class="mt-10 mb-6">
+                <LinkButton
+                    href={eventData.registerLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block px-8 py-4 text-lg bg-accent text-white rounded-full font-semibold whitespace-nowrap hover:bg-accent-dark transition-colors duration-200 shadow-lg no-underline"
+                    ariaLabel="Register for the Ngubi Forest Trail Fest"
+                    title="Register for the Ngubi Forest Trail Fest"
+                >
+                    Register Now
+                </LinkButton>
+                <p class="text-sm text-text-muted mt-3">
+                    For inquiries or assistance, contact us on
+                    <a href="tel:+254702428654" class="no-underline hover:underline">+254 702 428 654</a>
+                    or <a href="mailto:info@ngubiadventures.or.ke" class="no-underline hover:underline">info@ngubiadventures.or.ke</a>.
+                </p>
+            </div>
+
+        </section>
+    </main>
+    <Footer />
+</Layout>

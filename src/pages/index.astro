@@ -24,6 +24,7 @@ import SvgIcon from '../components/SvgIcon.astro';
 // import { eventData as forestEcologyWalkData } from './events/forest-ecology-walk.astro';
 // import { eventData as birdWatchingData } from './events/bird-watching-tour.astro';
 import { eventData as birdwalk18thfeb26 } from './events/bird-walk-nature-kenya-18-feb-26.astro';
+import { eventData as traildest2026 } from './events/trail-fest-2026.astro';
 
 // This is the new, simple list of your events
 const allEvents = [
@@ -32,6 +33,7 @@ const allEvents = [
   // { data: birdWatchingData, href: '/events/bird-watching-tour' },
   // { data: mtb7thfeb26, href: '/events/mtb-ngubi-escarpment' },
   // { data: birdwalk18thfeb26, href: '/events/bird-walk-nature-kenya-18-feb-26' },
+  { data: traildest2026, href: '/events/trail-fest-2026.astro' },
 ];
 
 function formatDate(date: Date): string {
@@ -211,6 +213,52 @@ decoding="async">
     </section>
     {/* --- END OF TREE PLANTING FEATURE SECTION --- */}
 
+    <Hr />
+
+    {/* --- START OF TRAIL FEST EVENT PROMO STRIP --- */}
+    <section class="py-4 sm:py-6 bg-surface text-foreground">
+      <div class="max-w-app mx-auto px-4">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <img
+            src="/images/trail-fest-promo.webp"
+            alt="Trail runners on a forest path at Ngubi Forest"
+            class="w-full h-[340px] sm:h-[420px] object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          {/* Same dark gradient treatment as the Tree Planting section, for visual consistency */}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10"></div>
+ 
+          <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
+            <span class="inline-block mb-3 text-xs font-bold uppercase tracking-widest text-white bg-accent px-3 py-1 rounded-full w-fit">
+              Upcoming Event · 10th October 2026
+            </span>
+ 
+            <h2 class="text-2xl sm:text-4xl font-bold text-white mb-3 max-w-2xl [text-shadow:_0_2px_10px_rgb(0_0_0_/_60%)]">
+              Ngubi Forest Trail Fest
+            </h2>
+ 
+            <p class="text-white/90 max-w-2xl mb-6 leading-relaxed">
+              Run. Plant a seedling. Restore the forest. Join us for 5KM, 10KM or 15KM trails through the Kikuyu Escarpment on Mazingira Day.
+            </p>
+ 
+            <div>
+              <LinkButton
+                href="/events/trail-fest-2026"
+                class="inline-flex items-center px-8 py-3 bg-white text-accent rounded-full font-bold shadow-lg hover:bg-gray-100 transition-colors"
+                ariaLabel="Learn more about the Ngubi Forest Trail Fest"
+                title="Learn more about the Ngubi Forest Trail Fest"
+              >
+                Learn More & Register
+                <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4" />
+              </LinkButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* --- END OF TRAIL FEST EVENT PROMO STRIP --- */}
+ 
     <Hr />
 
 
@@ -522,29 +570,29 @@ decoding="async">
           <div class="group overflow-hidden rounded-2xl bg-surface shadow-md border border-gray-100 transition-all hover:shadow-xl">
             <div class="relative h-64 overflow-hidden">
               <img 
-                src="/images/birding.webp" 
-                alt="Birding with Nature Kenya" 
+                src="/images/events/ngubi-trail-fest-2026.webp" 
+                alt="Ngubi Trail Fest 2026" 
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy" 
   decoding="async"
               />
               {/* Badge: Can be changed to "Upcoming Event" if needed */}
               <div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                Recent Highlight
-                 <!-- Upcoming -->
+                <!-- Recent Highlight -->
+                 Upcoming
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-2xl font-bold text-accent mb-2">Birding with Nature Kenya</h3>
+              <h3 class="text-2xl font-bold text-accent mb-2">Ngubi Forest Trail Fest</h3>
               <p class="text-foreground-light-bg leading-relaxed mb-2">
-                We regularly host expert-led birdwalks to explore the vibrant birdlife of the Kikuyu Escarpment. Discover over 74 bird species.
+                  Join us for our first forest trail run through the Kikuyu Escarpment — 5KM, 10KM or 15KM routes, with every entry planting a tree seedling. Runs on Mazingira Day, 10th October 2026.
                 <!-- , including the Hartlaub's Turaco. -->
                 <!-- Join us on Wednesday May 20th for a Morning Birdwalk in partnership with Nature Kenya to explore the vibrant birdlife of the Kikuyu Escarpment. -->
               </p>
-              <a href="/services/events2" class="inline-flex items-center font-bold text-accent hover:underline">
-                View Birding Events <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4" />
+              <a href="/events/trail-fest-2026" class="inline-flex items-center font-bold text-accent hover:underline">
+                Join Us <SvgIcon name="IconArrowRight" class="ml-2 w-4 h-4" />
                 <!-- a href="/events/birding-nature-kenya-20-May-26" -->
-                <!-- Join Us -->
+                <!-- View Birding Events -->
               </a>
             </div>
           </div>
