@@ -116,46 +116,79 @@ function formatDate(date: Date): string {
   <main id="main-content" class="pt-1">
     <Hr />
 
-    {/* --- START OF PARTNERS/ACCREDITATION SECTION --- */}
-    <section class="py-2 sm:py-4 bg-surface text-foreground">
-      <div class="max-w-app mx-auto px-2">
+    {/* --- START OF PARTNERS/ACCREDITATION SECTION (MINIMAL) --- */}  
+    <section class="py-6 sm:py-8 bg-surface text-foreground border-b border-gray-100/10">  
+      <div class="max-w-app mx-auto px-4">
+        {/* Optional tiny header to give context */}
+        <p class="text-center text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 sm:mb-2">
+          In Partnership With
+        </p>
         
-        {/* Flexbox container centers the children dynamically */}
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-12 justify-items-center">
-        <!-- <div class="flex flex-wrap justify-center items-center gap-4"> -->
+        {/* Flexbox container for a tight, centered row */}  
+        <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-16">  
           
-          {/* Partner Logo 1 */}
-          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-museums.webp" alt="Partner Museums Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy"
-decoding="async">
-          </div>
+          <img 
+            src="/images/partner-museums.webp" 
+            alt="National Museums of Kenya Logo" 
+            class="h-8 sm:h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+            loading="lazy"  
+            decoding="async"
+          >
 
-          {/* Partner Logo 2 */}
-          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-kfs.webp" alt="Partner KFS Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy"
-decoding="async">
-          </div>
+          <img 
+            src="/images/partner-kfs.webp" 
+            alt="Kenya Forest Service Logo" 
+            class="h-8 sm:h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+            loading="lazy"  
+            decoding="async"
+          >
 
-          {/* Partner Logo 3 */}
-          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-nature-kenya.webp" alt="Partner Nature Kenya Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy" 
-  decoding="async">
-          </div>
+          <img 
+            src="/images/partner-nature-kenya.webp" 
+            alt="Nature Kenya Logo" 
+            class="h-8 sm:h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+            loading="lazy"   
+            decoding="async"
+          >
 
-          {/* Partner Logo 4 */}
-          <div class="bg-surface p-1 rounded-lg shadow-md flex items-center justify-center h-24 sm:h-32 w-48">
-            <img src="/images/partner-kijabe.webp" alt="Partner Kijabe Forest Trust Logo" class="max-h-full max-w-full object-contain hover:scale-105 transition-all duration-300" loading="lazy" 
-  decoding="async">
-          </div>
+          <img 
+            src="/images/partner-kijabe.webp" 
+            alt="Kijabe Forest Trust Logo" 
+            class="h-8 sm:h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+            loading="lazy"   
+            decoding="async"
+          >
 
-        </div>
-      </div>
-    </section>
+        </div>  
+      </div>  
+    </section>  
     {/* --- END OF PARTNERS/ACCREDITATION SECTION --- */}
 
     <Hr />
 
-    {/* --- START OF TRAIL FEST EVENT PROMO STRIP --- */}
+    {/* --- START OF TRAIL FEST FLYER SECTION --- */}
+    <section class="py-4 sm:py-6 bg-surface text-foreground">
+      <div class="max-w-app mx-auto px-4">
+        <a 
+          href="/events/trail-fest-2026" 
+          class="block relative rounded-3xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-[1.01]"
+          aria-label="Ngubi Forest Trail Fest Flyer - Click to view details and register"
+        >
+          <img
+            src="/images/trail-fest-flyer.webp"
+            alt="Ngubi Forest Trail Fest Flyer - 10th October 2026"
+            width="991"
+            height="495"
+            class="w-full h-auto object-cover aspect-[991/495]"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </div>
+    </section>
+    {/* --- END OF TRAIL FEST FLYER SECTION --- */}
+
+    <!-- {/* --- START OF TRAIL FEST EVENT PROMO STRIP --- */}
     <section class="py-4 sm:py-6 bg-surface text-foreground">
       <div class="max-w-app mx-auto px-4">
         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -197,7 +230,7 @@ decoding="async">
         </div>
       </div>
     </section>
-    {/* --- END OF TRAIL FEST EVENT PROMO STRIP --- */}
+    {/* --- END OF TRAIL FEST EVENT PROMO STRIP --- */} -->
 
     <Hr />
 
